@@ -28,7 +28,7 @@ namespace ServerManager.WPF.Pages
             InitializeComponent();
         }
 
-        private async void txtCommand_KeyDown(object sender, KeyEventArgs e)
+        private void txtCommand_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.F5)
             {
@@ -38,41 +38,38 @@ namespace ServerManager.WPF.Pages
                 {
                     TextRange txt = new TextRange(pragCmd.Inlines.LastInline.ContentStart
                         , pragCmd.Inlines.LastInline.ContentEnd);
-                    await RunCmd(txt.Text);
+                    RunCmd(txt.Text);
                 }
             }
         }
 
-        private async Task RunCmd(string cmd)
+        private void RunCmd(string cmd)
         {
-            await Task.Run(() =>
+            try
             {
-                try
-                {
-                    ProcessStartInfo processInfo = new ProcessStartInfo();
-                    processInfo.FileName = "powershell.exe";
-                    processInfo.Arguments = cmd;
-                    processInfo.RedirectStandardError = true;
-                    processInfo.RedirectStandardOutput = true;
-                    processInfo.UseShellExecute = false;
-                    processInfo.CreateNoWindow = true;
+                ProcessStartInfo processInfo = new ProcessStartInfo();
+                processInfo.FileName = "powershell.exe";
+                processInfo.Arguments = cmd;
+                processInfo.RedirectStandardError = true;
+                processInfo.RedirectStandardOutput = true;
+                processInfo.UseShellExecute = false;
+                processInfo.CreateNoWindow = true;
 
-                    Process process = new Process();
-                    process.StartInfo = processInfo;
-                    process.Start();
-                    pragResult.Inlines.Add(new Run(process.StandardOutput.ReadToEnd()));
+                Process process = new Process();
+                process.StartInfo = processInfo;
+                process.Start();
+                pragResult.Inlines.Add(new Run(process.StandardOutput.ReadToEnd()));
 
-                    string errors = process.StandardError.ReadToEnd();
-                    if (!string.IsNullOrEmpty(errors))
-                    {
-                        pragResult.Inlines.Add(new Run($"Errors : {errors}"));
-                    }
-                }
-                catch (Exception ex)
+                string errors = process.StandardError.ReadToEnd();
+                if (!string.IsNullOrEmpty(errors))
                 {
-                    pragResult.Inlines.Add(new Run($"An error occurred \n Massage : {ex.Message} \n"));
+                    pragResult.Inlines.Add(new Run($"Errors : {errors}"));
                 }
-            });
+            }
+            catch (Exception ex)
+            {
+                pragResult.Inlines.Add(new Run($"An error occurred \n Massage : {ex.Message} \n"));
+            }
         }
     }
 }
