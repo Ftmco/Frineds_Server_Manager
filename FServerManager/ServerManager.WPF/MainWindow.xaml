@@ -19,7 +19,7 @@
             </Grid.ColumnDefinitions>
 
             <Grid>
-                <Button Content="Files" Width="40" x:Name="btnFile" Click="btnFile_Click" HorizontalAlignment="Left" Margin="0,5,0,5">
+                <Button Content="Files" Width="40" x:Name="btnFile" Click="BtnFile_Click" HorizontalAlignment="Left" Margin="0,5,0,5">
                     <Button.ContextMenu>
                         <ContextMenu >
                             <MenuItem Header="Exit"/>
@@ -27,7 +27,7 @@
                         </ContextMenu>
                     </Button.ContextMenu>
                 </Button>
-                <Button Content="View" Width="40" x:Name="btnView" Click="btnFile_Click" HorizontalAlignment="Left" Margin="42,5,0,5">
+                <Button Content="View" Width="40" x:Name="btnView" Click="BtnFile_Click" HorizontalAlignment="Left" Margin="42,5,0,5">
                     <Button.ContextMenu>
                         <ContextMenu>
                             <MenuItem Header="Exit"/>
@@ -35,7 +35,7 @@
                         </ContextMenu>
                     </Button.ContextMenu>
                 </Button>
-                <Button Content="Tools" x:Name="btnTools" Click="btnFile_Click" Margin="85,5,0,5" HorizontalAlignment="Left" Width="40">
+                <Button Content="Tools" x:Name="btnTools" Click="BtnFile_Click" Margin="85,5,0,5" HorizontalAlignment="Left" Width="40">
                     <Button.ContextMenu>
                         <ContextMenu>
                             <MenuItem Header="Exit"/>
@@ -43,7 +43,7 @@
                         </ContextMenu>
                     </Button.ContextMenu>
                 </Button>
-                <Button x:Name="btnPoweShell" Click="btnPoweShell_Click" Margin="129,5,131,5">
+                <Button x:Name="btnPoweShell" Click="BtnPoweShell_Click" Margin="129,5,131,5">
                     <Button.Content>
                         <Image x:Name="imgBtn" Source="Images/Console.png"/>
                     </Button.Content>
@@ -113,7 +113,8 @@
             </TabControl>
         </Grid>
         <Grid Grid.Row="2">
-
+            <Label x:Name="lblTime" Content="Time" HorizontalAlignment="Left"/>
+            <Label x:Name="lblConnect" HorizontalAlignment="Right"/>
         </Grid>
     </Grid>
 </Window>

@@ -21,7 +21,7 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Label Content="Command" HorizontalContentAlignment="Center" Foreground="White" VerticalAlignment="Center" Background="#FF3A3838" />
-            <RichTextBox  Grid.Row="1" FontSize="20" KeyDown="txtCommand_KeyDown" x:Name="txtCMD">
+            <RichTextBox  Grid.Row="1" FontSize="20" KeyDown="TxtCommand_KeyDown" x:Name="txtCMD">
                 <FlowDocument>
                     <Paragraph FontSize="15" x:Name="pragCmd"/>
                 </FlowDocument>

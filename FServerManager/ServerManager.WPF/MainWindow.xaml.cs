@@ -1,19 +1,10 @@
 ﻿using ServerManager.WPF.Pages;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ServerManager.WPF
 {
@@ -22,26 +13,16 @@ namespace ServerManager.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public DateTime DateTime { get; set; } = DateTime.Now;
-
-        public int heigth { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
             imgBtn.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + @"\Statics\Console.png"));
+            GetDate();
+            CheckConnection();
         }
 
-        private void AddPresetButton_Click(object sender, RoutedEventArgs e)
-        {
-            var addButton = sender as FrameworkElement;
-            if (addButton != null)
-            {
-                addButton.ContextMenu.IsOpen = true;
-            }
-        }
-
-        private void btnFile_Click(object sender, RoutedEventArgs e)
+        private void BtnFile_Click(object sender, RoutedEventArgs e)
         {
             (sender as Button).ContextMenu.IsEnabled = true;
             (sender as Button).ContextMenu.PlacementTarget = (sender as Button);
@@ -49,10 +30,30 @@ namespace ServerManager.WPF
             (sender as Button).ContextMenu.IsOpen = true;
         }
 
-        private void btnPoweShell_Click(object sender, RoutedEventArgs e)
+        private void BtnPoweShell_Click(object sender, RoutedEventArgs e)
         {
             PoweShell ps1 = new();
             ps1.ShowDialog();
         }
+
+        void GetDate()
+        {
+            lblTime.Content = DateTime.Now.Year + "/" + DateTime.Now.Month.ToString("00") + "/" + DateTime.Now.DayOfWeek.ToString();
+        }
+
+        void CheckConnection()
+        {
+            if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
+            {
+                lblConnect.Content = "Connect";
+                lblConnect.Foreground = Brushes.Green;
+            }
+            else
+            {
+                lblConnect.Content = "Connecttion Faild";
+                lblConnect.Foreground = Brushes.Red;
+            }
+        }
+
     }
 }

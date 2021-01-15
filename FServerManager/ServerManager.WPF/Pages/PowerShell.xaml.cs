@@ -1,20 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Management.Automation;
-using System.Management.Automation.Runspaces;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ServerManager.WPF.Pages
 {
@@ -28,7 +16,7 @@ namespace ServerManager.WPF.Pages
             InitializeComponent();
         }
 
-        private void txtCommand_KeyDown(object sender, KeyEventArgs e)
+        private void TxtCommand_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.F5)
             {
@@ -49,16 +37,20 @@ namespace ServerManager.WPF.Pages
         {
             try
             {
-                ProcessStartInfo processInfo = new ProcessStartInfo();
-                processInfo.FileName = "powershell.exe";
-                processInfo.Arguments = cmd;
-                processInfo.RedirectStandardError = true;
-                processInfo.RedirectStandardOutput = true;
-                processInfo.UseShellExecute = false;
-                processInfo.CreateNoWindow = true;
+                ProcessStartInfo processInfo = new()
+                {
+                    FileName = "powershell.exe",
+                    Arguments = cmd,
+                    RedirectStandardError = true,
+                    RedirectStandardOutput = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
 
-                Process process = new Process();
-                process.StartInfo = processInfo;
+                Process process = new()
+                {
+                    StartInfo = processInfo
+                };
                 process.Start();
                 pragResult.Inlines.Clear();
                 pragResult.Inlines.Add(new Run(process.StandardOutput.ReadToEnd()));
