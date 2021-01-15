@@ -32,12 +32,14 @@ namespace ServerManager.WPF.Pages
         {
             if (e.Key == Key.F5)
             {
-                if (pragCmd.Inlines.LastInline == null)
+                TextRange txt = new TextRange(txtCMD.Document.ContentStart
+                        , txtCMD.Document.ContentEnd);
+
+                if (string.IsNullOrEmpty(txt.Text))
                     MessageBox.Show("Command Is Null", "Null Refrence", MessageBoxButton.OK, MessageBoxImage.Error);
                 else
                 {
-                    TextRange txt = new TextRange(pragCmd.Inlines.LastInline.ContentStart
-                        , pragCmd.Inlines.LastInline.ContentEnd);
+                    pragResult.Inlines.Add(new Run("Please Wait Runnig Command"));
                     RunCmd(txt.Text);
                 }
             }
@@ -58,6 +60,7 @@ namespace ServerManager.WPF.Pages
                 Process process = new Process();
                 process.StartInfo = processInfo;
                 process.Start();
+                pragResult.Inlines.Clear();
                 pragResult.Inlines.Add(new Run(process.StandardOutput.ReadToEnd()));
 
                 string errors = process.StandardError.ReadToEnd();

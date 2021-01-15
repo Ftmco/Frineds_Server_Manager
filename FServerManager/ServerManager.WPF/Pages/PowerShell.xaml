@@ -21,7 +21,7 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Label Content="Command" HorizontalContentAlignment="Center" Foreground="White" VerticalAlignment="Center" Background="#FF3A3838" />
-            <RichTextBox  Grid.Row="1" FontSize="20" KeyDown="txtCommand_KeyDown">
+            <RichTextBox  Grid.Row="1" FontSize="20" KeyDown="txtCommand_KeyDown" x:Name="txtCMD">
                 <FlowDocument>
                     <Paragraph FontSize="15" x:Name="pragCmd"/>
                 </FlowDocument>
@@ -36,7 +36,7 @@
             <Label Content="Result" HorizontalContentAlignment="Center" Foreground="White" VerticalAlignment="Center" Background="#FF3A3838"/>
             <RichTextBox x:Name="txtResult" IsReadOnly="True" Grid.Row="1">
                 <FlowDocument>
-                    <Paragraph FontSize="15" x:Name="pragResult"/>
+                    <Paragraph FontSize="15" Foreground="Green" x:Name="pragResult"/>
                 </FlowDocument>
             </RichTextBox>
         </Grid>
