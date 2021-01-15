@@ -59,17 +59,29 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="5"/>
                             <ColumnDefinition Width="250" MaxWidth="350" MinWidth="150"/>
+
                         </Grid.ColumnDefinitions>
                         <GridSplitter Grid.Column="1" Foreground="Black" Width="5" HorizontalAlignment="Stretch"/>
                         <Grid Grid.Column="2">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="25"/>
-                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="150" MaxHeight="200" MinHeight="100"/>
+                                <RowDefinition Height="5"/>
+                                <RowDefinition Height="150" MaxHeight="200" MinHeight="100"/>
                             </Grid.RowDefinitions>
-                            <Label Content="Tasks" HorizontalAlignment="Center"/>
-                            <ScrollViewer Grid.Row="1">
+                            <GridSplitter Grid.Row="2" Foreground="Black"  HorizontalAlignment="Stretch"/>
 
-                            </ScrollViewer>
+                            <Label Content="Tasks" HorizontalAlignment="Center"/>
+                            <Grid Grid.Row="1">
+                                <ScrollViewer>
+                                    
+                                </ScrollViewer>
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <ScrollViewer Margin="0,0,0,-16">
+
+                                </ScrollViewer>
+                            </Grid>
                         </Grid>
 
                         <Grid Grid.Row="0">
@@ -78,7 +90,10 @@
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
                             <Label Content="Monitoring Servers Or Sites" HorizontalAlignment="Center" Grid.Row="0"/>
+                            <Grid Grid.Row="1">
 
+
+                            </Grid>
                         </Grid>
                     </Grid>
                 </TabItem>

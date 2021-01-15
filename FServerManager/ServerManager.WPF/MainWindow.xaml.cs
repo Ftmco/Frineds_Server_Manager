@@ -24,6 +24,8 @@ namespace ServerManager.WPF
     {
         public DateTime DateTime { get; set; } = DateTime.Now;
 
+        public int heigth { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
