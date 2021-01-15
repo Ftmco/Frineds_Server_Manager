@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,7 @@ namespace ServerManager.WPF
         public MainWindow()
         {
             InitializeComponent();
+            imgBtn.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + @"\Statics\Console.png"));
         }
 
         private void AddPresetButton_Click(object sender, RoutedEventArgs e)
@@ -42,6 +44,11 @@ namespace ServerManager.WPF
             (sender as Button).ContextMenu.PlacementTarget = (sender as Button);
             (sender as Button).ContextMenu.Placement = System.Windows.Controls.Primitives.PlacementMode.Bottom;
             (sender as Button).ContextMenu.IsOpen = true;
+        }
+
+        private void btnPoweShell_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
