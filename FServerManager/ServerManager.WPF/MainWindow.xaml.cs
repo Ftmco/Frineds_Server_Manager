@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServerManager.WPF.Pages;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -48,7 +49,8 @@ namespace ServerManager.WPF
 
         private void btnPoweShell_Click(object sender, RoutedEventArgs e)
         {
-
+            PoweShell ps1 = new();
+            ps1.ShowDialog();
         }
     }
 }
