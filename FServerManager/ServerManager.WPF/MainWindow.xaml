@@ -19,7 +19,22 @@
             </Grid.ColumnDefinitions>
 
             <Grid>
-               
+                <Button Content="Files" Width="40" x:Name="btnFile" Click="btnFile_Click" HorizontalAlignment="Left" Margin="0,5,0,5">
+                    <Button.ContextMenu>
+                        <ContextMenu >
+                            <MenuItem Header="Exit"/>
+                            <MenuItem Header="Setting"/>
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                </Button>
+                <Button Content="View" Width="40" x:Name="btnView" Click="btnFile_Click" HorizontalAlignment="Left" Margin="45,5,0,5">
+                    <Button.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Exit"/>
+                            <MenuItem Header="Setting"/>
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                </Button>
             </Grid>
             <Label Grid.Column="1" Content="F Server Manager" FontFamily="Andalus" HorizontalAlignment="Right" FontSize="15" />
         </Grid>
@@ -40,6 +55,15 @@
                             <ScrollViewer Grid.Row="1">
 
                             </ScrollViewer>
+                        </Grid>
+
+                        <Grid Grid.Row="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Monitoring Servers Or Sites" HorizontalAlignment="Center" Grid.Row="0"/>
+
                         </Grid>
                     </Grid>
                 </TabItem>
