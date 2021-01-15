@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "iEA3ged1CH6RTMik3RNUd1KDvMYRq1gy6AKZLA8UpJDsghvOBXxr0ft2AMkahv636isx0Lx5Xz4uBd9HPyn7WQ==",
+  "dgSpecHash": "5oZIernZFL6O9TrJymVHoI4lU/XiOdEEgWfvHw3vYK056C9KWB33oCAhEVYuhbtxxK/O4lWZBxmhVnJr62PAew==",
   "success": true,
   "projectFilePath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\ServerManager.WPF\\ServerManager.WPF.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\Amir Hossin\\.nuget\\packages\\microsoft.powershell.5.referenceassemblies\\1.1.0\\microsoft.powershell.5.referenceassemblies.1.1.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.PowerShell.5.ReferenceAssemblies 1.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.PowerShell.5.ReferenceAssemblies",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    }
+  ]
 }

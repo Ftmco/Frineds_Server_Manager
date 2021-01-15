@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Pages\PoweShell.xaml.cs">
+    <Compile Update="Pages\PowerShell.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -15,7 +15,7 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\PoweShell.xaml">
+    <Page Update="Pages\PowerShell.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

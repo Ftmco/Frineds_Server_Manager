@@ -75,13 +75,12 @@
                                     <RowDefinition Height="1*"/>
                                 </Grid.RowDefinitions>
                                 <Label Content="Tasks" HorizontalContentAlignment="Center" Background="#FF3A3838" Foreground="White"/>
-
                                 <ScrollViewer Grid.Row="1">
 
                                 </ScrollViewer>
                             </Grid>
                             <Grid Grid.Row="2">
-                                
+
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="25"/>
                                     <RowDefinition Height="1*"/>
