@@ -43,10 +43,12 @@
                 <TabItem Header="Monitoring">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="250"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="250" MaxWidth="350" MinWidth="150"/>
                         </Grid.ColumnDefinitions>
-                        <Grid Grid.Column="1">
+                        <GridSplitter Grid.Column="1" Foreground="Black" Width="5" HorizontalAlignment="Stretch"/>
+                        <Grid Grid.Column="2">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="25"/>
                                 <RowDefinition Height="1*"/>
