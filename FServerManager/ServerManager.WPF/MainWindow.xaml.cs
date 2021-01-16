@@ -1,4 +1,6 @@
 ﻿using ServerManager.WPF.Pages;
+using Services.Shared.Repository;
+using Services.Shared.Services;
 using System;
 using System.IO;
 using System.Windows;
@@ -14,9 +16,14 @@ namespace ServerManager.WPF
     public partial class MainWindow : Window
     {
 
+        private readonly IWindowsServices _service;
+
         public MainWindow()
         {
+            _service = new WindowsService();
+
             InitializeComponent();
+
             imgBtn.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + @"\Statics\Console.png"));
             GetDate();
             CheckConnection();
@@ -44,7 +51,7 @@ namespace ServerManager.WPF
 
         void CheckConnection()
         {
-            if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
+            if (_service.IsConnectNetWork().Result)
             {
                 lblConnect.Content = "Connect";
                 lblConnect.Foreground = Brushes.Green;
