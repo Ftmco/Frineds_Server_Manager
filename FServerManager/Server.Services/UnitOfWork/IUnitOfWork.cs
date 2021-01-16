@@ -1,15 +1,33 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Server.Services.UnitOfWork
 {
-    public interface IUnitOfWork<TContext> where TContext : class
+    /// <summary>
+    /// Unit Of Work Service
+    /// </summary>
+    /// <typeparam name="TContext">DbContext</typeparam>
+    public interface IUnitOfWork<TContext> : IDisposable where TContext : DbContext
     {
-        #region __Dependency__
+        /// <summary>
+        /// Save All Changes
+        /// </summary>
+        /// <returns>
+        /// True : Success
+        /// False : Exception
+        /// </returns>
+        Task<bool> SaveAsync();
 
-        private readonly 
-
-        #endregion
+        /// <summary>
+        /// Save All Changes
+        /// </summary>
+        /// <returns> 
+        /// True : Success
+        /// False : Exception
+        /// </returns>
+        bool Save();
     }
 }
