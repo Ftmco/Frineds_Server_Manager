@@ -309,7 +309,7 @@
       },
       "Services.Shared/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/Services.Shared.dll": {}
         },
@@ -805,7 +805,7 @@
       },
       "Services.Shared/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/Services.Shared.dll": {}
         },
@@ -1302,7 +1302,7 @@
       },
       "Services.Shared/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/Services.Shared.dll": {}
         },
@@ -1799,7 +1799,7 @@
       },
       "Services.Shared/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/Services.Shared.dll": {}
         },
@@ -2295,7 +2295,7 @@
       },
       "Services.Shared/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/Services.Shared.dll": {}
         },
@@ -2792,7 +2792,7 @@
       },
       "Services.Shared/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/Services.Shared.dll": {}
         },
@@ -3288,7 +3288,7 @@
       },
       "Services.Shared/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/Services.Shared.dll": {}
         },
@@ -3785,7 +3785,7 @@
       },
       "Services.Shared/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/Services.Shared.dll": {}
         },
@@ -8315,5 +8315,79 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Services.Shared is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763). Project Services.Shared supports: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Services.Shared",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Services.Shared is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-arm. Project Services.Shared supports: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Services.Shared",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-arm"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Services.Shared is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-arm-aot. Project Services.Shared supports: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Services.Shared",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-arm-aot"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Services.Shared is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-arm64-aot. Project Services.Shared supports: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Services.Shared",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-arm64-aot"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Services.Shared is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-x64. Project Services.Shared supports: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Services.Shared",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Services.Shared is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-x64-aot. Project Services.Shared supports: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Services.Shared",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-x64-aot"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Services.Shared is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-x86. Project Services.Shared supports: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Services.Shared",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-x86"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Services.Shared is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-x86-aot. Project Services.Shared supports: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Services.Shared",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-x86-aot"
+      ]
+    }
+  ]
 }

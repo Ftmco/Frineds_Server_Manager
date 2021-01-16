@@ -9,7 +9,7 @@ namespace Services.Shared.Services
 {
     public class WindowsService : IWindowsServices
     {
-        public async Task<bool> IsConnectNetWork()
+        public async Task<bool> IsConnectNetWorkAsynx()
         {
             return await Task.Run(() => NetworkInterface.GetIsNetworkAvailable());
         }

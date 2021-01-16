@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "bQ3le0vT+/5j+SQHZoDlmHjZiGoavGL8HTlcGwKSSHD6XrvLCZaiSI9PVI+0hbDn5AKMSZTikmZ0Pt+IWJ0HRA==",
-  "success": true,
+  "dgSpecHash": "WZttZko+cK47eJfXW6STUAAmOkV2OEkKrwyPf+kDErG1Ft6t+OcHS9+OZnCZQH6/Wv+rIqjHhH9fcc9CB4/gCw==",
+  "success": false,
   "projectFilePath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\ServerManager.UWP\\ServerManager.UWP.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.net.native.compiler\\2.2.8-rel-28605-00\\microsoft.net.native.compiler.2.2.8-rel-28605-00.nupkg.sha512",
@@ -28,5 +28,78 @@
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk\\2.2.10\\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk.2.2.10.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\\6.2.10\\runtime.win10-x86.microsoft.netcore.universalwindowsplatform.6.2.10.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Services.Shared is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763). Project Services.Shared supports: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Services.Shared",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Services.Shared is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-arm. Project Services.Shared supports: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Services.Shared",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-arm"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Services.Shared is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-arm-aot. Project Services.Shared supports: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Services.Shared",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-arm-aot"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Services.Shared is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-arm64-aot. Project Services.Shared supports: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Services.Shared",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-arm64-aot"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Services.Shared is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-x64. Project Services.Shared supports: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Services.Shared",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Services.Shared is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-x64-aot. Project Services.Shared supports: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Services.Shared",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-x64-aot"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Services.Shared is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-x86. Project Services.Shared supports: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Services.Shared",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-x86"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Services.Shared is not compatible with uap10.0.17763 (UAP,Version=v10.0.17763) / win10-x86-aot. Project Services.Shared supports: netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Services.Shared",
+      "targetGraphs": [
+        "UAP,Version=v10.0.17763/win10-x86-aot"
+      ]
+    }
+  ]
 }

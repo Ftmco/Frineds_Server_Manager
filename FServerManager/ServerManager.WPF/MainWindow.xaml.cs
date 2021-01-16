@@ -51,7 +51,7 @@ namespace ServerManager.WPF
 
         void CheckConnection()
         {
-            if (_service.IsConnectNetWork().Result)
+            if (_service.IsConnectNetWorkAsynx().Result)
             {
                 lblConnect.Content = "Local Internet Connect";
                 lblConnect.Foreground = Brushes.Green;

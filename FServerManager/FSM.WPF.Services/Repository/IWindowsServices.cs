@@ -4,6 +4,6 @@ namespace Services.Shared.Repository
 {
     public interface IWindowsServices
     {
-        Task<bool> IsConnectNetWork();
+        Task<bool> IsConnectNetWorkAsynx();
     }
 }
