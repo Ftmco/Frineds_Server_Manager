@@ -9,8 +9,4 @@
     <ProjectReference Include="..\Server.Entity\Server.Entity.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Generic\" />
-  </ItemGroup>
-
 </Project>
