@@ -2,28 +2,28 @@
   "version": 3,
   "targets": {
     "net5.0-windows7.0": {
-      "Services.Shared/1.0.0": {
+      "FSM.WPF.Services/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
+        "framework": ".NETCoreApp,Version=v5.0",
         "compile": {
-          "bin/placeholder/Services.Shared.dll": {}
+          "bin/placeholder/FSM.WPF.Services.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Services.Shared.dll": {}
+          "bin/placeholder/FSM.WPF.Services.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Services.Shared/1.0.0": {
+    "FSM.WPF.Services/1.0.0": {
       "type": "project",
-      "path": "../Services.Shared/Services.Shared.csproj",
-      "msbuildProject": "../Services.Shared/Services.Shared.csproj"
+      "path": "../FSM.WPF.Services/FSM.WPF.Services.csproj",
+      "msbuildProject": "../FSM.WPF.Services/FSM.WPF.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
-      "Services.Shared >= 1.0.0"
+      "FSM.WPF.Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -58,8 +58,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Services.Shared\\Services.Shared.csproj": {
-              "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Services.Shared\\Services.Shared.csproj"
+            "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Services\\FSM.WPF.Services.csproj": {
+              "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Services\\FSM.WPF.Services.csproj"
             }
           }
         }

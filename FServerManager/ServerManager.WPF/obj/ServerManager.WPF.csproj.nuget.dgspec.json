@@ -4,6 +4,64 @@
     "D:\\project\\FTEAM\\FServerManager\\FServerManager\\ServerManager.WPF\\ServerManager.WPF.csproj": {}
   },
   "projects": {
+    "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Services\\FSM.WPF.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Services\\FSM.WPF.Services.csproj",
+        "projectName": "FSM.WPF.Services",
+        "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Services\\FSM.WPF.Services.csproj",
+        "packagesPath": "C:\\Users\\Amir Hossin\\.nuget\\packages\\",
+        "outputPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Amir Hossin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-rc.2.20479.15\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\project\\FTEAM\\FServerManager\\FServerManager\\ServerManager.WPF\\ServerManager.WPF.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -32,8 +90,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Services.Shared\\Services.Shared.csproj": {
-                "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Services.Shared\\Services.Shared.csproj"
+              "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Services\\FSM.WPF.Services.csproj": {
+                "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Services\\FSM.WPF.Services.csproj"
               }
             }
           }
@@ -63,64 +121,6 @@
             },
             "Microsoft.WindowsDesktop.App.WPF": {
               "privateAssets": "none"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-rc.2.20479.15\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Services.Shared\\Services.Shared.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Services.Shared\\Services.Shared.csproj",
-        "projectName": "Services.Shared",
-        "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Services.Shared\\Services.Shared.csproj",
-        "packagesPath": "C:\\Users\\Amir Hossin\\.nuget\\packages\\",
-        "outputPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Services.Shared\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\Amir Hossin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netstandard2.1"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "NETStandard.Library": {
-              "privateAssets": "all"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-rc.2.20479.15\\RuntimeIdentifierGraph.json"
