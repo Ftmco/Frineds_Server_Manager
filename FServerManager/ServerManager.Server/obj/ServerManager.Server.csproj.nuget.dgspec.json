@@ -4,6 +4,223 @@
     "D:\\project\\FTEAM\\FServerManager\\FServerManager\\ServerManager.Server\\ServerManager.Server.csproj": {}
   },
   "projects": {
+    "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.DataLayer\\Server.DataLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.DataLayer\\Server.DataLayer.csproj",
+        "projectName": "Server.DataLayer",
+        "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.DataLayer\\Server.DataLayer.csproj",
+        "packagesPath": "C:\\Users\\Amir Hossin\\.nuget\\packages\\",
+        "outputPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.DataLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Amir Hossin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.Entity\\Server.Entity.csproj": {
+                "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.Entity\\Server.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-rc.2.20479.15\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.Entity\\Server.Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.Entity\\Server.Entity.csproj",
+        "projectName": "Server.Entity",
+        "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.Entity\\Server.Entity.csproj",
+        "packagesPath": "C:\\Users\\Amir Hossin\\.nuget\\packages\\",
+        "outputPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.Entity\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Amir Hossin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-rc.2.20479.15\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.Services\\Server.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.Services\\Server.Services.csproj",
+        "projectName": "Server.Services",
+        "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.Services\\Server.Services.csproj",
+        "packagesPath": "C:\\Users\\Amir Hossin\\.nuget\\packages\\",
+        "outputPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Amir Hossin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.DataLayer\\Server.DataLayer.csproj": {
+                "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.DataLayer\\Server.DataLayer.csproj"
+              },
+              "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.Entity\\Server.Entity.csproj": {
+                "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.Entity\\Server.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-rc.2.20479.15\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\project\\FTEAM\\FServerManager\\FServerManager\\ServerManager.Server\\ServerManager.Server.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -31,7 +248,20 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.DataLayer\\Server.DataLayer.csproj": {
+                "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.DataLayer\\Server.DataLayer.csproj"
+              },
+              "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.Entity\\Server.Entity.csproj": {
+                "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.Entity\\Server.Entity.csproj"
+              },
+              "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.Services\\Server.Services.csproj": {
+                "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.Services\\Server.Services.csproj"
+              },
+              "D:\\project\\FTEAM\\FServerManager\\FServerManager\\ViewModels\\ViewModels.csproj": {
+                "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\ViewModels\\ViewModels.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -67,6 +297,64 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-rc.2.20479.15\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\project\\FTEAM\\FServerManager\\FServerManager\\ViewModels\\ViewModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\ViewModels\\ViewModels.csproj",
+        "projectName": "ViewModels",
+        "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\ViewModels\\ViewModels.csproj",
+        "packagesPath": "C:\\Users\\Amir Hossin\\.nuget\\packages\\",
+        "outputPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\ViewModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Amir Hossin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
