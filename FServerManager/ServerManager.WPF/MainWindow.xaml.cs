@@ -53,12 +53,12 @@ namespace ServerManager.WPF
         {
             if (_service.IsConnectNetWork().Result)
             {
-                lblConnect.Content = "Connect";
+                lblConnect.Content = "Local Internet Connect";
                 lblConnect.Foreground = Brushes.Green;
             }
             else
             {
-                lblConnect.Content = "Connecttion Faild";
+                lblConnect.Content = "Local Internet Connecttion Faild";
                 lblConnect.Foreground = Brushes.Red;
             }
         }
