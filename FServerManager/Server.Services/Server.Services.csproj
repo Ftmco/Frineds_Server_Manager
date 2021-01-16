@@ -1,7 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Server.DataLayer\Server.DataLayer.csproj" />
+    <ProjectReference Include="..\Server.Entity\Server.Entity.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Generic\" />
+  </ItemGroup>
 
 </Project>
