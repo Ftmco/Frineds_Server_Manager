@@ -20,6 +20,7 @@ namespace ServerManager.WPF
             imgBtn.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + @"\Statics\Console.png"));
             GetDate();
             CheckConnection();
+            SideBar();
         }
 
         private void BtnFile_Click(object sender, RoutedEventArgs e)
@@ -55,5 +56,9 @@ namespace ServerManager.WPF
             }
         }
 
+        void SideBar()
+        {
+            frmSideBar.Navigate(new SideBar());
+        }
     }
 }

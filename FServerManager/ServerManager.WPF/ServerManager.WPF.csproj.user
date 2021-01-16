@@ -10,12 +10,18 @@
     <Compile Update="Pages\PowerShell.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\SideBar.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\PowerShell.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\SideBar.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

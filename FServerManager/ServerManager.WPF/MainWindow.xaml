@@ -62,35 +62,9 @@
                         </Grid.ColumnDefinitions>
                         <GridSplitter Grid.Column="1" Foreground="Black" Width="5" HorizontalAlignment="Stretch"/>
                         <Grid Grid.Column="2">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" MaxHeight="200" MinHeight="100"/>
-                                <RowDefinition Height="5"/>
-                                <RowDefinition Height="*" MaxHeight="200" MinHeight="100"/>
-                            </Grid.RowDefinitions>
-                            <GridSplitter Grid.Row="1" Foreground="Black"  HorizontalAlignment="Stretch"/>
-
-                            <Grid Grid.Row="0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="25"/>
-                                    <RowDefinition Height="1*"/>
-                                </Grid.RowDefinitions>
-                                <Label Content="Tasks" HorizontalContentAlignment="Center" Background="#FF3A3838" Foreground="White"/>
-                                <ScrollViewer Grid.Row="1">
-
-                                </ScrollViewer>
-                            </Grid>
-                            <Grid Grid.Row="2">
-
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="25"/>
-                                    <RowDefinition Height="1*"/>
-                                </Grid.RowDefinitions>
-                                <Label Content="Pings" HorizontalContentAlignment="Center" Background="#FF3A3838" Foreground="White"/>
-
-                                <ScrollViewer Grid.Row="1">
-
-                                </ScrollViewer>
-                            </Grid>
+                            <Frame x:Name="frmSideBar">
+                                
+                            </Frame>
                         </Grid>
 
                         <Grid Grid.Row="0">
