@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace FSM.Services.Shared.Repository
+namespace FSM.UWP.Services.Repository
 {
     public interface IWindowsServices
     {

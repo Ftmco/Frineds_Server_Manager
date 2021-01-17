@@ -1,8 +1,8 @@
-﻿using FSM.Services.Shared.Repository;
+﻿using FSM.UWP.Services.Repository;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 
-namespace FSM.Services.Shared.Services
+namespace FSM.UWP.Services.Services
 {
     public class WindowsService : IWindowsServices
     {

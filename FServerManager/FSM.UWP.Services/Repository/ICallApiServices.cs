@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FSM.WPF.Services.Repository
+namespace FSM.UWP.Services.Repository
 {
     interface ICallApiServices
     {
