@@ -1,6 +1,6 @@
-﻿using ServerManager.WPF.Pages;
-using Services.Shared.Repository;
-using Services.Shared.Services;
+﻿using FSM.Services.Shared.Repository;
+using FSM.Services.Shared.Services;
+using ServerManager.WPF.Pages;
 using System;
 using System.IO;
 using System.Windows;
@@ -21,9 +21,12 @@ namespace ServerManager.WPF
         public MainWindow()
         {
             _service = new WindowsService();
-
             InitializeComponent();
+            CallFuncs();
+        }
 
+        void CallFuncs()
+        {
             imgBtn.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + @"\Statics\Console.png"));
             GetDate();
             CheckConnection();
@@ -44,12 +47,14 @@ namespace ServerManager.WPF
             ps1.ShowDialog();
         }
 
-        void GetDate()
+        #region __Private Methodes__
+
+        private void GetDate()
         {
-            lblTime.Content = DateTime.Now.Year + "/" + DateTime.Now.Month.ToString("00") + "/" + DateTime.Now.DayOfWeek.ToString();
+            lblTime.Content = _service.GetDateAsync(DateTime.Now).Result;
         }
 
-        void CheckConnection()
+        private void CheckConnection()
         {
             if (_service.IsConnectNetWorkAsynx().Result)
             {
@@ -63,9 +68,11 @@ namespace ServerManager.WPF
             }
         }
 
-        void SideBar()
+        private void SideBar()
         {
             frmSideBar.Navigate(new SideBar());
         }
+
+        #endregion
     }
 }
