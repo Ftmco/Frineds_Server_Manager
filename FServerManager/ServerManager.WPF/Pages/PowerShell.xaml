@@ -14,7 +14,11 @@
             <RowDefinition Height="*" MinHeight="150"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <Button Content="Setting" Width="50" VerticalAlignment="Center" HorizontalAlignment="Left" d:LayoutOverrides="Width"></Button>
+        <Button  Width="50" VerticalAlignment="Center" HorizontalAlignment="Left" d:LayoutOverrides="Width">
+            <Button.Content>
+                <Image Source="/Images/Settings.png" x:Name="imgSettings"/>
+            </Button.Content>
+        </Button>
         <GridSplitter Grid.Row="2"  HorizontalAlignment="Stretch"/>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>

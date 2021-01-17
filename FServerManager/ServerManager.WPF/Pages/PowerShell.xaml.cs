@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace ServerManager.WPF.Pages
 {
@@ -16,6 +18,7 @@ namespace ServerManager.WPF.Pages
         public PoweShell()
         {
             InitializeComponent();
+            imgSettings.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + @"\Statics\Settings.png"));
         }
 
         private void TxtCommand_KeyDown(object sender, KeyEventArgs e)
