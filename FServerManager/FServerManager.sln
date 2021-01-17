@@ -43,7 +43,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.DataLayer", "Server.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server.Entity", "Server.Entity\Server.Entity.csproj", "{5570AAEF-9BAF-45CA-A304-365F57F70DDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FSM.WPF.Services", "FSM.WPF.Services\FSM.WPF.Services.csproj", "{37CC4973-3EDA-4E64-BBE9-C6C3567DAB6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FSM.WPF.Services", "FSM.WPF.Services\FSM.WPF.Services.csproj", "{37CC4973-3EDA-4E64-BBE9-C6C3567DAB6D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FSM.UWP.Services", "FSM.UWP.Services\FSM.UWP.Services.csproj", "{37AEFE5C-E631-4C9E-B534-D935EC9E6208}"
 EndProject
