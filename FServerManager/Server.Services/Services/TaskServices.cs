@@ -46,8 +46,8 @@ namespace Server.Services.Services
 
                 return new Response
                 {
-                    StandardErrors = cmdStandardErrors,
-                    StandardOutPot = cmdStandardOutPut
+                    StandardErrors =  cmdStandardErrors,
+                    StandardOutPot =  cmdStandardOutPut
                 };
             });
         }
