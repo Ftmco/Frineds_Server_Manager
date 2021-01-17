@@ -12,6 +12,7 @@
             <RowDefinition Height="*" MinHeight="150"/>
             <RowDefinition Height="5"/>
             <RowDefinition Height="*" MinHeight="150"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Button Content="Setting" Width="50" VerticalAlignment="Center" HorizontalAlignment="Left" d:LayoutOverrides="Width"></Button>
         <GridSplitter Grid.Row="2"  HorizontalAlignment="Stretch"/>
@@ -34,11 +35,18 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Label Content="Result" HorizontalContentAlignment="Center" Foreground="White" VerticalAlignment="Center" Background="#FF3A3838"/>
+
             <RichTextBox x:Name="txtResult" IsReadOnly="True" Grid.Row="1">
                 <FlowDocument>
                     <Paragraph FontSize="15" Foreground="Green" x:Name="pragResult"/>
                 </FlowDocument>
             </RichTextBox>
         </Grid>
+        <Border BorderThickness="5" x:Name="brdPG" Grid.Row="4">
+            <StackPanel Background = "White">
+                <ProgressBar x:Name="pgGetResult" Height="20"  
+                  IsIndeterminate = "True"  Visibility="Hidden"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

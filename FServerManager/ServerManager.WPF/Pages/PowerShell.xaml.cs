@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace ServerManager.WPF.Pages
 {
@@ -28,12 +30,14 @@ namespace ServerManager.WPF.Pages
                 else
                 {
                     pragResult.Inlines.Add(new Run("Please Wait Runnig Command"));
+                    pgGetResult.Visibility = Visibility.Visible;
+                    brdPG.BorderBrush = Brushes.Blue;
                     RunCmd(txt.Text);
                 }
             }
         }
 
-        private void RunCmd(string cmd)
+        private async void RunCmd(string cmd)
         {
             try
             {
@@ -53,17 +57,24 @@ namespace ServerManager.WPF.Pages
                 };
                 process.Start();
                 pragResult.Inlines.Clear();
-                pragResult.Inlines.Add(new Run(process.StandardOutput.ReadToEnd()));
+                pragResult.Inlines.Add(new Run(await process.StandardOutput.ReadToEndAsync()));
 
                 string errors = process.StandardError.ReadToEnd();
                 if (!string.IsNullOrEmpty(errors))
                 {
                     pragResult.Inlines.Add(new Run($"Errors : {errors}"));
                 }
+                brdPG.BorderBrush = Brushes.White;
             }
             catch (Exception ex)
             {
                 pragResult.Inlines.Add(new Run($"An error occurred \n Massage : {ex.Message} \n"));
+                pgGetResult.IsIndeterminate = false;
+                brdPG.BorderBrush = Brushes.Red;
+            }
+            finally
+            {
+                pgGetResult.Visibility = Visibility.Hidden;
             }
         }
     }
