@@ -33,9 +33,9 @@ namespace ServerManager.Server.Api
 
         [HttpGet]
         [Route("KillTask")]
-        public async Task<IActionResult> KillTask(string pId)
+        public async Task<IActionResult> KillTask(string pName)
         {
-            return Ok(await _task.KillTaskAsync(pId));
+            return Ok(await _task.KillTaskAsync(pName));
         }
     }
 }

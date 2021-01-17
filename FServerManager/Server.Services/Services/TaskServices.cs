@@ -11,9 +11,9 @@ namespace Server.Services.Services
             return await Task.Run(async () => await RunCmdAsync("tasklist"));
         }
 
-        public async Task<Response> KillTaskAsync(string pId)
+        public async Task<Response> KillTaskAsync(string pName)
         {
-            return await Task.Run(async () => await RunCmdAsync($"kill {pId}"));
+            return await Task.Run(async () => await RunCmdAsync($"Stop-process -name {pName}"));
         }
 
         public async Task<Response> RunCmdAsync(string cmd)
