@@ -26,6 +26,11 @@
                             <MenuItem Header="Setting"/>
                         </ContextMenu>
                     </Button.ContextMenu>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="3"/>
+                        </Style>
+                    </Button.Resources>
                 </Button>
                 <Button Content="View" Width="40" x:Name="btnView" Click="BtnFile_Click" HorizontalAlignment="Left" Margin="42,5,0,5">
                     <Button.ContextMenu>
@@ -34,6 +39,11 @@
                             <MenuItem Header="Setting"/>
                         </ContextMenu>
                     </Button.ContextMenu>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="3"/>
+                        </Style>
+                    </Button.Resources>
                 </Button>
                 <Button Content="Tools" x:Name="btnTools" Click="BtnFile_Click" Margin="85,5,0,5" HorizontalAlignment="Left" Width="40">
                     <Button.ContextMenu>
@@ -42,16 +52,31 @@
                             <MenuItem Header="Setting"/>
                         </ContextMenu>
                     </Button.ContextMenu>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="3"/>
+                        </Style>
+                    </Button.Resources>
                 </Button>
                 <Button x:Name="btnPoweShell" Click="BtnPoweShell_Click" Margin="129,5,131,5">
                     <Button.Content>
                         <Image x:Name="imgBtnConsle" Source="/Images/Console.png"/>
                     </Button.Content>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="3"/>
+                        </Style>
+                    </Button.Resources>
                 </Button>
                 <Button x:Name="btnSetting" Margin="174,5,88,5" >
                     <Button.Content>
                         <Image x:Name="imgBtnSettings" Source="/Images/Settings.png"/>
                     </Button.Content>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="3"/>
+                        </Style>
+                    </Button.Resources>
                 </Button>
             </Grid>
             <Label Grid.Column="1" Content="F Server Manager" FontFamily="Andalus" HorizontalAlignment="Right" FontSize="15" />
@@ -80,9 +105,9 @@
                             <Label Content="Monitoring Servers Or Sites" HorizontalAlignment="Center" Grid.Row="0"/>
                             <Grid Grid.Row="1">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="*" MinHeight="150"/>
+                                    <RowDefinition Height="*" MinHeight="200"/>
                                     <RowDefinition Height="5"/>
-                                    <RowDefinition Height="*" MinHeight="150"/>
+                                    <RowDefinition Height="*" MinHeight="200"/>
                                 </Grid.RowDefinitions>
                                 <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch"/>
                                 <Grid Grid.Row="0">
@@ -93,15 +118,26 @@
                                     <Label Content="Ping Servers" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
                                     <Grid Grid.Row="1">
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" MinWidth="350"/>
-                                            <ColumnDefinition Width="5" />
-                                            <ColumnDefinition Width="*" MinWidth="150"/>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="200" />
                                         </Grid.ColumnDefinitions>
-                                        <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
                                         <Grid>
                                             <ListBox x:Name="lstPings" Margin="5">
 
                                             </ListBox>
+                                        </Grid>
+                                        <Grid Grid.Column="2">
+                                            <Label Content="Add New Ping Server" Margin="10,11,0,111" HorizontalContentAlignment="Center" Height="28" Width="132" HorizontalAlignment="Left" d:LayoutOverrides="Width"/>
+                                            <Button x:Name="btnNewPing" Click="BtnNewPing_Click" Margin="147,18,0,119" Height="28" HorizontalAlignment="Left" Width="49">
+                                                <Button.Content>
+                                                    <Image x:Name="imgBtnPlus" Source="/Images/Plus.png"/>
+                                                </Button.Content>
+                                                <Button.Resources>
+                                                    <Style TargetType="{x:Type Border}">
+                                                        <Setter Property="CornerRadius" Value="7"/>
+                                                    </Style>
+                                                </Button.Resources>
+                                            </Button>
                                         </Grid>
                                     </Grid>
                                 </Grid>

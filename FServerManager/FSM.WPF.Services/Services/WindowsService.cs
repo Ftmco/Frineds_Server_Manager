@@ -1,9 +1,9 @@
-﻿using FSM.Services.Shared.Repository;
+﻿using FSM.WPF.Services.Repository;
 using System;
 using System.Globalization;
 using System.Net.NetworkInformation;
 
-namespace FSM.Services.Shared.Services
+namespace FSM.WPF.Services.Services
 {
     public class WindowsService : IWindowsServices
     {

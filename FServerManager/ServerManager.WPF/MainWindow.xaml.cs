@@ -1,5 +1,5 @@
-﻿using FSM.Services.Shared.Repository;
-using FSM.Services.Shared.Services;
+﻿using FSM.WPF.Services.Repository;
+using FSM.WPF.Services.Services;
 using ServerManager.WPF.Pages;
 using System;
 using System.IO;
@@ -78,8 +78,18 @@ namespace ServerManager.WPF
             string path = Directory.GetCurrentDirectory() + @"\Statics\";
             imgBtnConsle.Source = new BitmapImage(new Uri(path + "Console.png"));
             imgBtnSettings.Source = new BitmapImage(new Uri(path + "Settings.png"));
+            imgBtnPlus.Source = new BitmapImage(new Uri(path + "Plus.png"));
         }
 
         #endregion
+
+        private void BtnNewPing_Click(object sender, RoutedEventArgs e)
+        {
+            NewPing newPing = new();
+            if (newPing.ShowDialog().Value)
+            {
+
+            }
+        }
     }
 }
