@@ -1,8 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 
-namespace FSM.WPF.Entity.Context
+/// <summary>
+/// Db Context
+/// </summary>
+public class FsmWpfContext : DbContext
 {
-    public class FsmWpfContext : DbContext
-    {
-    }
+    /// <summary>
+    /// Server Table
+    /// </summary>
+    public DbSet<Server> Servers { get; set; }
 }
