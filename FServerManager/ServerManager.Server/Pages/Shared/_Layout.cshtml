@@ -1,14 +1,9 @@
 ﻿<!--
-=========================================================
-Material Dashboard - v2.1.2
-=========================================================
 
-Product Page: https://www.creative-tim.com/product/material-dashboard
-Copyright 2020 Creative Tim (https://www.creative-tim.com)
-Coded by Creative Tim
 
-=========================================================
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+Friends TmCo 2021
+                  Opne Source and Free Server Management Pannel
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,48 +31,14 @@ The above copyright notice and this permission notice shall be included in all c
 <body class="">
     <div class="wrapper ">
         <!--Side Bar-->
-        <partial name="_SideBar"/>
+        <partial name="_SideBar" />
         <!--End Side Bar-->
         <div class="main-panel">
             <!-- Navbar -->
-          <partial name="_NavBar"/>
+            <partial name="_NavBar" />
             <!-- End Navbar -->
-          @RenderBody()
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="float-left">
-                        <ul>
-                            <li>
-                                <a href="https://www.creative-tim.com">
-                                    Creative Tim
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://creative-tim.com/presentation">
-                                    About Us
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://blog.creative-tim.com">
-                                    Blog
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.creative-tim.com/license">
-                                    Licenses
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="copyright float-right">
-                        &copy;
-                        <script>
-                            document.write(new Date().getFullYear())
-                        </script>, made with <i class="material-icons">favorite</i> by
-                        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-                    </div>
-                </div>
-            </footer>
+            @RenderBody()
+            <partial name="_Footer" />
         </div>
     </div>
     <div class="fixed-plugin">
@@ -148,7 +109,7 @@ The above copyright notice and this permission notice shall be included in all c
             </ul>
         </div>
     </div>
-   
+
     <!--   Core JS Files   -->
     <script src="~/assets/js/core/jquery.min.js"></script>
     <script src="~/assets/js/core/popper.min.js"></script>
