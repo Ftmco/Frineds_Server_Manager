@@ -51,12 +51,12 @@ namespace ServerManager.WPF
 
         private void GetDate()
         {
-            lblTime.Content = _service.GetDateAsync(DateTime.Now).Result;
+            lblTime.Content = _service.GetDate(DateTime.Now);
         }
 
         private void CheckConnection()
         {
-            if (_service.IsConnectNetWorkAsynx().Result)
+            if (_service.IsConnectNetWork())
             {
                 lblConnect.Content = "Local Internet Connect";
                 lblConnect.Foreground = Brushes.Green;

@@ -2,32 +2,25 @@
 using System;
 using System.Globalization;
 using System.Net.NetworkInformation;
-using System.Threading.Tasks;
 
 namespace FSM.Services.Shared.Services
 {
     public class WindowsService : IWindowsServices
     {
-        public async Task<string> GetDateAsync(DateTime date)
+        public string GetDate(DateTime date)
         {
-            return await Task.Run(() =>
-            {
-                PersianCalendar pc = new();
-                return $"{pc.GetYear(date)}/{pc.GetMonth(date):00}/{pc.GetDayOfMonth(date):00}";
-            });
+            PersianCalendar pc = new();
+            return $"{pc.GetYear(date)}/{pc.GetMonth(date):00}/{pc.GetDayOfMonth(date):00}";
         }
 
-        public async Task<string> GetPersianDateAsync(DateTime date)
-        {
-            return await Task.Run(() =>
+        public string GetPersianDate(DateTime date) =>
             (date.Date.Year + "/" +
             date.Date.Month.ToString("00") + "/" +
-            date.Date.DayOfYear.ToString("00")));
-        }
+            date.Date.DayOfYear.ToString("00"));
 
-        public async Task<bool> IsConnectNetWorkAsynx()
-        {
-            return await Task.Run(() => NetworkInterface.GetIsNetworkAvailable());
-        }
+
+        public bool IsConnectNetWork() =>
+       NetworkInterface.GetIsNetworkAvailable() == true;
+
     }
 }
