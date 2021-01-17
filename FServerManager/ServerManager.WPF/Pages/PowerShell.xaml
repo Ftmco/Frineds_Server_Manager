@@ -14,7 +14,7 @@
             <RowDefinition Height="*" MinHeight="150"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <Button  Width="50" VerticalAlignment="Center" HorizontalAlignment="Left" d:LayoutOverrides="Width">
+        <Button  Width="50" VerticalAlignment="Center" HorizontalAlignment="Left" d:LayoutOverrides="Width" Click="Button_Click">
             <Button.Content>
                 <Image Source="/Images/Settings.png" x:Name="imgSettings"/>
             </Button.Content>

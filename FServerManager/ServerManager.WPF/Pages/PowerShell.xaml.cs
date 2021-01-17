@@ -80,5 +80,10 @@ namespace ServerManager.WPF.Pages
                 pgGetResult.Visibility = Visibility.Hidden;
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Insert in v2", "Warning", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
     }
 }
