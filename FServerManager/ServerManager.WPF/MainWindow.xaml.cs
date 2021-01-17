@@ -27,7 +27,7 @@ namespace ServerManager.WPF
 
         void CallFuncs()
         {
-            imgBtn.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + @"\Statics\Console.png"));
+            SetItemSource();
             GetDate();
             CheckConnection();
             SideBar();
@@ -71,6 +71,13 @@ namespace ServerManager.WPF
         private void SideBar()
         {
             frmSideBar.Navigate(new SideBar());
+        }
+
+        private void SetItemSource()
+        {
+            string path = Directory.GetCurrentDirectory() + @"\Statics\";
+            imgBtnConsle.Source = new BitmapImage(new Uri(path + "Console.png"));
+            imgBtnSettings.Source = new BitmapImage(new Uri(path + "Settings.png"));
         }
 
         #endregion
