@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Api\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\assets\css\black-dashboard.css.map" />
     <None Include="wwwroot\assets\demo\demo.js" />
     <None Include="wwwroot\assets\fonts\nucleo.woff2" />
