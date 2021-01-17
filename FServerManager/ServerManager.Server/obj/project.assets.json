@@ -1721,7 +1721,8 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Server.DataLayer": "1.0.0",
-          "Server.Entity": "1.0.0"
+          "Server.Entity": "1.0.0",
+          "ViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Server.Services.dll": {}

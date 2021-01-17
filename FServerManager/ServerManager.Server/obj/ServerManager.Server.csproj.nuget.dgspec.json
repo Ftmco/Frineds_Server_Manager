@@ -189,6 +189,9 @@
               },
               "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.Entity\\Server.Entity.csproj": {
                 "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\Server.Entity\\Server.Entity.csproj"
+              },
+              "D:\\project\\FTEAM\\FServerManager\\FServerManager\\ViewModels\\ViewModels.csproj": {
+                "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\ViewModels\\ViewModels.csproj"
               }
             }
           }

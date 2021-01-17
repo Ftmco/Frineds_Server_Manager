@@ -21,7 +21,7 @@ namespace ServerManager.Server
         {
             services.AddRazorPages();
 
-            services.AddDbContext<FSMServerContext>(options => 
+            services.AddDbContext<FSMServerContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("FSMConnection")));
         }
 
@@ -48,6 +48,10 @@ namespace ServerManager.Server
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                  name: "default",
+                  pattern: "{controller=Home}/{action=Index}/{id?}");
+
                 endpoints.MapRazorPages();
             });
         }
