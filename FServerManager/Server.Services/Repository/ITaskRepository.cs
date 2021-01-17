@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace Server.Services.Repository
 {
+    /// <summary>
+    /// Task Services 
+    /// Run Power Shell
+    /// </summary>
     public interface ITaskRepository
     {
         Task<Response> GetSystemTasksAsync();
+        Task<Response> KillTaskAsync(string pId);
+        Task<Response> RunCmdAsync(string cmd);
     }
 }

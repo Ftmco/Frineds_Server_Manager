@@ -30,5 +30,12 @@ namespace ServerManager.Server.Api
         {
             return Ok(await _task.GetSystemTasksAsync());
         }
+
+        [HttpGet]
+        [Route("KillTask")]
+        public async Task<IActionResult> KillTask(string pId)
+        {
+            return Ok(await _task.KillTaskAsync(pId));
+        }
     }
 }
