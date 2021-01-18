@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -23,6 +24,14 @@ namespace MainServer.Windows
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnFile_Click(object sender, RoutedEventArgs e)
+        {
+            (sender as Button).ContextMenu.IsEnabled = true;
+            (sender as Button).ContextMenu.PlacementTarget = (sender as Button);
+            (sender as Button).ContextMenu.Placement = PlacementMode.Bottom;
+            (sender as Button).ContextMenu.IsOpen = true;
         }
     }
 }
