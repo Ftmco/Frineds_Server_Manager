@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="900" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="1*"/>
@@ -106,40 +106,32 @@
                             <Label Content="Monitoring Servers Or Sites" HorizontalAlignment="Center" Grid.Row="0"/>
                             <Grid Grid.Row="1">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="*" MinHeight="200"/>
-                                    <RowDefinition Height="5"/>
-                                    <RowDefinition Height="*" MinHeight="200"/>
+                                    <RowDefinition Height="35"/>
+                                    <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch"/>
-                                <Grid Grid.Row="0">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="35"/>
-                                        <RowDefinition Height="*"/>
-                                    </Grid.RowDefinitions>
-                                    <Label Content="Ping Servers" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
-                                    <Grid Grid.Row="1">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="200" />
-                                        </Grid.ColumnDefinitions>
-                                        <Grid>
-                                            <ListBox x:Name="lstPings" Margin="5">
+                                <Label Content="Ping Servers" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
+                                <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="200" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid>
+                                        <ListBox x:Name="lstPings" Margin="5">
 
-                                            </ListBox>
-                                        </Grid>
-                                        <Grid Grid.Column="2">
-                                            <Label Content="Add New Ping Server" Margin="10,11,0,111" HorizontalContentAlignment="Center" Height="28" Width="132" HorizontalAlignment="Left" d:LayoutOverrides="Width"/>
-                                            <Button x:Name="btnNewPing" Click="BtnNewPing_Click" Margin="147,18,0,119" Height="28" HorizontalAlignment="Left" Width="49">
-                                                <Button.Content>
-                                                    <Image x:Name="imgBtnPlus" Source="/Images/Plus.png"/>
-                                                </Button.Content>
-                                                <Button.Resources>
-                                                    <Style TargetType="{x:Type Border}">
-                                                        <Setter Property="CornerRadius" Value="7"/>
-                                                    </Style>
-                                                </Button.Resources>
-                                            </Button>
-                                        </Grid>
+                                        </ListBox>
+                                    </Grid>
+                                    <Grid Grid.Column="2">
+                                        <Label Content="Add New Ping Server" Margin="10,32,0,276" HorizontalContentAlignment="Center" Height="28" Width="132" HorizontalAlignment="Left" d:LayoutOverrides="Width"/>
+                                        <Button x:Name="btnNewPing" Click="BtnNewPing_Click" Margin="142,32,0,276" Height="28" HorizontalAlignment="Left" Width="49">
+                                            <Button.Content>
+                                                <Image x:Name="imgBtnPlus" Source="/Images/Plus.png"/>
+                                            </Button.Content>
+                                            <Button.Resources>
+                                                <Style TargetType="{x:Type Border}">
+                                                    <Setter Property="CornerRadius" Value="7"/>
+                                                </Style>
+                                            </Button.Resources>
+                                        </Button>
                                     </Grid>
                                 </Grid>
                             </Grid>

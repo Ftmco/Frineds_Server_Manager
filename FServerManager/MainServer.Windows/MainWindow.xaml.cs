@@ -33,5 +33,13 @@ namespace MainServer.Windows
             (sender as Button).ContextMenu.Placement = PlacementMode.Bottom;
             (sender as Button).ContextMenu.IsOpen = true;
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Are You Sure To Close?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
+        }
     }
 }

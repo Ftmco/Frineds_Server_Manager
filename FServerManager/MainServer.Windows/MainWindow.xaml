@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="28"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid>
@@ -20,7 +20,7 @@
             <Button  Content="Files" Width="40" x:Name="btnFile" Click="btnFile_Click" HorizontalAlignment="Left" Margin="0,5,0,5">
                 <Button.ContextMenu>
                     <ContextMenu >
-                        <MenuItem Header="Exit"/>
+                        <MenuItem Header="Exit" Click="MenuItem_Click"/>
                         <MenuItem Header="Setting"/>
                     </ContextMenu>
                 </Button.ContextMenu>
