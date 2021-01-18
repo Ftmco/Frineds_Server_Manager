@@ -10,9 +10,9 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" MaxHeight="200" MinHeight="100"/>
+            <RowDefinition Height="*"  MinHeight="100"/>
             <RowDefinition Height="5"/>
-            <RowDefinition Height="*" MaxHeight="200" MinHeight="100"/>
+            <RowDefinition Height="*"  MinHeight="100"/>
         </Grid.RowDefinitions>
         <GridSplitter Grid.Row="1" Foreground="Black"  HorizontalAlignment="Stretch"/>
 

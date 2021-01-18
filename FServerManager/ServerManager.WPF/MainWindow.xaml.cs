@@ -91,5 +91,10 @@ namespace ServerManager.WPF
 
             }
         }
+
+        private void BtnKillProcess_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
