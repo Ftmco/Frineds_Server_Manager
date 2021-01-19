@@ -193,13 +193,19 @@
                                         <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Ip Address"/>
                                         <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Title"/>
                                     </DataGrid.Columns>
-
+                                    <DataGrid.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem Header="Add New Server"/>
+                                            <Separator/>
+                                            <MenuItem Header="Delete"/>
+                                            <MenuItem Header="Edit"/>
+                                        </ContextMenu>
+                                    </DataGrid.ContextMenu>
                                 </DataGrid>
                             </Grid>
                         </Grid>
                     </Grid>
                 </TabItem>
-
             </TabControl>
         </Grid>
         <Grid Grid.Row="2">
