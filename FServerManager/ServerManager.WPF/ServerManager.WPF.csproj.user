@@ -15,6 +15,9 @@
     <Compile Update="Pages\PowerShell.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\ServerTasks.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\SideBar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -27,6 +30,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\PowerShell.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\ServerTasks.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\SideBar.xaml">

@@ -109,7 +109,7 @@
                                     <RowDefinition Height="35"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <Label Content="Ping Servers" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
+                                <Label Content="Ping Servers" HorizontalContentAlignment="Center" Background="#FF3A3838" Foreground="White" VerticalAlignment="Center"/>
                                 <Grid Grid.Row="1">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
@@ -159,26 +159,9 @@
                             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
 
                             <Grid Grid.Column="0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="30"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                <Label Content="Task List" HorizontalContentAlignment="Center" FontSize="15" Background="#FF3A3838" Foreground="White" VerticalContentAlignment="Center"/>
-                                <DataGrid x:Name="dgProcess" Grid.Row="1" >
-                                    <DataGrid.Columns>
-                                        <DataGridTextColumn Width="*" Visibility="Hidden" Binding="{Binding Id}" Header="Id"/>
-                                        <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Image Name"/>
-                                        <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Process Id"/>
-                                        <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Session Name"/>
-                                        <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Session #"/>
-                                        <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Memory Usage"/>
-                                    </DataGrid.Columns>
-                                    <DataGrid.ContextMenu>
-                                        <ContextMenu>
-                                            <MenuItem x:Name="btnKillProcess" Click="BtnKillProcess_Click" Header="Kill"/>
-                                        </ContextMenu>
-                                    </DataGrid.ContextMenu>
-                                </DataGrid>
+                                <Frame x:Name="frServerInfos">
+                                    
+                                </Frame>
                             </Grid>
                             <Grid Grid.Column="2">
                                 <Grid.RowDefinitions>

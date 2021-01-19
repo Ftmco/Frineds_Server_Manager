@@ -1,0 +1,33 @@
+﻿<Page x:Class="ServerManager.WPF.Pages.ServerTasks"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ServerManager.WPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ServerTasks">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Task List" HorizontalContentAlignment="Center" FontSize="15" Background="#FF3A3838" Foreground="White" VerticalContentAlignment="Center"/>
+        <DataGrid x:Name="dgProcess" Grid.Row="1" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Visibility="Hidden" Binding="{Binding Id}" Header="Id"/>
+                <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Image Name"/>
+                <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Process Id"/>
+                <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Session Name"/>
+                <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Session #"/>
+                <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Memory Usage"/>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="btnKillProcess" Click="BtnKillProcess_Click" Header="Kill Process"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+    </Grid>
+</Page>

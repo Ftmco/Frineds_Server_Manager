@@ -30,7 +30,7 @@ namespace ServerManager.WPF
             SetItemSource();
             GetDate();
             CheckConnection();
-            SideBar();
+            NavigateFrames();
         }
 
         private void BtnFile_Click(object sender, RoutedEventArgs e)
@@ -68,9 +68,10 @@ namespace ServerManager.WPF
             }
         }
 
-        private void SideBar()
+        private void NavigateFrames()
         {
             frmSideBar.Navigate(new SideBar());
+            frServerInfos.Navigate(new ServerTasks());
         }
 
         private void SetItemSource()
@@ -91,10 +92,6 @@ namespace ServerManager.WPF
 
             }
         }
-
-        private void BtnKillProcess_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+               
     }
 }
