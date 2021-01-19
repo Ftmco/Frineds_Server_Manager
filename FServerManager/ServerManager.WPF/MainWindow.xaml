@@ -159,7 +159,7 @@
                             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
 
                             <Grid Grid.Column="0">
-                                <Frame x:Name="frServerInfos">
+                                <Frame x:Name="frmServerInfos">
                                     
                                 </Frame>
                             </Grid>
@@ -182,6 +182,7 @@
                                             <Separator/>
                                             <MenuItem Header="Delete"/>
                                             <MenuItem Header="Edit"/>
+                                            <MenuItem Header="Server Sites" x:Name="btnSitest" Click="BtnSitest_Click"/>
                                         </ContextMenu>
                                     </DataGrid.ContextMenu>
                                 </DataGrid>

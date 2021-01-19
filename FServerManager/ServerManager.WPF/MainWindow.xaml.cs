@@ -71,7 +71,7 @@ namespace ServerManager.WPF
         private void NavigateFrames()
         {
             frmSideBar.Navigate(new SideBar());
-            frServerInfos.Navigate(new ServerTasks());
+            frmServerInfos.Navigate(new ServerTasks());
         }
 
         private void SetItemSource()
@@ -92,6 +92,10 @@ namespace ServerManager.WPF
 
             }
         }
-               
+
+        private void BtnSitest_Click(object sender, RoutedEventArgs e)
+        {
+            frmServerInfos.Navigate(new ServerSites());
+        }
     }
 }
