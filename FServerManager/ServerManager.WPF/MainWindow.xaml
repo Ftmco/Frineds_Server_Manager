@@ -105,65 +105,27 @@
                                 </Grid.RowDefinitions>
                                 <Label Content="Ping Servers" HorizontalContentAlignment="Center" Background="#FF3A3838" Foreground="White" VerticalAlignment="Center"/>
                                 <Grid Grid.Row="1">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="30"/>
-                                        <RowDefinition Height="*"/>
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="1">
-                                        <DataGrid x:Name="lstPings" Margin="5">
-                                            <DataGrid.Columns>
-                                                <DataGridTextColumn Width="*" Header="Server Name"/>
-                                                <DataGridTextColumn Width="*" Header="Ping"/>
-                                                <DataGridTextColumn Width="*" Header="Request Count"/>
-                                                <DataGridTextColumn Width="*" Header="Status"/>
-                                            </DataGrid.Columns>
-                                            <DataGrid.ContextMenu>
-                                                <ContextMenu>
-                                                    <MenuItem Header="Add"/>
-                                                    <Separator/>
-                                                    <MenuItem Header="Edit"/>
-                                                    <MenuItem Header="Delete"/>
-                                                </ContextMenu>
-                                            </DataGrid.ContextMenu>
-                                            <DataGrid.Resources>
-                                                <Style TargetType="{x:Type Border}">
-                                                    <Setter Property="CornerRadius" Value="7"/>
-                                                </Style>
-                                            </DataGrid.Resources>
-                                        </DataGrid>
-                                    </Grid>
-                                    <Button x:Name="btnNewPing"  Click="BtnNewPing_Click" Margin="10,0,0,0" HorizontalAlignment="Left" Width="50">
-                                        <Button.Content>
-                                            <Image Source="/Plus.png" x:Name="imgBtnPlus"/>
-                                        </Button.Content>
-                                        <Button.Resources>
+                                    <DataGrid x:Name="lstPings" Margin="5">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Width="*" Header="Server Name"/>
+                                            <DataGridTextColumn Width="*" Header="Ping"/>
+                                            <DataGridTextColumn Width="*" Header="Request Count"/>
+                                            <DataGridTextColumn Width="*" Header="Status"/>
+                                        </DataGrid.Columns>
+                                        <DataGrid.ContextMenu>
+                                            <ContextMenu>
+                                                <MenuItem Header="Add"/>
+                                                <Separator/>
+                                                <MenuItem Header="Edit"/>
+                                                <MenuItem Header="Delete"/>
+                                            </ContextMenu>
+                                        </DataGrid.ContextMenu>
+                                        <DataGrid.Resources>
                                             <Style TargetType="{x:Type Border}">
-                                                <Setter Property="CornerRadius" Value="3"/>
+                                                <Setter Property="CornerRadius" Value="7"/>
                                             </Style>
-                                        </Button.Resources>
-                                    </Button>
-
-                                    <Button x:Name="btnEdit"  Click="BtnNewPing_Click" Margin="65,0,0,0" HorizontalAlignment="Left" Width="50">
-                                        <Button.Content>
-                                            <Image Source="/icons8-edit-64.png" x:Name="imgBtnEdit"/>
-                                        </Button.Content>
-                                        <Button.Resources>
-                                            <Style TargetType="{x:Type Border}">
-                                                <Setter Property="CornerRadius" Value="3"/>
-                                            </Style>
-                                        </Button.Resources>
-                                    </Button>
-
-                                    <Button x:Name="btnDelete"  Click="BtnNewPing_Click" Margin="120,0,0,0" HorizontalAlignment="Left" Width="50">
-                                        <Button.Content>
-                                            <Image Source="/icons8-delete-64.png" x:Name="imgBtnDelete"/>
-                                        </Button.Content>
-                                        <Button.Resources>
-                                            <Style TargetType="{x:Type Border}">
-                                                <Setter Property="CornerRadius" Value="3"/>
-                                            </Style>
-                                        </Button.Resources>
-                                    </Button>
+                                        </DataGrid.Resources>
+                                    </DataGrid>
                                 </Grid>
                             </Grid>
                         </Grid>

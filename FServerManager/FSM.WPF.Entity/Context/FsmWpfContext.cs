@@ -15,4 +15,9 @@ public class FsmWpfContext : DbContext
     /// Server Table
     /// </summary>
     public DbSet<Server> Servers { get; set; }
+
+    /// <summary>
+    /// Pinging Servers Table
+    /// </summary>
+    public DbSet<ServerPings> ServerPings { get; set; }
 }
