@@ -68,6 +68,7 @@ namespace ServerManager.WPF.Pages
                     pragResult.Inlines.Add(new Run($"Errors : {errors}"));
                 }
                 brdPG.BorderBrush = Brushes.White;
+                process.Close();
             }
             catch (Exception ex)
             {
