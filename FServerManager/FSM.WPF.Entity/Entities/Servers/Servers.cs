@@ -1,6 +1,7 @@
-﻿using ServiceStack.DataAnnotations;
+﻿
+
 using System;
-using System.Diagnostics.CodeAnalysis;
+using System.ComponentModel.DataAnnotations;
 
 /// <summary>
 /// Servers Entity
@@ -16,13 +17,13 @@ public record Server
     /// <summary>
     /// Primary Key
     /// </summary>
-    [PrimaryKey, AutoIncrement]
+    [Key]
     public Guid ServerId { get; set; }
 
     /// <summary>
     /// Server Name or Server Ip Address
     /// </summary>
-    [NotNull]
+    [Required]
     public string ServerName { get; set; }
 
     /// <summary>
@@ -38,6 +39,6 @@ public record Server
     /// <summary>
     /// Insert Date Time
     /// </summary>
-    [NotNull]
+    [Required]
     public DateTime InsertDate { get; set; }
 }
