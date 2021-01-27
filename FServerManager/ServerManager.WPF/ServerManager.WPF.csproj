@@ -5,9 +5,39 @@
     <UseWPF>true</UseWPF>
     <ApplicationIcon>ServerManager.ico</ApplicationIcon>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Console.png" />
+    <None Remove="icons8-delete-64.png" />
+    <None Remove="icons8-edit-64.png" />
+    <None Remove="Plus.png" />
+    <None Remove="Settings.png" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FSM.WPF.Services\FSM.WPF.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Console.png" />
+    <Resource Include="icons8-delete-64.png" />
+    <Resource Include="icons8-edit-64.png" />
+    <Resource Include="Plus.png" />
+    <Resource Include="Settings.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

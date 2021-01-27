@@ -27,7 +27,6 @@ namespace ServerManager.WPF
 
         void CallFuncs()
         {
-            SetItemSource();
             GetDate();
             CheckConnection();
             NavigateFrames();
@@ -72,14 +71,6 @@ namespace ServerManager.WPF
         {
             frmSideBar.Navigate(new SideBar());
             frmServerInfos.Navigate(new ServerTasks());
-        }
-
-        private void SetItemSource()
-        {
-            string path = Directory.GetCurrentDirectory() + @"\Statics\";
-            imgBtnConsle.Source = new BitmapImage(new Uri(path + "Console.png"));
-            imgBtnSettings.Source = new BitmapImage(new Uri(path + "Settings.png"));
-            imgBtnPlus.Source = new BitmapImage(new Uri(path + "Plus.png"));
         }
 
         #endregion

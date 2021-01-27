@@ -25,6 +25,7 @@
                         <ContextMenu >
                             <MenuItem Header="Exit"/>
                             <MenuItem Header="Setting"/>
+                            <MenuItem Header="Options..."/>
                         </ContextMenu>
                     </Button.ContextMenu>
                     <Button.Resources>
@@ -36,8 +37,7 @@
                 <Button Content="View" Width="40" x:Name="btnView" Click="BtnFile_Click" HorizontalAlignment="Left" Margin="42,5,0,5">
                     <Button.ContextMenu>
                         <ContextMenu>
-                            <MenuItem Header="Exit"/>
-                            <MenuItem Header="Setting"/>
+                            <MenuItem Header="Theme"/>
                         </ContextMenu>
                     </Button.ContextMenu>
                     <Button.Resources>
@@ -49,8 +49,7 @@
                 <Button Content="Tools" x:Name="btnTools" Click="BtnFile_Click" Margin="85,5,0,5" HorizontalAlignment="Left" Width="40">
                     <Button.ContextMenu>
                         <ContextMenu>
-                            <MenuItem Header="Exit"/>
-                            <MenuItem Header="Setting"/>
+                            <MenuItem Header="Configure"/>
                         </ContextMenu>
                     </Button.ContextMenu>
                     <Button.Resources>
@@ -61,7 +60,7 @@
                 </Button>
                 <Button x:Name="btnPoweShell" Click="BtnPoweShell_Click" Margin="129,5,131,5">
                     <Button.Content>
-                        <Image x:Name="imgBtnConsle" Source="/Images/Console.png"/>
+                        <Image x:Name="imgBtnConsle" Source="/Console.png"/>
                     </Button.Content>
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
@@ -71,7 +70,7 @@
                 </Button>
                 <Button x:Name="btnSetting" Margin="174,5,88,5" >
                     <Button.Content>
-                        <Image x:Name="imgBtnSettings" Source="/Images/Settings.png"/>
+                        <Image x:Name="imgBtnSettings" Source="/Settings.png"/>
                     </Button.Content>
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
@@ -99,44 +98,72 @@
                         </Grid>
 
                         <Grid Grid.Row="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="25"/>
-                                <RowDefinition Height="1*"/>
-                            </Grid.RowDefinitions>
-                            <Label Content="Monitoring Servers Or Sites" HorizontalAlignment="Center" Grid.Row="0"/>
-                            <Grid Grid.Row="1">
+                            <Grid >
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="35"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <Label Content="Ping Servers" HorizontalContentAlignment="Center" Background="#FF3A3838" Foreground="White" VerticalAlignment="Center"/>
                                 <Grid Grid.Row="1">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="200" />
-                                    </Grid.ColumnDefinitions>
-                                    <Grid>
-                                        <ListBox x:Name="lstPings" Margin="5">
-
-                                        </ListBox>
-                                    </Grid>
-                                    <Grid Grid.Column="2">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="100"/>
-                                            <RowDefinition Height="*"/>
-                                        </Grid.RowDefinitions>
-                                        <Label Content="Add New Ping Server"  HorizontalContentAlignment="Center" Height="28" Width="132" HorizontalAlignment="Left" d:LayoutOverrides="Width"/>
-                                        <Button x:Name="btnNewPing" Click="BtnNewPing_Click"  Height="28" HorizontalAlignment="Left" Width="49" Margin="141,36,0,36">
-                                            <Button.Content>
-                                                <Image x:Name="imgBtnPlus" Source="/Images/Plus.png"/>
-                                            </Button.Content>
-                                            <Button.Resources>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="1">
+                                        <DataGrid x:Name="lstPings" Margin="5">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Width="*" Header="Server Name"/>
+                                                <DataGridTextColumn Width="*" Header="Ping"/>
+                                                <DataGridTextColumn Width="*" Header="Request Count"/>
+                                                <DataGridTextColumn Width="*" Header="Status"/>
+                                            </DataGrid.Columns>
+                                            <DataGrid.ContextMenu>
+                                                <ContextMenu>
+                                                    <MenuItem Header="Add"/>
+                                                    <Separator/>
+                                                    <MenuItem Header="Edit"/>
+                                                    <MenuItem Header="Delete"/>
+                                                </ContextMenu>
+                                            </DataGrid.ContextMenu>
+                                            <DataGrid.Resources>
                                                 <Style TargetType="{x:Type Border}">
                                                     <Setter Property="CornerRadius" Value="7"/>
                                                 </Style>
-                                            </Button.Resources>
-                                        </Button>
+                                            </DataGrid.Resources>
+                                        </DataGrid>
                                     </Grid>
+                                    <Button x:Name="btnNewPing"  Click="BtnNewPing_Click" Margin="10,0,0,0" HorizontalAlignment="Left" Width="50">
+                                        <Button.Content>
+                                            <Image Source="/Plus.png" x:Name="imgBtnPlus"/>
+                                        </Button.Content>
+                                        <Button.Resources>
+                                            <Style TargetType="{x:Type Border}">
+                                                <Setter Property="CornerRadius" Value="3"/>
+                                            </Style>
+                                        </Button.Resources>
+                                    </Button>
+
+                                    <Button x:Name="btnEdit"  Click="BtnNewPing_Click" Margin="65,0,0,0" HorizontalAlignment="Left" Width="50">
+                                        <Button.Content>
+                                            <Image Source="/icons8-edit-64.png" x:Name="imgBtnEdit"/>
+                                        </Button.Content>
+                                        <Button.Resources>
+                                            <Style TargetType="{x:Type Border}">
+                                                <Setter Property="CornerRadius" Value="3"/>
+                                            </Style>
+                                        </Button.Resources>
+                                    </Button>
+
+                                    <Button x:Name="btnDelete"  Click="BtnNewPing_Click" Margin="120,0,0,0" HorizontalAlignment="Left" Width="50">
+                                        <Button.Content>
+                                            <Image Source="/icons8-delete-64.png" x:Name="imgBtnDelete"/>
+                                        </Button.Content>
+                                        <Button.Resources>
+                                            <Style TargetType="{x:Type Border}">
+                                                <Setter Property="CornerRadius" Value="3"/>
+                                            </Style>
+                                        </Button.Resources>
+                                    </Button>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -160,7 +187,7 @@
 
                             <Grid Grid.Column="0">
                                 <Frame x:Name="frmServerInfos">
-                                    
+
                                 </Frame>
                             </Grid>
                             <Grid Grid.Column="2">
