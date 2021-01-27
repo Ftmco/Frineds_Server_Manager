@@ -9,6 +9,7 @@
     <None Remove="Console.png" />
     <None Remove="icons8-delete-64.png" />
     <None Remove="icons8-edit-64.png" />
+    <None Remove="icons8-test-account-64.png" />
     <None Remove="Plus.png" />
     <None Remove="Settings.png" />
   </ItemGroup>
@@ -21,6 +22,7 @@
     <Resource Include="Console.png" />
     <Resource Include="icons8-delete-64.png" />
     <Resource Include="icons8-edit-64.png" />
+    <Resource Include="icons8-test-account-64.png" />
     <Resource Include="Plus.png" />
     <Resource Include="Settings.png" />
   </ItemGroup>

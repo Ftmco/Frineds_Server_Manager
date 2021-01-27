@@ -15,8 +15,8 @@
         </Grid.RowDefinitions>
         <Grid>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="300"/>
-                <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
             <Grid>
@@ -58,7 +58,7 @@
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button x:Name="btnPoweShell" Click="BtnPoweShell_Click" Margin="129,5,131,5">
+                <Button x:Name="btnPoweShell" Click="BtnPoweShell_Click" Margin="127,5,0,5" HorizontalAlignment="Left" Width="46">
                     <Button.Content>
                         <Image x:Name="imgBtnConsle" Source="/Console.png"/>
                     </Button.Content>
@@ -68,9 +68,19 @@
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button x:Name="btnSetting" Margin="174,5,88,5" >
+                <Button x:Name="btnSetting" Margin="175,5,0,5" HorizontalAlignment="Left" Width="51" d:LayoutOverrides="HorizontalAlignment" >
                     <Button.Content>
                         <Image x:Name="imgBtnSettings" Source="/Settings.png"/>
+                    </Button.Content>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="3"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="btnAccount" Width="50" HorizontalAlignment="Left" Margin="229,5,0,5" d:LayoutOverrides="Width">
+                    <Button.Content>
+                        <Image x:Name="imgBtnAccount" Source="/icons8-test-account-64.png" />
                     </Button.Content>
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
@@ -96,37 +106,35 @@
 
                             </Frame>
                         </Grid>
-
                         <Grid Grid.Row="0">
-                            <Grid >
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="35"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                <Label Content="Ping Servers" HorizontalContentAlignment="Center" Background="#FF3A3838" Foreground="White" VerticalAlignment="Center"/>
-                                <Grid Grid.Row="1">
-                                    <DataGrid x:Name="lstPings" Margin="5">
-                                        <DataGrid.Columns>
-                                            <DataGridTextColumn Width="*" Header="Server Name"/>
-                                            <DataGridTextColumn Width="*" Header="Ping"/>
-                                            <DataGridTextColumn Width="*" Header="Request Count"/>
-                                            <DataGridTextColumn Width="*" Header="Status"/>
-                                        </DataGrid.Columns>
-                                        <DataGrid.ContextMenu>
-                                            <ContextMenu>
-                                                <MenuItem Header="Add"/>
-                                                <Separator/>
-                                                <MenuItem Header="Edit"/>
-                                                <MenuItem Header="Delete"/>
-                                            </ContextMenu>
-                                        </DataGrid.ContextMenu>
-                                        <DataGrid.Resources>
-                                            <Style TargetType="{x:Type Border}">
-                                                <Setter Property="CornerRadius" Value="7"/>
-                                            </Style>
-                                        </DataGrid.Resources>
-                                    </DataGrid>
-                                </Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Ping Servers" HorizontalContentAlignment="Center" Background="#FF3A3838" Foreground="White" VerticalAlignment="Top"/>
+
+                            <Grid Grid.Row="1">
+                                <DataGrid x:Name="lstPings" Margin="5">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Width="*" Header="Server Name"/>
+                                        <DataGridTextColumn Width="*" Header="Ping"/>
+                                        <DataGridTextColumn Width="*" Header="Request Count"/>
+                                        <DataGridTextColumn Width="*" Header="Status"/>
+                                    </DataGrid.Columns>
+                                    <DataGrid.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem Header="Add"/>
+                                            <Separator/>
+                                            <MenuItem Header="Edit"/>
+                                            <MenuItem Header="Delete"/>
+                                        </ContextMenu>
+                                    </DataGrid.ContextMenu>
+                                    <DataGrid.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="7"/>
+                                        </Style>
+                                    </DataGrid.Resources>
+                                </DataGrid>
                             </Grid>
                         </Grid>
                     </Grid>
