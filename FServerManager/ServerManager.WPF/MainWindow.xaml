@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:ServerManager.WPF" 
         mc:Ignorable="d"
         Title="Friends Server Manager " Height="500" Width="900" MinHeight="450" MinWidth="850" WindowStartupLocation="CenterScreen">
+   
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="1*"/>
