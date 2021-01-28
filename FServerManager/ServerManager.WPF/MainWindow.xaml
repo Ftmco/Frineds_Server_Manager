@@ -139,7 +139,7 @@
                         </Grid>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Controlles">
+                <TabItem Header="Control">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="30"/>

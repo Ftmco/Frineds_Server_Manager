@@ -23,10 +23,11 @@
             </DataGrid.Columns>
             <DataGrid.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Add New Site"/>
+                    <MenuItem Header="Add New Site" x:Name="btnNewIISApp" Click="BtnNewIISApp_Click"/>
                     <Separator/>
                     <MenuItem Header="Update Site"/>
                     <MenuItem Header="Delete Site"/>
+                    <MenuItem Header="Show Details"/>
                 </ContextMenu>
             </DataGrid.ContextMenu>
         </DataGrid>

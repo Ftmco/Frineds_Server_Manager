@@ -24,5 +24,14 @@ namespace ServerManager.WPF.Pages
         {
             InitializeComponent();
         }
+
+        private void BtnNewIISApp_Click(object sender, RoutedEventArgs e)
+        {
+            NewIISApp newIISApp = new();
+            if (newIISApp.ShowDialog() == true)
+            {
+
+            }
+        }
     }
 }
