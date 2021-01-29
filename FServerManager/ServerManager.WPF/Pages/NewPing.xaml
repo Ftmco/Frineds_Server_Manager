@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServerManager.WPF.Pages"
         mc:Ignorable="d"
-        Title="NewPing" Height="320" Width="550" MaxHeight="360" MaxWidth="560" MinHeight="310" MinWidth="540" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+        Title="NewPing" Loaded="Window_Loaded" Height="320" Width="550" MaxHeight="360" MaxWidth="560" MinHeight="310" MinWidth="540" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
 
         <Grid.RowDefinitions>
