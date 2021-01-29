@@ -54,16 +54,17 @@ namespace ServerManager.WPF.Pages
             IEnumerable<ServerPings> data = await Control.Services.GetAllAsync();
             dgvPings.ItemsSource = data;
             _control = null;
-            await GetPingingAsync();
         }
 
-        private void BtnRefresh_Click(object sender, RoutedEventArgs e)
+        private async void BtnRefresh_Click(object sender, RoutedEventArgs e)
         {
             BindGrid();
+            await GetPingingAsync();
         }
 
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            await GetPingingAsync();
             BindGrid();
         }
 
