@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServerManager.WPF.Pages.Account"
         mc:Ignorable="d"
-        Title="Regester" Height="400" Width="700" MinHeight="400" MinWidth="700" MaxHeight="400" MaxWidth="700">
+        Title="Regester" WindowStartupLocation="CenterScreen" Height="400" Width="700" MinHeight="400" MinWidth="700" MaxHeight="400" MaxWidth="700">
     <Grid >
         <Grid.Background>
             <ImageBrush ImageSource="/Pages/Account/auth-bg-dark.jpg"/>
@@ -47,10 +47,10 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Label Content="Phone Number" Margin="10,10,87,58" Height="27"/>
-                        <TextBox Margin="10,37,10,26" VerticalContentAlignment="Center"/>
-                        <Label Grid.Column="1"  Content="Password" Margin="10,10,87,58" Height="27"/>
-                        <PasswordBox Grid.Column="1" VerticalContentAlignment="Center" Margin="10,37,10,26"/>
+                        <Label Content="Phone Number" Margin="10,3,87,65" Height="27"/>
+                        <TextBox Margin="10,32,10,31" VerticalContentAlignment="Center"/>
+                        <Label Grid.Column="1"  Content="Password" Margin="10,3,87,65" Height="27"/>
+                        <PasswordBox Grid.Column="1" VerticalContentAlignment="Center" Margin="10,32,10,31"/>
                     </Grid>
                     <Grid Grid.Row="2">
                         <Grid.RowDefinitions>

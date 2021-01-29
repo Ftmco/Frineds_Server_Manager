@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServerManager.WPF.Pages.Account"
         mc:Ignorable="d"
-        Title="Login" Height="400" Width="700" MinHeight="400" MinWidth="700" MaxHeight="400" MaxWidth="700">
+        Title="Login" Height="400" WindowStartupLocation="CenterScreen" Width="700" MinHeight="400" MinWidth="700" MaxHeight="400" MaxWidth="700">
     <Grid >
         <Grid.Background>
             <ImageBrush ImageSource="/Pages/Account/auth-bg.jpg"/>
