@@ -12,6 +12,9 @@
     <Compile Update="Pages\Account\Login.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Account\SingUp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\NewIISApp.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -41,6 +44,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Account\Login.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Account\SingUp.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\NewIISApp.xaml">

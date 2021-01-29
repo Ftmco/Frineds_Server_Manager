@@ -22,6 +22,28 @@ namespace ServerManager.WPF.Pages.Account
         public Login()
         {
             InitializeComponent();
+            txtUserName.GotFocus += TxtUserName_GotFocus;
+            txtUserName.LostFocus += TxtUserName_LostFocus;
+        }
+
+        private void TxtUserName_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtUserName.Text))
+                txtUserName.Text = "User Name or Email";
+        }
+
+        private void TxtUserName_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtUserName.Text == "User Name or Email")
+            {
+                txtUserName.Text = "";
+            }
+        }
+
+        private void LblRegister_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            SingUp singUp = new();
+            DialogResult = singUp.ShowDialog();
         }
     }
 }

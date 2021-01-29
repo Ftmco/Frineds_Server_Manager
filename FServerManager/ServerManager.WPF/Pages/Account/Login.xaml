@@ -35,12 +35,12 @@
                     </Grid.RowDefinitions>
                     <Grid>
                         <Label Content="User Name" Margin="10,10,262,39" Height="29" Width="78" />
-                        <TextBox Margin="10,39,10,10" x:Name="txtUserName" VerticalContentAlignment="Center"/>
+                        <TextBox Margin="10,39,10,0" Text="User Name or Email" x:Name="txtUserName" VerticalContentAlignment="Center"/>
 
                     </Grid>
                     <Grid Grid.Row="1">
                         <Label Content="Password" Margin="10,10,262,39" Height="29" Width="78" />
-                        <PasswordBox Margin="10,39,10,10" x:Name="txtPassword" VerticalContentAlignment="Center"/>
+                        <PasswordBox Margin="10,39,10,0" x:Name="txtPassword" VerticalContentAlignment="Center"/>
                     </Grid>
                     <Grid Grid.Row="2">
                         <Grid.RowDefinitions>
@@ -60,7 +60,7 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Margin="10,10,0,10" Foreground="Blue" Text="Loss Your Password?" HorizontalAlignment="Left" Width="108"/>
-                            <TextBlock Grid.Column="1" Margin="10,10,0,10" Text="Register" Foreground="Blue" HorizontalAlignment="Left"/>
+                            <TextBlock x:Name="lblRegister" MouseDown="LblRegister_MouseDown" Grid.Column="1" Margin="10,10,0,10" Text="Register" Foreground="Blue" HorizontalAlignment="Left"/>
                         </Grid>
                     </Grid>
                 </Grid>
