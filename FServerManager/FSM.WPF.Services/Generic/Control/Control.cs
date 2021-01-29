@@ -1,10 +1,6 @@
 ﻿using FSM.WPF.Services.Generic.Repository;
 using FSM.WPF.Services.UnitOfWork;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FSM.WPF.Services.Generic.Control
 {
@@ -28,7 +24,6 @@ namespace FSM.WPF.Services.Generic.Control
                 }
                 return _services;
             }
-            set => throw new NotImplementedException();
         }
     }
 }

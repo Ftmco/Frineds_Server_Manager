@@ -9,6 +9,6 @@ namespace FSM.WPF.Services.Generic.Control
 {
     public interface IControl<TModel> where TModel : class
     {
-        public IGenericRepository<TModel> Services { get; set; }
+        public IGenericRepository<TModel> Services { get; }
     }
 }
