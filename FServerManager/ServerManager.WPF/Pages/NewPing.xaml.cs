@@ -17,18 +17,18 @@ namespace ServerManager.WPF.Pages
             _control = new Control<ServerPings>();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
             ServerPings newPing = new()
             {
                 ServerName = txtServerName.Text,
                 Title = txtTitle.Text
             };
-            if (_control.Services.InsertAsync(newPing).Result && _control.Save())
-            {
+            if (await _control.Services.InsertAsync(newPing) && await _control.SaveAsync())
                 DialogResult = true;
-            }
-            MessageBox.Show("Exception");
+            else
+                MessageBox.Show("Sorry :( Exception", "Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
+
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)

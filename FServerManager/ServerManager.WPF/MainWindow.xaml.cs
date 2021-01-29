@@ -72,18 +72,10 @@ namespace ServerManager.WPF
         {
             frmSideBar.Navigate(new SideBar());
             frmServerInfos.Navigate(new ServerTasks());
+            frmListServers.Navigate(new PingServerList());
         }
 
         #endregion
-
-        private void BtnNewPing_Click(object sender, RoutedEventArgs e)
-        {
-            NewPing newPing = new();
-            if (newPing.ShowDialog().Value)
-            {
-
-            }
-        }
 
         private void BtnSitest_Click(object sender, RoutedEventArgs e)
         {
@@ -99,13 +91,5 @@ namespace ServerManager.WPF
             }
         }
 
-        private void BtnAddNewPingServer_Click(object sender, RoutedEventArgs e)
-        {
-            NewPing newPing = new();
-            if (newPing.ShowDialog() == true)
-            {
-
-            }
-        }
     }
 }

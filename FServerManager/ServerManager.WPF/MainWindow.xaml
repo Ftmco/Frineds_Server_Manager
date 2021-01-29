@@ -106,36 +106,8 @@
 
                             </Frame>
                         </Grid>
-                        <Grid Grid.Row="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="35"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Label Content="Ping Servers" HorizontalContentAlignment="Center" Background="#FF3A3838" Foreground="White" VerticalAlignment="Top"/>
-
-                            <Grid Grid.Row="1">
-                                <DataGrid x:Name="lstPings" Margin="5">
-                                    <DataGrid.Columns>
-                                        <DataGridTextColumn Width="*" Header="Server Name"/>
-                                        <DataGridTextColumn Width="*" Header="Ping"/>
-                                        <DataGridTextColumn Width="*" Header="Request Count"/>
-                                        <DataGridTextColumn Width="*" Header="Status"/>
-                                    </DataGrid.Columns>
-                                    <DataGrid.ContextMenu>
-                                        <ContextMenu>
-                                            <MenuItem Header="Add" x:Name="btnAddNewPingServer" Click="BtnAddNewPingServer_Click"/>
-                                            <Separator/>
-                                            <MenuItem Header="Edit"/>
-                                            <MenuItem Header="Delete"/>
-                                        </ContextMenu>
-                                    </DataGrid.ContextMenu>
-                                    <DataGrid.Resources>
-                                        <Style TargetType="{x:Type Border}">
-                                            <Setter Property="CornerRadius" Value="7"/>
-                                        </Style>
-                                    </DataGrid.Resources>
-                                </DataGrid>
-                            </Grid>
+                        <Grid>
+                            <Frame x:Name="frmListServers"/>
                         </Grid>
                     </Grid>
                 </TabItem>

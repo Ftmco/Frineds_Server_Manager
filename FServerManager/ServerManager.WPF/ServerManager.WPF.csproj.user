@@ -21,6 +21,9 @@
     <Compile Update="Pages\NewPing.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\PingServerList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\PowerShell.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -53,6 +56,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\NewPing.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PingServerList.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\PowerShell.xaml">
