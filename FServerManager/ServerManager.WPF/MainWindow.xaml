@@ -78,7 +78,7 @@
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button x:Name="btnAccount" Width="50" HorizontalAlignment="Left" Margin="217,5,0,5" d:LayoutOverrides="Width">
+                <Button Click="BtnAccount_Click" x:Name="btnAccount" Width="50" HorizontalAlignment="Left" Margin="217,5,0,5" d:LayoutOverrides="Width">
                     <Button.Content>
                         <Image x:Name="imgBtnAccount" Source="/icons8-test-account-64.png" />
                     </Button.Content>

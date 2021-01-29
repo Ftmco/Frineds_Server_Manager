@@ -7,10 +7,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Console.png" />
-    <None Remove="icons8-delete-64.png" />
-    <None Remove="icons8-edit-64.png" />
     <None Remove="icons8-test-account-64.png" />
-    <None Remove="Plus.png" />
+    <None Remove="Pages\Account\auth-bg.jpg" />
+    <None Remove="Pages\Account\login.png" />
     <None Remove="Settings.png" />
   </ItemGroup>
 
@@ -20,10 +19,9 @@
 
   <ItemGroup>
     <Resource Include="Console.png" />
-    <Resource Include="icons8-delete-64.png" />
-    <Resource Include="icons8-edit-64.png" />
     <Resource Include="icons8-test-account-64.png" />
-    <Resource Include="Plus.png" />
+    <Resource Include="Pages\Account\auth-bg.jpg" />
+    <Resource Include="Pages\Account\login.png" />
     <Resource Include="Settings.png" />
   </ItemGroup>
 

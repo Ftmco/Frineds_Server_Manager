@@ -63,9 +63,39 @@ namespace ServerManager.WPF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] auth_bg {
+            get {
+                object obj = ResourceManager.GetObject("auth_bg", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] auth_bg_dark {
+            get {
+                object obj = ResourceManager.GetObject("auth_bg_dark", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] Console {
             get {
                 object obj = ResourceManager.GetObject("Console", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] forgot_password {
+            get {
+                object obj = ResourceManager.GetObject("forgot_password", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -103,9 +133,39 @@ namespace ServerManager.WPF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] login {
+            get {
+                object obj = ResourceManager.GetObject("login", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] Plus {
             get {
                 object obj = ResourceManager.GetObject("Plus", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] register {
+            get {
+                object obj = ResourceManager.GetObject("register", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] reset_password {
+            get {
+                object obj = ResourceManager.GetObject("reset_password", resourceCulture);
                 return ((byte[])(obj));
             }
         }

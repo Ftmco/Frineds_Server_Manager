@@ -1,6 +1,7 @@
 ﻿using FSM.WPF.Services.Repository;
 using FSM.WPF.Services.Services;
 using ServerManager.WPF.Pages;
+using ServerManager.WPF.Pages.Account;
 using System;
 using System.IO;
 using System.Windows;
@@ -87,6 +88,15 @@ namespace ServerManager.WPF
         private void BtnSitest_Click(object sender, RoutedEventArgs e)
         {
             frmServerInfos.Navigate(new ServerSites());
+        }
+
+        private void BtnAccount_Click(object sender, RoutedEventArgs e)
+        {
+            Login login = new();
+            if (login.ShowDialog() == true)
+            {
+
+            }
         }
     }
 }
