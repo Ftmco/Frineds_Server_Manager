@@ -24,20 +24,29 @@ public record ServerPings
     public string ServerName { get; set; }
 
     /// <summary>
-    /// Ping Length
+    /// Server Title
     /// </summary>
     [Required]
+    public string Title { get; set; }
+
+    /// <summary>
+    /// Ping Length
+    /// </summary>
     public int Ping { get; set; }
 
     /// <summary>
     /// Request Count
     /// </summary>
-    [Required]
     public int RequestCount { get; set; }
 
     /// <summary>
     /// Status
     /// </summary>
-    [Required]
     public string Status { get; set; }
+
+    /// <summary>
+    /// Descriptions
+    /// </summary>
+    [MaxLength(800)]
+    public string Description { get; set; }
 }

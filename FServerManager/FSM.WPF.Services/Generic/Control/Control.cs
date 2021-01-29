@@ -1,14 +1,19 @@
 ﻿using FSM.WPF.Services.Generic.Repository;
 using FSM.WPF.Services.UnitOfWork;
-using System;
+using System.Threading.Tasks;
 
 namespace FSM.WPF.Services.Generic.Control
 {
-    class Control<TModel> : IControl<TModel> where TModel : class
+    public class Control<TModel> : IControl<TModel> where TModel : class
     {
         #region __Dependency__
 
         private readonly IUnitOfWork<FsmWpfContext> _unitOfWork;
+
+        public Control()
+        {
+            _unitOfWork = new UnitOfWork<FsmWpfContext>();
+        }
 
         #endregion
 
@@ -25,5 +30,10 @@ namespace FSM.WPF.Services.Generic.Control
                 return _services;
             }
         }
+
+        public bool Save() => _unitOfWork.Save();
+
+        public async Task<bool> SaveAsync() => await _unitOfWork.SaveAsync();
+
     }
 }
