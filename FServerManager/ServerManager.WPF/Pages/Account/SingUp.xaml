@@ -38,9 +38,9 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Label Content="User Name" Margin="10,10,87,58" Height="27"/>
-                        <TextBox Margin="10,37,10,26"/>
-                        <Label Grid.Column="1" Content="Email" Margin="10,10,87,58" Height="27"/>
-                        <TextBox Grid.Column="1" Margin="10,37,10,26"/>
+                        <TextBox Margin="10,37,10,26" VerticalContentAlignment="Center"/>
+                        <Label Grid.Column="1" Content="Email" Margin="10,10,87,58" Height="27" />
+                        <TextBox Grid.Column="1" Margin="10,37,10,26" VerticalContentAlignment="Center"/>
                     </Grid>
                     <Grid Grid.Row="1">
                         <Grid.ColumnDefinitions>
@@ -48,16 +48,16 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Label Content="Phone Number" Margin="10,10,87,58" Height="27"/>
-                        <TextBox Margin="10,37,10,26"/>
-                        <Label Grid.Column="1" Content="Password" Margin="10,10,87,58" Height="27"/>
-                        <PasswordBox Grid.Column="1" Margin="10,37,10,26"/>
+                        <TextBox Margin="10,37,10,26" VerticalContentAlignment="Center"/>
+                        <Label Grid.Column="1"  Content="Password" Margin="10,10,87,58" Height="27"/>
+                        <PasswordBox Grid.Column="1" VerticalContentAlignment="Center" Margin="10,37,10,26"/>
                     </Grid>
                     <Grid Grid.Row="2">
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <Button Margin="10,5,10,5" Content="Register">
+                        <Button Margin="10,5,10,5" Content="Register" x:Name="btnRegister" Click="btnRegister_Click">
                             <Button.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="7"/>
