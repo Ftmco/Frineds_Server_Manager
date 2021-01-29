@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:ServerManager.WPF.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PingServerList">
+      Title="PingServerList" Loaded="Page_Loaded">
 
     <Grid>
         <Grid Grid.Row="0">
@@ -17,7 +17,7 @@
             <Label Content="Ping Servers" HorizontalContentAlignment="Center" Background="#FF3A3838" Foreground="White" VerticalAlignment="Top"/>
 
             <Grid Grid.Row="1">
-                <DataGrid x:Name="dgvPings" Margin="5">
+                <DataGrid x:Name="dgvPings" Margin="5" CanUserAddRows="False" CanUserDeleteRows="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Width="*" Header="Server Name" Binding="{Binding ServerName}"/>
                         <DataGridTextColumn Width="*" Header="Title" Binding="{Binding Title}"/>
@@ -28,6 +28,7 @@
                     <DataGrid.ContextMenu>
                         <ContextMenu>
                             <MenuItem Header="Add" x:Name="btnAddNewPingServer" Click="BtnAddNewPingServer_Click"/>
+                            <MenuItem Header="Refresh" x:Name="btnRefresh" Click="BtnRefresh_Click"/>
                             <Separator/>
                             <MenuItem Header="Edit"/>
                             <MenuItem Header="Delete"/>

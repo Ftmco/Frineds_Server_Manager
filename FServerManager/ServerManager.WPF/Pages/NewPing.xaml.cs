@@ -19,21 +19,29 @@ namespace ServerManager.WPF.Pages
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            ServerPings newPing = new()
+            if (IsValidForm())
             {
-                ServerName = txtServerName.Text,
-                Title = txtTitle.Text
-            };
-            if (await _control.Services.InsertAsync(newPing) && await _control.SaveAsync())
-                DialogResult = true;
+                ServerPings newPing = new()
+                {
+                    ServerName = txtServerName.Text,
+                    Title = txtTitle.Text
+                };
+                if (await _control.Services.InsertAsync(newPing) && await _control.SaveAsync())
+                    DialogResult = true;
+                else
+                    MessageBox.Show("Sorry :( Exception", "Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
             else
-                MessageBox.Show("Sorry :( Exception", "Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
-
+                MessageBox.Show("Please Enter The Requeird Filds (Titl) (Server Name)", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
         }
+
+        private bool IsValidForm() =>
+       !string.IsNullOrEmpty(txtServerName.Text) && !string.IsNullOrEmpty(txtTitle.Text);
+
     }
 }
