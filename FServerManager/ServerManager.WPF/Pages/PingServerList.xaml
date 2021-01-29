@@ -30,7 +30,7 @@
                             <MenuItem Header="Add" x:Name="btnAddNewPingServer" Click="BtnAddNewPingServer_Click"/>
                             <MenuItem Header="Refresh" x:Name="btnRefresh" Click="BtnRefresh_Click"/>
                             <Separator/>
-                            <MenuItem Header="Edit" x:Name="btnEdit" Click="btnEdit_Click"/>
+                            <MenuItem Header="Edit" x:Name="btnEdit" Click="BtnEdit_Click"/>
                             <MenuItem Header="Delete" x:Name="btnDelete"  Click="BtnDelete_Click"/>
                         </ContextMenu>
                     </DataGrid.ContextMenu>

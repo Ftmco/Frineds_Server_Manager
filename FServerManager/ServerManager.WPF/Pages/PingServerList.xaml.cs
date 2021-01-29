@@ -17,12 +17,23 @@ namespace ServerManager.WPF.Pages
     {
         #region __Dependency__
 
-        private readonly IControl<ServerPings> _control;
+        private IControl<ServerPings> _control;
+
+        public IControl<ServerPings> Control
+        {
+            get
+            {
+                if (_control == null)
+                {
+                    _control = new Control<ServerPings>();
+                }
+                return _control;
+            }
+        }
 
         public PingServerList()
         {
             InitializeComponent();
-            _control = new Control<ServerPings>();
             BindGrid();
         }
 
@@ -39,13 +50,16 @@ namespace ServerManager.WPF.Pages
 
         private async void BindGrid()
         {
+            dgvPings.ItemsSource = null;
+            dgvPings.Items.Clear();
             dgvPings.AutoGenerateColumns = false;
-            dgvPings.ItemsSource = await _control.Services.GetAllAsync();
+            IEnumerable<ServerPings> data = await Control.Services.GetAllAsync();
+            dgvPings.ItemsSource = data;
+            _control = null;
         }
 
         private void BtnRefresh_Click(object sender, RoutedEventArgs e)
         {
-            dgvPings.ItemsSource = null;
             BindGrid();
         }
 
@@ -60,7 +74,7 @@ namespace ServerManager.WPF.Pages
             await Task.Run(async () =>
             {
                 IControl<ServerPings> _service = new Control<ServerPings>();
-                for (int i = 0; i < 1000; i++)
+                while (true)
                 {
                     IEnumerable<ServerPings> lstPigns = await _service.Services.GetAllAsync();
                     Ping ping = new();
@@ -161,9 +175,10 @@ namespace ServerManager.WPF.Pages
                         }
                         finally
                         {
-                            await _service.Services.UpdateAsync(item); await _service.SaveAsync();
+                            await _service.Services.UpdateAsync(item);
                         }
                     }
+                    await _service.SaveAsync();
                 }
             });
         }
@@ -184,12 +199,17 @@ namespace ServerManager.WPF.Pages
                 MessageBox.Show("Please Select One", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
-        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
             ServerPings current = (ServerPings)dgvPings.CurrentItem;
             if (current != null)
             {
                 NewPing editPing = new();
+                editPing.PingId = current.PingId;
+                if (editPing.ShowDialog() == true)
+                {
+                    BindGrid();
+                }
             }
             else
                 MessageBox.Show("Please Select One", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);

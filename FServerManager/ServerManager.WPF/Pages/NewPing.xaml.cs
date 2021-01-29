@@ -35,16 +35,14 @@ namespace ServerManager.WPF.Pages
                         DialogResult = true;
                     else
                         MessageBox.Show("Sorry :( Exception", "Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
-
                 }
                 else
                 {
-                    ServerPings editPing = new()
-                    {
-                        PingId = PingId,
-                        ServerName = txtServerName.Text,
-                        Title = txtTitle.Text
-                    };
+                    ServerPings editPing = await _control.Services.FindAsync(PingId);
+                    editPing.ServerName = txtServerName.Text;
+                    editPing.Title = txtTitle.Text;
+                    editPing.Status = editPing.Status;
+
                     if (await _control.Services.UpdateAsync(editPing) && await _control.SaveAsync())
                         DialogResult = true;
                     else
@@ -73,7 +71,8 @@ namespace ServerManager.WPF.Pages
                     txtServerName.Text = ping.ServerName;
                     txtTitle.Text = ping.Title;
                 }
-                MessageBox.Show("Not Found", "404 :)", MessageBoxButton.OK, MessageBoxImage.Hand);
+                else
+                    MessageBox.Show("Not Found", "404 :)", MessageBoxButton.OK, MessageBoxImage.Hand);
             }
         }
     }

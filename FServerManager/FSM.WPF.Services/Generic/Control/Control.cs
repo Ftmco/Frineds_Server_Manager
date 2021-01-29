@@ -10,25 +10,19 @@ namespace FSM.WPF.Services.Generic.Control
 
         private readonly IUnitOfWork<FsmWpfContext> _unitOfWork;
 
+        private readonly IGenericRepository<TModel> _services;
+
         public Control()
         {
             _unitOfWork = new UnitOfWork<FsmWpfContext>();
+            _services = new GenericServicves<TModel>(_unitOfWork.GetDbContext);
         }
 
         #endregion
 
-        private IGenericRepository<TModel> _services;
-
         public IGenericRepository<TModel> Services
         {
-            get
-            {
-                if (_services == null)
-                {
-                    _services = new GenericServicves<TModel>(_unitOfWork.GetDbContext);
-                }
-                return _services;
-            }
+            get => _services;
         }
 
         public bool Save() => _unitOfWork.Save();
