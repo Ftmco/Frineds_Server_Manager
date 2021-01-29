@@ -36,7 +36,6 @@
                     <Grid>
                         <Label Content="User Name" Margin="10,10,262,39" Height="29" Width="78" />
                         <TextBox Margin="10,39,10,0" Text="User Name or Email" x:Name="txtUserName" VerticalContentAlignment="Center"/>
-
                     </Grid>
                     <Grid Grid.Row="1">
                         <Label Content="Password" Margin="10,10,262,39" Height="29" Width="78" />

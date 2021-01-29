@@ -8,8 +8,10 @@
   <ItemGroup>
     <None Remove="Console.png" />
     <None Remove="icons8-test-account-64.png" />
+    <None Remove="Pages\Account\auth-bg-dark.jpg" />
     <None Remove="Pages\Account\auth-bg.jpg" />
     <None Remove="Pages\Account\login.png" />
+    <None Remove="Pages\Account\register.png" />
     <None Remove="Settings.png" />
   </ItemGroup>
 
@@ -20,8 +22,10 @@
   <ItemGroup>
     <Resource Include="Console.png" />
     <Resource Include="icons8-test-account-64.png" />
+    <Resource Include="Pages\Account\auth-bg-dark.jpg" />
     <Resource Include="Pages\Account\auth-bg.jpg" />
     <Resource Include="Pages\Account\login.png" />
+    <Resource Include="Pages\Account\register.png" />
     <Resource Include="Settings.png" />
   </ItemGroup>
 
