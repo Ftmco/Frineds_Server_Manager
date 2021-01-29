@@ -6,10 +6,11 @@ using System;
 /// </summary>
 public class FsmWpfContext : DbContext
 {
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=FSM_DB;Integerated Security=True");
-    }
+    private const string ConnectionString = "Data Source=.;Initial Catalog=FSM_DB;Integrated Security=True";
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
+        optionsBuilder.UseSqlServer(ConnectionString);
+
 
     /// <summary>
     /// Server Table

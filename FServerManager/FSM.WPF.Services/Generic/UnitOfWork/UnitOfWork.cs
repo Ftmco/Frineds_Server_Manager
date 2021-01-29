@@ -18,10 +18,7 @@ namespace FSM.WPF.Services.UnitOfWork
 
         public DbContext GetDbContext { get => _db; set => throw new System.NotImplementedException(); }
 
-        public async void Dispose()
-        {
-            await _db.DisposeAsync();
-        }
+        public async void Dispose() => await _db.DisposeAsync();
 
         public bool Save()
         {
