@@ -50,12 +50,11 @@ namespace ServerManager.WPF.Pages
 
         private async void BindGrid()
         {
-            dgvPings.ItemsSource = null;
-            dgvPings.Items.Clear();
             dgvPings.AutoGenerateColumns = false;
             IEnumerable<ServerPings> data = await Control.Services.GetAllAsync();
             dgvPings.ItemsSource = data;
             _control = null;
+            await GetPingingAsync();
         }
 
         private void BtnRefresh_Click(object sender, RoutedEventArgs e)
@@ -65,7 +64,6 @@ namespace ServerManager.WPF.Pages
 
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            await GetPingingAsync();
             BindGrid();
         }
 
@@ -78,6 +76,7 @@ namespace ServerManager.WPF.Pages
                 {
                     IEnumerable<ServerPings> lstPigns = await _service.Services.GetAllAsync();
                     Ping ping = new();
+
                     foreach (var item in lstPigns)
                     {
                         try
@@ -179,6 +178,7 @@ namespace ServerManager.WPF.Pages
                         }
                     }
                     await _service.SaveAsync();
+                    await Dispatcher.BeginInvoke(new Action(() => BindGrid()));
                 }
             });
         }
@@ -188,7 +188,7 @@ namespace ServerManager.WPF.Pages
             ServerPings current = (ServerPings)dgvPings.CurrentItem;
             if (current != null)
             {
-                if (await _control.Services.DeleteAsync(current) && await _control.SaveAsync())
+                if (await Control.Services.DeleteAsync(current) && await Control.SaveAsync())
                 {
                     BindGrid();
                 }

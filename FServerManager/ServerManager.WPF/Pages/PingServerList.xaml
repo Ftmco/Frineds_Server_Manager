@@ -17,7 +17,7 @@
             <Label Content="Ping Servers" HorizontalContentAlignment="Center" Background="#FF3A3838" Foreground="White" VerticalAlignment="Top"/>
 
             <Grid Grid.Row="1">
-                <DataGrid x:Name="dgvPings" Margin="5" CanUserAddRows="False" CanUserDeleteRows="False">
+                <DataGrid x:Name="dgvPings" Margin="5" CanUserAddRows="False" CanUserDeleteRows="False" ItemsSource="{Binding lstPings}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Width="*" Header="Server Name" Binding="{Binding ServerName}"/>
                         <DataGridTextColumn Width="*" Header="Title" Binding="{Binding Title}"/>
