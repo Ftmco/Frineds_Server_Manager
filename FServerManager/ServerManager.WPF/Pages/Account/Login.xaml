@@ -46,7 +46,7 @@
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <Button Margin="10,5,10,5" Content="Login">
+                        <Button Margin="10,5,10,5" Content="Login" x:Name="btnLogin" Click="BtnLogin_Click">
                             <Button.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="7"/>

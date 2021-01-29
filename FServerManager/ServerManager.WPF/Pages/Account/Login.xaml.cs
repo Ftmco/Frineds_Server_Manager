@@ -45,5 +45,10 @@ namespace ServerManager.WPF.Pages.Account
             SingUp singUp = new();
             DialogResult = singUp.ShowDialog();
         }
+               
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
