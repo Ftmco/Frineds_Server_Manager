@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
@@ -22,59 +23,125 @@ namespace FSM.WPF.Services.Generic.Repository
 
         #endregion
 
-        public Task<bool> DeleteAsync(TModel model)
+        public async Task<bool> DeleteAsync(TModel model)
         {
-            throw new NotImplementedException();
+            return await Task.Run(() =>
+            {
+                try
+                {
+                    _dbSet.Remove(model);
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            });
         }
 
-        public Task<bool> DeleteAsync(IList<TModel> model)
+        public async Task<bool> DeleteAsync(IList<TModel> model)
         {
-            throw new NotImplementedException();
+            return await Task.Run(() =>
+            {
+                try
+                {
+                    _dbSet.RemoveRange(model);
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            });
         }
 
-        public Task<bool> DeleteAsync(object id)
+        public async Task<bool> DeleteAsync(object id)
         {
-            throw new NotImplementedException();
+            return await Task.Run(async () => await DeleteAsync(await FindAsync(id)));
         }
 
-        public Task<TModel> FindAsync(object id)
+        public async Task<TModel> FindAsync(object id)
         {
-            throw new NotImplementedException();
+            return await Task.Run(async () => await _dbSet.FindAsync(id));
         }
 
-        public Task<TModel> FirstOrDefaultAsync(Expression<Func<TModel, bool>> firstOrDefualt)
+        public async Task<TModel> FirstOrDefaultAsync(Expression<Func<TModel, bool>> firstOrDefualt)
         {
-            throw new NotImplementedException();
+            return await Task.Run(async () => await _dbSet.FirstOrDefaultAsync(firstOrDefualt));
         }
 
-        public Task<IEnumerable<TModel>> GetAllAsync()
+        public async Task<IEnumerable<TModel>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await Task.Run(async () => await _dbSet.ToListAsync());
         }
 
-        public Task<IEnumerable<TModel>> GetAllAsync(Expression<Func<TModel, bool>> where)
+        public async Task<IEnumerable<TModel>> GetAllAsync(Expression<Func<TModel, bool>> where)
         {
-            throw new NotImplementedException();
+            return await Task.Run(async () => await _dbSet.Where(where).ToListAsync());
         }
 
-        public Task<bool> InsertAsync(TModel model)
+        public async Task<bool> InsertAsync(TModel model)
         {
-            throw new NotImplementedException();
+            return await Task.Run(async () =>
+            {
+                try
+                {
+                    await _dbSet.AddAsync(model);
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            });
         }
 
-        public Task<bool> InsertAsync(IList<TModel> model)
+        public async Task<bool> InsertAsync(IList<TModel> model)
         {
-            throw new NotImplementedException();
+            return await Task.Run(async () =>
+            {
+                try
+                {
+                    await _dbSet.AddRangeAsync(model);
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            });
         }
 
-        public Task<bool> UpdateAsync(TModel model)
+        public async Task<bool> UpdateAsync(TModel model)
         {
-            throw new NotImplementedException();
+            return await Task.Run(() =>
+            {
+                try
+                {
+                    _dbSet.Update(model);
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            });
         }
 
-        public Task<bool> UpdateAsync(IList<TModel> model)
+        public async Task<bool> UpdateAsync(IList<TModel> model)
         {
-            throw new NotImplementedException();
+            return await Task.Run(() =>
+            {
+                try
+                {
+                    _dbSet.UpdateRange(model);
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            });
         }
     }
 }
