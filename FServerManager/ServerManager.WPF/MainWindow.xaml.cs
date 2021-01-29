@@ -98,5 +98,14 @@ namespace ServerManager.WPF
 
             }
         }
+
+        private void BtnAddNewPingServer_Click(object sender, RoutedEventArgs e)
+        {
+            NewPing newPing = new();
+            if (newPing.ShowDialog() == true)
+            {
+
+            }
+        }
     }
 }

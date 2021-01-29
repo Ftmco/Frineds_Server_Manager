@@ -4,14 +4,14 @@
     "D:\\project\\FTEAM\\FServerManager\\FServerManager\\ServerManager.WPF\\ServerManager.WPF.csproj": {}
   },
   "projects": {
-    "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Services\\FSM.WPF.Services.csproj": {
+    "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Entity\\FSM.WPF.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Services\\FSM.WPF.Services.csproj",
-        "projectName": "FSM.WPF.Services",
-        "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Services\\FSM.WPF.Services.csproj",
+        "projectUniqueName": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Entity\\FSM.WPF.Entity.csproj",
+        "projectName": "FSM.WPF.Entity",
+        "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Entity\\FSM.WPF.Entity.csproj",
         "packagesPath": "C:\\Users\\Amir Hossin\\.nuget\\packages\\",
-        "outputPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Services\\obj\\",
+        "outputPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -43,6 +43,112 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "ServiceStack.Interfaces": {
+              "target": "Package",
+              "version": "[5.10.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-rc.2.20479.15\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Services\\FSM.WPF.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Services\\FSM.WPF.Services.csproj",
+        "projectName": "FSM.WPF.Services",
+        "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Services\\FSM.WPF.Services.csproj",
+        "packagesPath": "C:\\Users\\Amir Hossin\\.nuget\\packages\\",
+        "outputPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Amir Hossin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Entity\\FSM.WPF.Entity.csproj": {
+                "projectPath": "D:\\project\\FTEAM\\FServerManager\\FServerManager\\FSM.WPF.Entity\\FSM.WPF.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
