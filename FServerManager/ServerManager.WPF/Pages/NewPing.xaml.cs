@@ -2,6 +2,7 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 
 namespace ServerManager.WPF.Pages
 {
@@ -26,10 +27,13 @@ namespace ServerManager.WPF.Pages
             {
                 if (PingId == Guid.Empty)
                 {
+                    TextRange txt = new TextRange(txtDescription.Document.ContentStart
+                       , txtDescription.Document.ContentEnd);
                     ServerPings newPing = new()
                     {
                         ServerName = txtServerName.Text,
-                        Title = txtTitle.Text
+                        Title = txtTitle.Text,
+                        Description = txt.Text
                     };
                     if (await _control.Services.InsertAsync(newPing) && await _control.SaveAsync())
                         DialogResult = true;
@@ -38,10 +42,14 @@ namespace ServerManager.WPF.Pages
                 }
                 else
                 {
+                    TextRange txt = new TextRange(txtDescription.Document.ContentStart
+                      , txtDescription.Document.ContentEnd);
+
                     ServerPings editPing = await _control.Services.FindAsync(PingId);
                     editPing.ServerName = txtServerName.Text;
                     editPing.Title = txtTitle.Text;
                     editPing.Status = editPing.Status;
+                    editPing.Description = txt.Text;
 
                     if (await _control.Services.UpdateAsync(editPing) && await _control.SaveAsync())
                         DialogResult = true;
@@ -70,6 +78,7 @@ namespace ServerManager.WPF.Pages
                 {
                     txtServerName.Text = ping.ServerName;
                     txtTitle.Text = ping.Title;
+                    prgDescription.Inlines.Add(new Run(ping.Description));
                 }
                 else
                     MessageBox.Show("Not Found", "404 :)", MessageBoxButton.OK, MessageBoxImage.Hand);

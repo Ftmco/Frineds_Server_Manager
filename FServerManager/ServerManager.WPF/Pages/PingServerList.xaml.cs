@@ -63,7 +63,6 @@ namespace ServerManager.WPF.Pages
             {
                 using (IControl<ServerPings> _service = new Control<ServerPings>())
                 {
-
                     IEnumerable<ServerPings> lstPigns = await _service.Services.GetAllAsync();
                     Ping ping = new();
 
@@ -78,7 +77,7 @@ namespace ServerManager.WPF.Pages
                                 IPStatus status = res.Status;
                                 item.Ping = (int)res.RoundtripTime;
                                 item.PingSum += item.Ping;
-                                item.Avrage = item.PingSum / item.RequestCount;
+                                item.Avrage = item.PingSum / item.Ping;
 
                                 switch (status)
                                 {
