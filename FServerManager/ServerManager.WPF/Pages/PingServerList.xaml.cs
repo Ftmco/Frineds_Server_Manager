@@ -19,18 +19,6 @@ namespace ServerManager.WPF.Pages
 
         private IControl<ServerPings> _control;
 
-        public IControl<ServerPings> Control
-        {
-            get
-            {
-                if (_control == null)
-                {
-                    _control = new Control<ServerPings>();
-                }
-                return _control;
-            }
-        }
-
         public PingServerList()
         {
             InitializeComponent();
@@ -50,21 +38,22 @@ namespace ServerManager.WPF.Pages
 
         private async void BindGrid()
         {
-            dgvPings.AutoGenerateColumns = false;
-            IEnumerable<ServerPings> data = await Control.Services.GetAllAsync();
-            dgvPings.ItemsSource = data;
-            _control = null;
+            using (_control = new Control<ServerPings>())
+            {
+                dgvPings.AutoGenerateColumns = false;
+                IEnumerable<ServerPings> data = await _control.Services.GetAllAsync();
+                dgvPings.ItemsSource = data;
+            }
+            await GetPingingAsync();
         }
 
-        private async void BtnRefresh_Click(object sender, RoutedEventArgs e)
+        private void BtnRefresh_Click(object sender, RoutedEventArgs e)
         {
             BindGrid();
-            await GetPingingAsync();
         }
 
-        private async void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            await GetPingingAsync();
             BindGrid();
         }
 
@@ -72,9 +61,9 @@ namespace ServerManager.WPF.Pages
         {
             await Task.Run(async () =>
             {
-                IControl<ServerPings> _service = new Control<ServerPings>();
-                while (true)
+                using (IControl<ServerPings> _service = new Control<ServerPings>())
                 {
+
                     IEnumerable<ServerPings> lstPigns = await _service.Services.GetAllAsync();
                     Ping ping = new();
 
@@ -194,12 +183,15 @@ namespace ServerManager.WPF.Pages
             ServerPings current = (ServerPings)dgvPings.CurrentItem;
             if (current != null)
             {
-                if (await Control.Services.DeleteAsync(current) && await Control.SaveAsync())
+                using (_control = new Control<ServerPings>())
                 {
-                    BindGrid();
+                    if (await _control.Services.DeleteAsync(current) && await _control.SaveAsync())
+                    {
+                        BindGrid();
+                    }
+                    else
+                        MessageBox.Show("Sorry :( Exception", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-                else
-                    MessageBox.Show("Sorry :( Exception", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
                 MessageBox.Show("Please Select One", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);

@@ -7,7 +7,7 @@ using System;
 /// </summary>
 public class FsmWpfContext : DbContext
 {
-    private const string ConnectionString = "Server=185.83.208.175; Database=FSM_DB;User Id=motilogin; Password=Motahar@347";
+    private const string ConnectionString = "Server=.\\SQLEXPRESS;DataBase=FSM_DB;Integrated Security=True";
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
         optionsBuilder.UseSqlServer(ConnectionString);
