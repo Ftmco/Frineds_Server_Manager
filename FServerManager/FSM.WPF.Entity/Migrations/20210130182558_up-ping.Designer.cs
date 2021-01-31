@@ -3,14 +3,16 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FSM.WPF.Entity.Migrations
 {
     [DbContext(typeof(FsmWpfContext))]
-    partial class FsmWpfContextModelSnapshot : ModelSnapshot
+    [Migration("20210130182558_up-ping")]
+    partial class upping
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,9 +58,6 @@ namespace FSM.WPF.Entity.Migrations
                         .HasColumnType("nvarchar(800)");
 
                     b.Property<int>("Ping")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PingSum")
                         .HasColumnType("int");
 
                     b.Property<int>("RequestCount")

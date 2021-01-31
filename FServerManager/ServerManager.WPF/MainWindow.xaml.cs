@@ -70,7 +70,6 @@ namespace ServerManager.WPF
 
         private void NavigateFrames()
         {
-            frmSideBar.Navigate(new SideBar());
             frmServerInfos.Navigate(new ServerTasks());
             frmListServers.Navigate(new PingServerList());
         }

@@ -49,4 +49,14 @@ public record ServerPings
     /// </summary>
     [MaxLength(800)]
     public string Description { get; set; }
+
+    /// <summary>
+    /// Ping Avrage
+    /// </summary>
+    public float Avrage { get; set; }
+
+    /// <summary>
+    /// Pings Sum
+    /// </summary>
+    public int PingSum { get; set; }
 }

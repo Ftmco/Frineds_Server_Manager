@@ -88,6 +88,9 @@ namespace ServerManager.WPF.Pages
                                 item.RequestCount += 1;
                                 IPStatus status = res.Status;
                                 item.Ping = (int)res.RoundtripTime;
+                                item.PingSum += item.Ping;
+                                item.Avrage = item.PingSum / item.RequestCount;
+
                                 switch (status)
                                 {
                                     case IPStatus.Unknown:
@@ -167,6 +170,8 @@ namespace ServerManager.WPF.Pages
                             {
                                 item.RequestCount = 0;
                                 item.Ping = 0;
+                                item.Avrage = 0;
+                                item.PingSum = 0;
                             }
                         }
                         catch

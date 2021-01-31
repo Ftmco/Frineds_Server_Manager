@@ -33,9 +33,6 @@
     <Compile Update="Pages\ServerTasks.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\SideBar.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
@@ -68,9 +65,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\ServerTasks.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\SideBar.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

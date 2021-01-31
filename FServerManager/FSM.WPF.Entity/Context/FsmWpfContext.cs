@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 
 /// <summary>
@@ -6,7 +7,7 @@ using System;
 /// </summary>
 public class FsmWpfContext : DbContext
 {
-    private const string ConnectionString = "Data Source=.;Initial Catalog=FSM_DB;Integrated Security=True";
+    private const string ConnectionString = "Server=185.83.208.175; Database=FSM_DB;User Id=motilogin; Password=Motahar@347";
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
         optionsBuilder.UseSqlServer(ConnectionString);

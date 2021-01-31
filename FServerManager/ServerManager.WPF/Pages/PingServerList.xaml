@@ -22,6 +22,7 @@
                         <DataGridTextColumn Width="*" Header="Server Name" Binding="{Binding ServerName}"/>
                         <DataGridTextColumn Width="*" Header="Title" Binding="{Binding Title}"/>
                         <DataGridTextColumn Width="*" Header="Ping" Binding="{Binding Ping}"/>
+                        <DataGridTextColumn Width="*" Header="Ping Avrage" Binding="{Binding Avrage}"/>
                         <DataGridTextColumn Width="*" Header="Request Count" Binding="{Binding RequestCount}"/>
                         <DataGridTextColumn Width="*" Header="Status" Binding="{Binding Status}"/>
                     </DataGrid.Columns>

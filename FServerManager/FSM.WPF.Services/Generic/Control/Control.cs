@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace FSM.WPF.Services.Generic.Control
 {
-    public class Control<TModel> : IControl<TModel> where TModel : class
+    public class Control<TModel> : IControl<TModel>, System.IDisposable where TModel : class
     {
         #region __Dependency__
 
@@ -29,5 +29,9 @@ namespace FSM.WPF.Services.Generic.Control
 
         public async Task<bool> SaveAsync() => await _unitOfWork.SaveAsync();
 
+        public void Dispose()
+        {
+            _unitOfWork.Dispose();
+        }
     }
 }

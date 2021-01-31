@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ServerManager.WPF" 
         mc:Ignorable="d"
         Title="Friends Server Manager " Height="500" Width="900" MinHeight="450" MinWidth="850" WindowStartupLocation="CenterScreen">
-   
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -95,20 +95,7 @@
             <TabControl>
                 <TabItem Header="Monitoring">
                     <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="5"/>
-                            <ColumnDefinition Width="250" MaxWidth="350" MinWidth="150"/>
-                        </Grid.ColumnDefinitions>
-                        <GridSplitter Grid.Column="1" Foreground="Black" Width="5" HorizontalAlignment="Stretch"/>
-                        <Grid Grid.Column="2">
-                            <Frame x:Name="frmSideBar">
-
-                            </Frame>
-                        </Grid>
-                        <Grid>
-                            <Frame x:Name="frmListServers"/>
-                        </Grid>
+                        <Frame x:Name="frmListServers"/>
                     </Grid>
                 </TabItem>
                 <TabItem Header="Control">
