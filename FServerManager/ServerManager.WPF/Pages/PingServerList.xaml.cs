@@ -62,7 +62,7 @@ namespace ServerManager.WPF.Pages
         {
             await Task.Run(async () =>
    {
-       Thread.Sleep(200);
+      
        using (IControl<ServerPings> _service = new Control<ServerPings>())
        {
            IEnumerable<ServerPings> lstPigns = await _service.Services.GetAllAsync();
