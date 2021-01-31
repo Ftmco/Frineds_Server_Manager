@@ -2,14 +2,16 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FSM.WPF.Entity.Migrations
 {
     [DbContext(typeof(FsmWpfContext))]
-    partial class FsmWpfContextModelSnapshot : ModelSnapshot
+    [Migration("20210131172108_up-server-2")]
+    partial class upserver2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

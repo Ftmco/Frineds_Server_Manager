@@ -61,4 +61,9 @@ public record ServerPings
     /// Pings Sum
     /// </summary>
     public int PingSum { get; set; }
+
+    /// <summary>
+    /// Server Ip Address
+    /// </summary>
+    public string IpAddress { get; set; }
 }
