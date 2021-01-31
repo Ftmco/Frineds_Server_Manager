@@ -17,19 +17,16 @@
                 <ColumnDefinition Width="120"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="1" Content="F Server Manager" FontFamily="Andalus" FontSize="14"/>
-            <Button  Content="Files" Width="40" x:Name="btnFile" Click="btnFile_Click" HorizontalAlignment="Left" Margin="0,5,0,5">
-                <Button.ContextMenu>
-                    <ContextMenu >
-                        <MenuItem Header="Exit" Click="MenuItem_Click"/>
-                        <MenuItem Header="Setting"/>
-                    </ContextMenu>
-                </Button.ContextMenu>
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="3"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
+            <ToolBar>
+                <Button  Content="Files" x:Name="btnFile" Click="btnFile_Click" HorizontalAlignment="Left" >
+                    <Button.ContextMenu>
+                        <ContextMenu >
+                            <MenuItem Header="Exit" Click="MenuItem_Click"/>
+                            <MenuItem Header="Setting"/>
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                </Button>
+            </ToolBar>
         </Grid>
     </Grid>
 </Window>
