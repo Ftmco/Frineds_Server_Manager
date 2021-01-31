@@ -1,16 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using System;
+using System.IO;
 
 /// <summary>
 /// Db Context
 /// </summary>
 public class FsmWpfContext : DbContext
 {
-    private const string ConnectionString = "Server=.\\SQLEXPRESS;DataBase=FSM_DB;Integrated Security=True";
+
+
+    private static string ConnectionString = "Data Source=FSM_DB.db";
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
-        optionsBuilder.UseSqlServer(ConnectionString);
+        optionsBuilder.UseSqlite(ConnectionString);
 
 
     /// <summary>

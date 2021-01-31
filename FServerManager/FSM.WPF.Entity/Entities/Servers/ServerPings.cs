@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ServiceStack.DataAnnotations;
+using System;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 /// <summary>
 /// Server Pings 
@@ -14,19 +16,19 @@ public record ServerPings
     /// <summary>
     /// Primary Key
     /// </summary>
-    [Key]
-    public Guid PingId { get; set; }
+    [PrimaryKey, AutoIncrement]
+    public Guid Id { get; set; }
 
     /// <summary>
     /// Server Name Or Ip Address
     /// </summary>
-    [Required]
+    [NotNull]
     public string ServerName { get; set; }
 
     /// <summary>
     /// Server Title
     /// </summary>
-    [Required]
+    [NotNull]
     public string Title { get; set; }
 
     /// <summary>

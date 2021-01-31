@@ -203,7 +203,7 @@ namespace ServerManager.WPF.Pages
             if (current != null)
             {
                 NewPing editPing = new();
-                editPing.PingId = current.PingId;
+                editPing.PingId = current.Id;
                 if (editPing.ShowDialog() == true)
                 {
                     BindGrid();
