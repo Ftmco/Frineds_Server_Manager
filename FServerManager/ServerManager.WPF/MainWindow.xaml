@@ -24,14 +24,14 @@
                             <MenuItem Header="Options..."/>
                         </ContextMenu>
                     </Button.ContextMenu>
-                                  </Button>
+                </Button>
                 <Button Content="View" Width="40" x:Name="btnView" Click="BtnFile_Click" HorizontalAlignment="Left">
                     <Button.ContextMenu>
                         <ContextMenu>
                             <MenuItem Header="Theme"/>
                         </ContextMenu>
                     </Button.ContextMenu>
-                  
+
                 </Button>
                 <Button Content="Tools" x:Name="btnTools" Click="BtnFile_Click"  HorizontalAlignment="Left" Width="40">
                     <Button.ContextMenu>
@@ -39,28 +39,28 @@
                             <MenuItem Header="Configure"/>
                         </ContextMenu>
                     </Button.ContextMenu>
-                   
+
                 </Button>
                 <Button x:Name="btnPoweShell" Click="BtnPoweShell_Click"  HorizontalAlignment="Left" Width="46">
                     <Button.Content>
                         <Image x:Name="imgBtnConsle" Source="/Console.png"/>
                     </Button.Content>
-                  
+
                 </Button>
                 <Button x:Name="btnSetting"  HorizontalAlignment="Left" Width="51" d:LayoutOverrides="HorizontalAlignment" >
                     <Button.Content>
                         <Image x:Name="imgBtnSettings" Source="/Settings.png"/>
                     </Button.Content>
-                 
+
                 </Button>
                 <Button Click="BtnAccount_Click" x:Name="btnAccount" Width="50" HorizontalAlignment="Left" d:LayoutOverrides="Width">
                     <Button.Content>
                         <Image x:Name="imgBtnAccount" Source="/icons8-test-account-64.png" />
                     </Button.Content>
-                  
                 </Button>
+                <Label Content="F Server Manager" FontFamily="Andalus"   />
             </ToolBar>
-              </Grid>
+        </Grid>
         <Grid Grid.Row="1">
             <TabControl>
                 <TabItem Header="Monitoring">
