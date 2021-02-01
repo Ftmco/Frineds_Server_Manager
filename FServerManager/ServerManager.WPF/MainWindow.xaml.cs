@@ -16,7 +16,7 @@ namespace ServerManager.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-
+               
         private readonly IWindowsServices _service;
 
         public MainWindow()

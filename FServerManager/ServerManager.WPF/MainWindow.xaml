@@ -14,13 +14,9 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="300"/>
-            </Grid.ColumnDefinitions>
 
-            <Grid>
-                <Button  Content="Files" Width="40" x:Name="btnFile" Click="BtnFile_Click" HorizontalAlignment="Left" Margin="0,5,0,5">
+            <ToolBar>
+                <Button  Content="Files" Width="40" x:Name="btnFile" Click="BtnFile_Click" HorizontalAlignment="Left">
                     <Button.ContextMenu>
                         <ContextMenu >
                             <MenuItem Header="Exit"/>
@@ -28,69 +24,43 @@
                             <MenuItem Header="Options..."/>
                         </ContextMenu>
                     </Button.ContextMenu>
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="3"/>
-                        </Style>
-                    </Button.Resources>
-                </Button>
-                <Button Content="View" Width="40" x:Name="btnView" Click="BtnFile_Click" HorizontalAlignment="Left" Margin="40,5,0,5">
+                                  </Button>
+                <Button Content="View" Width="40" x:Name="btnView" Click="BtnFile_Click" HorizontalAlignment="Left">
                     <Button.ContextMenu>
                         <ContextMenu>
                             <MenuItem Header="Theme"/>
                         </ContextMenu>
                     </Button.ContextMenu>
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="3"/>
-                        </Style>
-                    </Button.Resources>
+                  
                 </Button>
-                <Button Content="Tools" x:Name="btnTools" Click="BtnFile_Click" Margin="80,5,0,5" HorizontalAlignment="Left" Width="40">
+                <Button Content="Tools" x:Name="btnTools" Click="BtnFile_Click"  HorizontalAlignment="Left" Width="40">
                     <Button.ContextMenu>
                         <ContextMenu>
                             <MenuItem Header="Configure"/>
                         </ContextMenu>
                     </Button.ContextMenu>
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="3"/>
-                        </Style>
-                    </Button.Resources>
+                   
                 </Button>
-                <Button x:Name="btnPoweShell" Click="BtnPoweShell_Click" Margin="120,5,0,5" HorizontalAlignment="Left" Width="46">
+                <Button x:Name="btnPoweShell" Click="BtnPoweShell_Click"  HorizontalAlignment="Left" Width="46">
                     <Button.Content>
                         <Image x:Name="imgBtnConsle" Source="/Console.png"/>
                     </Button.Content>
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="3"/>
-                        </Style>
-                    </Button.Resources>
+                  
                 </Button>
-                <Button x:Name="btnSetting" Margin="166,5,0,5" HorizontalAlignment="Left" Width="51" d:LayoutOverrides="HorizontalAlignment" >
+                <Button x:Name="btnSetting"  HorizontalAlignment="Left" Width="51" d:LayoutOverrides="HorizontalAlignment" >
                     <Button.Content>
                         <Image x:Name="imgBtnSettings" Source="/Settings.png"/>
                     </Button.Content>
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="3"/>
-                        </Style>
-                    </Button.Resources>
+                 
                 </Button>
-                <Button Click="BtnAccount_Click" x:Name="btnAccount" Width="50" HorizontalAlignment="Left" Margin="217,5,0,5" d:LayoutOverrides="Width">
+                <Button Click="BtnAccount_Click" x:Name="btnAccount" Width="50" HorizontalAlignment="Left" d:LayoutOverrides="Width">
                     <Button.Content>
                         <Image x:Name="imgBtnAccount" Source="/icons8-test-account-64.png" />
                     </Button.Content>
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="3"/>
-                        </Style>
-                    </Button.Resources>
+                  
                 </Button>
-            </Grid>
-            <Label Grid.Column="1" Content="F Server Manager" FontFamily="Andalus" HorizontalAlignment="Right" FontSize="15" />
-        </Grid>
+            </ToolBar>
+              </Grid>
         <Grid Grid.Row="1">
             <TabControl>
                 <TabItem Header="Monitoring">
