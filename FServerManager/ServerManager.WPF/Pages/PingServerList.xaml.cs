@@ -52,6 +52,9 @@ namespace ServerManager.WPF.Pages
 
         private void BtnRefresh_Click(object sender, RoutedEventArgs e)
         {
+            if (IsInException)
+                MessageBox.Show("You Have One Exception In Pinging \n We Retry To Pinging Again \n Any Exception Stop Pinging", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+
             IsInException = false;
             BindGrid();
         }
