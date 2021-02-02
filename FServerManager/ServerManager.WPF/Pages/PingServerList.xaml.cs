@@ -41,6 +41,9 @@ namespace ServerManager.WPF.Pages
 
         private async void BindGrid()
         {
+            if (IsInException)
+                MessageBox.Show("Please correct existing errors", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+
             using (_control = new Control<ServerPings>())
             {
                 dgvPings.AutoGenerateColumns = false;
@@ -48,12 +51,13 @@ namespace ServerManager.WPF.Pages
                 dgvPings.ItemsSource = data;
             }
             await GetPingingAsync();
+
         }
 
         private void BtnRefresh_Click(object sender, RoutedEventArgs e)
         {
             if (IsInException)
-                MessageBox.Show("You Have One Exception In Pinging \n We Retry To Pinging Again \n Any Exception Stop Pinging", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("there is an error we will continue and if there is an error we will stop", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
 
             IsInException = false;
             BindGrid();
