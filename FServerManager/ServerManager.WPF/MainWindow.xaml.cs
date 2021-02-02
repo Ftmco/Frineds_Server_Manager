@@ -90,5 +90,9 @@ namespace ServerManager.WPF
             }
         }
 
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

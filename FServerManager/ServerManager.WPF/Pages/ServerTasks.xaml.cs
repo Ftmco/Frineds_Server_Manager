@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,16 @@ namespace ServerManager.WPF.Pages
         {
 
         }
+
+        private void BindGrid()
+        {
+          
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            BindGrid();
+        }
     }
-      
+
 }

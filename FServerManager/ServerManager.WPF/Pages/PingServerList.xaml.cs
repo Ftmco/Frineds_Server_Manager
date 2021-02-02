@@ -16,6 +16,7 @@ namespace ServerManager.WPF.Pages
     public partial class PingServerList : Page
     {
         bool IsInChange = false;
+        bool IsInException = false;
 
         #region __Dependency__
 
@@ -51,6 +52,7 @@ namespace ServerManager.WPF.Pages
 
         private void BtnRefresh_Click(object sender, RoutedEventArgs e)
         {
+            IsInException = false;
             BindGrid();
         }
 
@@ -63,8 +65,7 @@ namespace ServerManager.WPF.Pages
         {
             await Task.Run(async () =>
             {
-
-                if (!IsInChange)
+                if (!IsInChange & !IsInException)
                 {
                     using IControl<ServerPings> _service = new Control<ServerPings>();
                     IEnumerable<ServerPings> lstPigns = await _service.Services.GetAllAsync();
@@ -74,7 +75,7 @@ namespace ServerManager.WPF.Pages
                     {
                         try
                         {
-                            if (item.RequestCount <= 1000)
+                            if (item.RequestCount <= 500)
                             {
                                 PingReply res = ping.Send(item.ServerName);
                                 item.RequestCount += 1;
@@ -170,6 +171,7 @@ namespace ServerManager.WPF.Pages
                         catch
                         {
                             item.Status = "Exception";
+                            IsInException = true;
                         }
                         finally
                         {

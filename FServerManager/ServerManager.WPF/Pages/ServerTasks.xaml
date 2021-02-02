@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:ServerManager.WPF.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ServerTasks">
+      Title="ServerTasks" Loaded="Page_Loaded">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -17,11 +17,10 @@
         <DataGrid x:Name="dgProcess" Grid.Row="1" >
             <DataGrid.Columns>
                 <DataGridTextColumn Width="*" Visibility="Hidden" Binding="{Binding Id}" Header="Id"/>
-                <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Image Name"/>
-                <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Process Id"/>
-                <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Session Name"/>
-                <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Session #"/>
-                <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Memory Usage"/>
+                <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding ProcessName}" Header="Process Name"/>
+                <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding SessionId}" Header="SessionId"/>
+                <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding MachineName}" Header="MachineName"/>
+                <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Responding}" Header="Responding"/>
             </DataGrid.Columns>
             <DataGrid.ContextMenu>
                 <ContextMenu>

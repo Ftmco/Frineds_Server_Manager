@@ -19,9 +19,9 @@
                 <Button  Content="Files" Width="40" x:Name="btnFile" Click="BtnFile_Click" HorizontalAlignment="Left">
                     <Button.ContextMenu>
                         <ContextMenu >
-                            <MenuItem Header="Exit"/>
                             <MenuItem Header="Setting"/>
                             <MenuItem Header="Options..."/>
+                            <MenuItem Header="Exit" x:Name="btnExit" Click="BtnExit_Click"/>
                         </ContextMenu>
                     </Button.ContextMenu>
                 </Button>
