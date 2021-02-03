@@ -4,6 +4,7 @@ using ServerManager.WPF.Pages;
 using ServerManager.WPF.Pages.Account;
 using System;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -58,22 +59,41 @@ namespace ServerManager.WPF
         private async Task CheckConnection() =>
             await Task.Run(async () =>
             {
-                while (true)
+                int result = await _service.IsConnectNetWorkAsync();
+
+                while (result != -2)
                 {
-                    await Dispatcher.BeginInvoke(new Action(async () =>
+                    Thread.Sleep(100);
+                    await Dispatcher.BeginInvoke(new Action(() =>
                      {
-                         if (await _service.IsConnectNetWorkAsync())
+                         switch (result)
                          {
-                             lblConnect.Content = "Local Internet Connect";
-                             lblConnect.Foreground = Brushes.Green;
+                             case 0:
+                                 lblConnect.Content = "Local Internet Connect";
+                                 lblConnect.Foreground = Brushes.Green;
+                                 _service.ResetCount();
+                                 break;
+                             case -1:
+                                 lblConnect.Content = "Local Internet Connecttion Faild";
+                                 lblConnect.Foreground = Brushes.Red;
+                                 break;
+                             case -2:
+                                 lblConnect.Content = "Trying to connect to the Internet more than allowed please check your connection and Restart Application";
+                                 lblConnect.Foreground = Brushes.Red;
+                                 break;
+                             default:
+                                 break;
                          }
-                         else
-                         {
-                             lblConnect.Content = "Local Internet Connecttion Faild";
-                             lblConnect.Foreground = Brushes.Red;
-                         }
+
                      }));
                 }
+                if (result == -2)
+                    await Dispatcher.BeginInvoke(new Action(() =>
+                    {
+                        lblConnect.Content = "Trying to connect to the Internet more than allowed please check your connection and Restart Application";
+                        lblConnect.Foreground = Brushes.Red;
+                    }));
+
             });
 
 

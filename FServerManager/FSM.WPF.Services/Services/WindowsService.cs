@@ -21,20 +21,29 @@ namespace FSM.WPF.Services.Services
             date.Date.Month.ToString("00") + "/" +
             date.Date.DayOfYear.ToString("00"));
 
-        public async Task<bool> IsConnectNetWorkAsync() =>
+        int count = 0;
+
+        public async Task<int> IsConnectNetWorkAsync() =>
             await Task.Run(() =>
-            {
-                try
+            {               
+                if (count <= 5000)
                 {
-                    Ping ping = new();
-                    PingReply res = ping.Send("google.com");
-                    return (res.Status == IPStatus.Success);
+                    count++;
+                    try
+                    {
+                        Ping ping = new();
+                        PingReply res = ping.Send("google.com");
+                        return (res.Status == IPStatus.Success) ? 0 : -1;
+                    }
+                    catch
+                    {
+                        return -1;
+                    }
                 }
-                catch
-                {
-                    return false;
-                }
+                return -2;
             });
+
+        public void ResetCount() => count = 0;
 
     }
 }

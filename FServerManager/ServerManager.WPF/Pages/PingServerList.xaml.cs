@@ -74,7 +74,7 @@ namespace ServerManager.WPF.Pages
                 using IWindowsServices windowsServices = new WindowsService();
                 if (!IsInChange)
                 {
-                    if (await windowsServices.IsConnectNetWorkAsync())
+                    if (await windowsServices.IsConnectNetWorkAsync() == 0)
                     {
                         using IControl<ServerPings> _service = new Control<ServerPings>();
                         IEnumerable<ServerPings> lstPigns = await _service.Services.GetAllAsync();
