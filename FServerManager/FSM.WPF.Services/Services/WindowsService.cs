@@ -21,10 +21,8 @@ namespace FSM.WPF.Services.Services
             date.Date.Month.ToString("00") + "/" +
             date.Date.DayOfYear.ToString("00"));
 
-
-        public async Task<bool> IsConnectNetWorkAsync()
-        {
-            return await Task.Run(() =>
+        public async Task<bool> IsConnectNetWorkAsync() =>
+            await Task.Run(() =>
             {
                 try
                 {
@@ -37,7 +35,6 @@ namespace FSM.WPF.Services.Services
                     return false;
                 }
             });
-        }
 
     }
 }

@@ -17,7 +17,6 @@ namespace ServerManager.WPF.Pages
         public PoweShell()
         {
             InitializeComponent();
-            imgSettings.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + @"\Statics\Settings.png"));
         }
 
         private void TxtCommand_KeyDown(object sender, KeyEventArgs e)

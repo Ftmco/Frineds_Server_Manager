@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <Button  Width="50" VerticalAlignment="Center" HorizontalAlignment="Left" d:LayoutOverrides="Width" Click="Button_Click">
             <Button.Content>
-                <Image Source="/Images/Settings.png" x:Name="imgSettings"/>
+                <Image Source="/Pages/Settings.png" x:Name="imgSettings"/>
             </Button.Content>
         </Button>
         <GridSplitter Grid.Row="2"  HorizontalAlignment="Stretch"/>

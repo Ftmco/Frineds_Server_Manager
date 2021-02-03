@@ -55,8 +55,7 @@ namespace ServerManager.WPF
             lblTime.Content = _service.GetDate(DateTime.Now);
         }
 
-        private async Task CheckConnection()
-        {
+        private async Task CheckConnection() =>
             await Task.Run(async () =>
             {
                 while (true)
@@ -76,7 +75,7 @@ namespace ServerManager.WPF
                      }));
                 }
             });
-        }
+
 
         private void NavigateFrames()
         {
