@@ -71,4 +71,5 @@ public record ServerPings
     /// Server Exception Count
     /// </summary>
     public int ExceptionCount { get; set; }
+       
 }
