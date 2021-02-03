@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 
 namespace FSM.WPF.Services.Repository
 {
-    public interface IWindowsServices
+    public interface IWindowsServices : IDisposable
     {
-        bool IsConnectNetWork();
+        Task<bool> IsConnectNetWorkAsync();
         string GetDate(DateTime date);
         string GetPersianDate(DateTime date);
     }

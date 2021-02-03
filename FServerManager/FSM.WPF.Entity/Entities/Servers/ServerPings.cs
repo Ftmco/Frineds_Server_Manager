@@ -66,4 +66,9 @@ public record ServerPings
     /// Server Ip Address
     /// </summary>
     public string IpAddress { get; set; }
+
+    /// <summary>
+    /// Server Exception Count
+    /// </summary>
+    public int ExceptionCount { get; set; }
 }

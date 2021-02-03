@@ -1,4 +1,6 @@
 ﻿using FSM.WPF.Services.Generic.Control;
+using FSM.WPF.Services.Repository;
+using FSM.WPF.Services.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,15 +18,17 @@ namespace ServerManager.WPF.Pages
     public partial class PingServerList : Page
     {
         bool IsInChange = false;
-        bool IsInException = false;
 
         #region __Dependency__
 
         private IControl<ServerPings> _control;
 
+        private readonly IWindowsServices _windows;
+
         public PingServerList()
         {
             InitializeComponent();
+            _windows = new WindowsService();
         }
 
 
@@ -41,14 +45,12 @@ namespace ServerManager.WPF.Pages
 
         private async void BindGrid()
         {
-            if (IsInException)
-                MessageBox.Show("Please correct existing errors", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
 
             using (_control = new Control<ServerPings>())
             {
                 dgvPings.AutoGenerateColumns = false;
                 IEnumerable<ServerPings> data = await _control.Services.GetAllAsync();
-                dgvPings.ItemsSource = data;
+                dgvPings.ItemsSource = data.OrderByDescending(sp => sp.Ping);
             }
             await GetPingingAsync();
 
@@ -56,10 +58,6 @@ namespace ServerManager.WPF.Pages
 
         private void BtnRefresh_Click(object sender, RoutedEventArgs e)
         {
-            if (IsInException)
-                MessageBox.Show("there is an error we will continue and if there is an error we will stop", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
-
-            IsInException = false;
             BindGrid();
         }
 
@@ -72,120 +70,134 @@ namespace ServerManager.WPF.Pages
         {
             await Task.Run(async () =>
             {
-                if (!IsInChange & !IsInException)
+                using IWindowsServices windowsServices = new WindowsService();
+                if (!IsInChange)
                 {
-                    using IControl<ServerPings> _service = new Control<ServerPings>();
-                    IEnumerable<ServerPings> lstPigns = await _service.Services.GetAllAsync();
-                    Ping ping = new();
-
-                    foreach (var item in lstPigns)
+                    if (await windowsServices.IsConnectNetWorkAsync())
                     {
-                        try
-                        {
-                            if (item.RequestCount <= 500)
-                            {
-                                PingReply res = ping.Send(item.ServerName);
-                                item.RequestCount += 1;
-                                IPStatus status = res.Status;
-                                item.Ping = (int)res.RoundtripTime;
-                                item.PingSum += item.Ping;
-                                item.Avrage = item.PingSum / item.RequestCount;
-                                item.IpAddress = res.Address.ToString();
+                        using IControl<ServerPings> _service = new Control<ServerPings>();
+                        IEnumerable<ServerPings> lstPigns = await _service.Services.GetAllAsync();
+                        Ping ping = new();
 
-                                switch (status)
+                        foreach (var item in lstPigns)
+                        {
+                            try
+                            {
+                                if (item.RequestCount <= 500)
                                 {
-                                    case IPStatus.Unknown:
-                                        item.Status = "Unknown";
-                                        break;
-                                    case IPStatus.Success:
-                                        item.Status = "Success";
-                                        break;
-                                    case IPStatus.DestinationNetworkUnreachable:
-                                        item.Status = "DestinationNetworkUnreachable";
-                                        break;
-                                    case IPStatus.DestinationHostUnreachable:
-                                        item.Status = "DestinationHostUnreachable";
-                                        break;
-                                    case IPStatus.DestinationProhibited:
-                                        item.Status = "DestinationProhibited";
-                                        break;
-                                    case IPStatus.DestinationPortUnreachable:
-                                        item.Status = "DestinationPortUnreachable";
-                                        break;
-                                    case IPStatus.NoResources:
-                                        item.Status = "NoResources";
-                                        break;
-                                    case IPStatus.BadOption:
-                                        item.Status = "BadOption";
-                                        break;
-                                    case IPStatus.HardwareError:
-                                        item.Status = "HardwareError";
-                                        break;
-                                    case IPStatus.PacketTooBig:
-                                        item.Status = "PacketTooBig";
-                                        break;
-                                    case IPStatus.TimedOut:
-                                        item.Status = "TimedOut";
-                                        break;
-                                    case IPStatus.BadRoute:
-                                        item.Status = "BadRoute";
-                                        break;
-                                    case IPStatus.TtlExpired:
-                                        item.Status = "TtlExpired";
-                                        break;
-                                    case IPStatus.TtlReassemblyTimeExceeded:
-                                        item.Status = "TtlReassemblyTimeExceeded";
-                                        break;
-                                    case IPStatus.ParameterProblem:
-                                        item.Status = "ParameterProblem";
-                                        break;
-                                    case IPStatus.SourceQuench:
-                                        item.Status = "SourceQuench";
-                                        break;
-                                    case IPStatus.BadDestination:
-                                        item.Status = "BadDestination";
-                                        break;
-                                    case IPStatus.DestinationUnreachable:
-                                        item.Status = "DestinationUnreachable";
-                                        break;
-                                    case IPStatus.TimeExceeded:
-                                        item.Status = "TimeExceeded";
-                                        break;
-                                    case IPStatus.BadHeader:
-                                        item.Status = "BadHeader";
-                                        break;
-                                    case IPStatus.UnrecognizedNextHeader:
-                                        item.Status = "UnrecognizedNextHeader";
-                                        break;
-                                    case IPStatus.IcmpError:
-                                        item.Status = "IcmpError";
-                                        break;
-                                    case IPStatus.DestinationScopeMismatch:
-                                        item.Status = "DestinationScopeMismatch";
-                                        break;
-                                    default:
-                                        break;
+                                    PingReply res = ping.Send(item.ServerName);
+                                    item.RequestCount += 1;
+                                    IPStatus status = res.Status;
+                                    item.Ping = (int)res.RoundtripTime;
+                                    item.PingSum += item.Ping;
+                                    item.Avrage = item.PingSum / item.RequestCount;
+                                    item.IpAddress = res.Address.ToString();
+
+                                    switch (status)
+                                    {
+                                        case IPStatus.Unknown:
+                                            item.Status = "Unknown";
+                                            break;
+                                        case IPStatus.Success:
+                                            item.Status = "Success";
+                                            break;
+                                        case IPStatus.DestinationNetworkUnreachable:
+                                            item.Status = "DestinationNetworkUnreachable";
+                                            break;
+                                        case IPStatus.DestinationHostUnreachable:
+                                            item.Status = "DestinationHostUnreachable";
+                                            break;
+                                        case IPStatus.DestinationProhibited:
+                                            item.Status = "DestinationProhibited";
+                                            break;
+                                        case IPStatus.DestinationPortUnreachable:
+                                            item.Status = "DestinationPortUnreachable";
+                                            break;
+                                        case IPStatus.NoResources:
+                                            item.Status = "NoResources";
+                                            break;
+                                        case IPStatus.BadOption:
+                                            item.Status = "BadOption";
+                                            break;
+                                        case IPStatus.HardwareError:
+                                            {
+                                                System.Console.Beep(2500, 200);
+                                                item.Status = "HardwareError";
+                                                break;
+                                            }
+                                        case IPStatus.PacketTooBig:
+                                            item.Status = "PacketTooBig";
+                                            break;
+                                        case IPStatus.TimedOut:
+                                            {
+                                                System.Console.Beep(1500, 200);
+                                                item.Status = "TimedOut";
+                                                break;
+                                            }
+                                        case IPStatus.BadRoute:
+                                            item.Status = "BadRoute";
+                                            break;
+                                        case IPStatus.TtlExpired:
+                                            item.Status = "TtlExpired";
+                                            break;
+                                        case IPStatus.TtlReassemblyTimeExceeded:
+                                            item.Status = "TtlReassemblyTimeExceeded";
+                                            break;
+                                        case IPStatus.ParameterProblem:
+                                            item.Status = "ParameterProblem";
+                                            break;
+                                        case IPStatus.SourceQuench:
+                                            item.Status = "SourceQuench";
+                                            break;
+                                        case IPStatus.BadDestination:
+                                            item.Status = "BadDestination";
+                                            break;
+                                        case IPStatus.DestinationUnreachable:
+                                            item.Status = "DestinationUnreachable";
+                                            break;
+                                        case IPStatus.TimeExceeded:
+                                            item.Status = "TimeExceeded";
+                                            break;
+                                        case IPStatus.BadHeader:
+                                            item.Status = "BadHeader";
+                                            break;
+                                        case IPStatus.UnrecognizedNextHeader:
+                                            item.Status = "UnrecognizedNextHeader";
+                                            break;
+                                        case IPStatus.IcmpError:
+                                            item.Status = "IcmpError";
+                                            break;
+                                        case IPStatus.DestinationScopeMismatch:
+                                            item.Status = "DestinationScopeMismatch";
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                }
+                                else
+                                {
+                                    item.RequestCount = 0;
+                                    item.Ping = 0;
+                                    item.Avrage = 0;
+                                    item.PingSum = 0;
                                 }
                             }
-                            else
+                            catch
                             {
-                                item.RequestCount = 0;
-                                item.Ping = 0;
-                                item.Avrage = 0;
-                                item.PingSum = 0;
+                                item.Status = "Exception";
+                                System.Console.Beep(2000, 50);
+                                item.ExceptionCount++;
+                                if (item.ExceptionCount >= 1000)
+                                    if (MessageBox.Show($"We want to remove '{item.Title}' because more than '{item.ExceptionCount}' errors have been registered for this '{item.Title}'", "Error", MessageBoxButton.OKCancel, MessageBoxImage.Error) == MessageBoxResult.OK)
+                                        await _service.Services.DeleteAsync(item); await _service.SaveAsync();
+                            }
+                            finally
+                            {
+                                await _service.Services.UpdateAsync(item);
                             }
                         }
-                        catch
-                        {
-                            item.Status = "Exception";
-                            IsInException = true;
-                        }
-                        finally
-                        {
-                            await _service.Services.UpdateAsync(item);
-                        }
+                        await _service.SaveAsync();
                     }
-                    await _service.SaveAsync();
                     await Dispatcher.BeginInvoke(new Action(() => BindGrid()));
                 }
             });

@@ -2,11 +2,14 @@
 using System;
 using System.Globalization;
 using System.Net.NetworkInformation;
+using System.Threading.Tasks;
 
 namespace FSM.WPF.Services.Services
 {
     public class WindowsService : IWindowsServices
     {
+        public void Dispose() { }
+
         public string GetDate(DateTime date)
         {
             PersianCalendar pc = new();
@@ -19,8 +22,22 @@ namespace FSM.WPF.Services.Services
             date.Date.DayOfYear.ToString("00"));
 
 
-        public bool IsConnectNetWork() =>
-       NetworkInterface.GetIsNetworkAvailable() == true;
+        public async Task<bool> IsConnectNetWorkAsync()
+        {
+            return await Task.Run(() =>
+            {
+                try
+                {
+                    Ping ping = new();
+                    PingReply res = ping.Send("google.com");
+                    return (res.Status == IPStatus.Success);
+                }
+                catch
+                {
+                    return false;
+                }
+            });
+        }
 
     }
 }

@@ -25,6 +25,7 @@
                         <DataGridTextColumn Width="*" Header="Ping" Binding="{Binding Ping}"/>
                         <DataGridTextColumn Width="*" Header="Ping Avrage" Binding="{Binding Avrage}"/>
                         <DataGridTextColumn Width="*" Header="Request Count" Binding="{Binding RequestCount}"/>
+                        <DataGridTextColumn Width="*" Foreground="Red" Header="Exception Count" Binding="{Binding ExceptionCount}"/>
                         <DataGridTextColumn Width="*" Header="Status" Binding="{Binding Status}"/>
                     </DataGrid.Columns>
                     <DataGrid.ContextMenu>

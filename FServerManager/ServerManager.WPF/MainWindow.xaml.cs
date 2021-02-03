@@ -4,6 +4,7 @@ using ServerManager.WPF.Pages;
 using ServerManager.WPF.Pages.Account;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -16,7 +17,7 @@ namespace ServerManager.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-               
+
         private readonly IWindowsServices _service;
 
         public MainWindow()
@@ -54,18 +55,27 @@ namespace ServerManager.WPF
             lblTime.Content = _service.GetDate(DateTime.Now);
         }
 
-        private void CheckConnection()
+        private async Task CheckConnection()
         {
-            if (_service.IsConnectNetWork())
+            await Task.Run(async () =>
             {
-                lblConnect.Content = "Local Internet Connect";
-                lblConnect.Foreground = Brushes.Green;
-            }
-            else
-            {
-                lblConnect.Content = "Local Internet Connecttion Faild";
-                lblConnect.Foreground = Brushes.Red;
-            }
+                while (true)
+                {
+                    await Dispatcher.BeginInvoke(new Action(async () =>
+                     {
+                         if (await _service.IsConnectNetWorkAsync())
+                         {
+                             lblConnect.Content = "Local Internet Connect";
+                             lblConnect.Foreground = Brushes.Green;
+                         }
+                         else
+                         {
+                             lblConnect.Content = "Local Internet Connecttion Faild";
+                             lblConnect.Foreground = Brushes.Red;
+                         }
+                     }));
+                }
+            });
         }
 
         private void NavigateFrames()
