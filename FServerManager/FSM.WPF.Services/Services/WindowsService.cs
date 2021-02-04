@@ -26,7 +26,7 @@ namespace FSM.WPF.Services.Services
         public async Task<int> IsConnectNetWorkAsync() =>
             await Task.Run(() =>
             {               
-                if (count <= 5000)
+                if (count <= 500)
                 {
                     count++;
                     try

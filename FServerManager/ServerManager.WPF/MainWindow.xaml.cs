@@ -59,11 +59,11 @@ namespace ServerManager.WPF
         private async Task CheckConnection() =>
             await Task.Run(async () =>
             {
-                int result = await _service.IsConnectNetWorkAsync();
-
+                int result = 0;
                 while (result != -2)
                 {
-                    Thread.Sleep(100);
+                    result = await _service.IsConnectNetWorkAsync();
+                    Thread.Sleep(50);
                     await Dispatcher.BeginInvoke(new Action(() =>
                      {
                          switch (result)
@@ -92,8 +92,8 @@ namespace ServerManager.WPF
                     {
                         lblConnect.Content = "Trying to connect to the Internet more than allowed please check your connection and Restart Application";
                         lblConnect.Foreground = Brushes.Red;
+                        Console.Beep(3500, 1000);
                     }));
-
             });
 
 
