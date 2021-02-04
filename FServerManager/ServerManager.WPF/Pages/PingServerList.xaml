@@ -62,8 +62,8 @@
                 </DataGrid>
             </Grid>
             <Grid Grid.Row="2">
-                <ProgressBar Margin="10,0,91,0" x:Name="pgAvrage"/>
-                <Label Margin="0,0,10,0" x:Name="lblAvrage" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="9" Width="76" d:LayoutOverrides="VerticalAlignment"/>
+                <ProgressBar Margin="10,0,101,0" x:Name="pgAvrage"/>
+                <Label Margin="699,0,0,0" x:Name="lblAvrage" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="9" Width="91" Height="20"/>
             </Grid>
         </Grid>
     </Grid>
