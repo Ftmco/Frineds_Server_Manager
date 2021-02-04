@@ -23,25 +23,24 @@ namespace FSM.WPF.Services.Services
 
         int count = 0;
 
-        public async Task<int> IsConnectNetWorkAsync() =>
-            await Task.Run(() =>
-            {               
-                if (count <= 500)
+        public async Task<int> IsConnectNetWorkAsync() => await Task.Run(() =>
+        {
+            if (count <= 500)
+            {
+                count++;
+                try
                 {
-                    count++;
-                    try
-                    {
-                        Ping ping = new();
-                        PingReply res = ping.Send("google.com");
-                        return (res.Status == IPStatus.Success) ? 0 : -1;
-                    }
-                    catch
-                    {
-                        return -1;
-                    }
+                    Ping ping = new();
+                    PingReply res = ping.Send("google.com");
+                    return (res.Status == IPStatus.Success) ? 0 : -1;
                 }
-                return -2;
-            });
+                catch
+                {
+                    return -1;
+                }
+            }
+            return -2;
+        });
 
         public void ResetCount() => count = 0;
 

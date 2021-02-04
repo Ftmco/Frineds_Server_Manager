@@ -46,19 +46,18 @@ namespace ServerManager.WPF.Pages
 
         private async void BindGrid()
         {
-
             using (_control = new Control<ServerPings>())
             {
                 dgvPings.AutoGenerateColumns = false;
                 IEnumerable<ServerPings> data = await _control.Services.GetAllAsync();
-                int sum = data.Sum(d => d.Ping);
-                double pgAvrageValue = sum/ data.Count();
+                float sum = data.Sum(d => d.Avrage);
+                double pgAvrageValue = sum / data.Count();
                 pgAvrage.Maximum = sum;
                 pgAvrage.Value = pgAvrageValue;
 
                 double switchValue = pgAvrageValue * 100 / sum;
 
-                lblAvrage.Content = $"{pgAvrageValue}/{sum} | {switchValue}%";
+                lblAvrage.Content = $"'{Convert.ToInt32(pgAvrageValue)}/{sum}' | '{Convert.ToInt32(switchValue)}%'";
 
                 pgAvrage.Foreground = switchValue switch
                 {
@@ -86,6 +85,7 @@ namespace ServerManager.WPF.Pages
             BindGrid();
         }
 
+        int result = 0;
         private async Task GetPingingAsync()
         {
             await Task.Run(async () =>
@@ -93,7 +93,6 @@ namespace ServerManager.WPF.Pages
                 using IWindowsServices windowsServices = new WindowsService();
                 if (!IsInChange)
                 {
-                    int result = 0;
                     if (result != -2)
                     {
                         result = await windowsServices.IsConnectNetWorkAsync();
@@ -145,6 +144,7 @@ namespace ServerManager.WPF.Pages
                                                 break;
                                             case IPStatus.HardwareError:
                                                 {
+                                                    item.PingSum += 200;
                                                     System.Console.Beep(2500, 200);
                                                     item.Status = "HardwareError";
                                                     break;
@@ -154,6 +154,7 @@ namespace ServerManager.WPF.Pages
                                                 break;
                                             case IPStatus.TimedOut:
                                                 {
+                                                    item.PingSum += 200;
                                                     System.Console.Beep(1500, 200);
                                                     item.Status = "TimedOut";
                                                     break;
@@ -208,6 +209,7 @@ namespace ServerManager.WPF.Pages
                                 }
                                 catch
                                 {
+                                    item.PingSum += 300;
                                     item.Status = "Exception";
                                     System.Console.Beep(5000, 50);
                                     item.ExceptionCount++;
