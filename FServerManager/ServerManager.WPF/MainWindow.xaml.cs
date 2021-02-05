@@ -1,9 +1,13 @@
-﻿using FSM.WPF.Services.Repository;
+﻿using FSM.WPF.Services.Generic.Control;
+using FSM.WPF.Services.Repository;
 using FSM.WPF.Services.Services;
 using ServerManager.WPF.Pages;
 using ServerManager.WPF.Pages.Account;
+using ServerManager.WPF.Pages.Control;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,6 +25,8 @@ namespace ServerManager.WPF
 
         private readonly IWindowsServices _service;
 
+        private IControl<Server> _serverManager;
+
         public MainWindow()
         {
             _service = new WindowsService();
@@ -33,6 +39,7 @@ namespace ServerManager.WPF
             GetDate();
             CheckConnection();
             NavigateFrames();
+            BindGrid();
         }
 
         private void BtnFile_Click(object sender, RoutedEventArgs e)
@@ -124,6 +131,24 @@ namespace ServerManager.WPF
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void BtnNewServer_Click(object sender, RoutedEventArgs e)
+        {
+            AddorEditServer addNewServer = new();
+            if (addNewServer.ShowDialog() == true)
+            {
+                BindGrid();
+            }
+        }
+
+        private async void BindGrid()
+        {
+            using (_serverManager = new Control<Server>())
+            {
+                IEnumerable<Server> data = await _serverManager.Services.GetAllAsync();
+                dgServers.ItemsSource = data.OrderByDescending(s => s.InsertDate);
+            }
         }
     }
 }

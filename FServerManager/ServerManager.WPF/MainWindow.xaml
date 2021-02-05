@@ -65,50 +65,63 @@
                     </Grid>
                 </TabItem>
                 <TabItem Header="Control">
+
                     <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="1*"/>
-                        </Grid.RowDefinitions>
-                        <Label Content="Controlle Server" HorizontalAlignment="Center" Grid.Row="0"/>
-                        <Grid Grid.Row="1">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" MinWidth="500"/>
-                                <ColumnDefinition Width="5"/>
-                                <ColumnDefinition Width="*" MinWidth="250"/>
-                            </Grid.ColumnDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" MinWidth="500"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="*" MinWidth="350"/>
+                        </Grid.ColumnDefinitions>
+                        <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
+                        <Grid Grid.Column="0">
+                            <Frame x:Name="frmServerInfos">
 
-                            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
-
-                            <Grid Grid.Column="0">
-                                <Frame x:Name="frmServerInfos">
-
-                                </Frame>
-                            </Grid>
-                            <Grid Grid.Column="2">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="30"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                <Label Content="Servers List" HorizontalContentAlignment="Center" FontSize="15" Background="#FF3A3838" Foreground="White" VerticalContentAlignment="Center"/>
-                                <DataGrid x:Name="dgServers" Grid.Row="1" >
-                                    <DataGrid.Columns>
-                                        <DataGridTextColumn Width="*" Visibility="Hidden" Binding="{Binding Id}" Header="Id"/>
-                                        <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Server Name"/>
-                                        <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Ip Address"/>
-                                        <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Title"/>
-                                    </DataGrid.Columns>
-                                    <DataGrid.ContextMenu>
-                                        <ContextMenu>
-                                            <MenuItem Header="Add New Server"/>
-                                            <Separator/>
-                                            <MenuItem Header="Delete"/>
-                                            <MenuItem Header="Edit"/>
-                                            <MenuItem Header="Server Sites" x:Name="btnSitest" Click="BtnSitest_Click"/>
-                                        </ContextMenu>
-                                    </DataGrid.ContextMenu>
-                                </DataGrid>
-                            </Grid>
+                            </Frame>
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Servers List" HorizontalContentAlignment="Center" FontSize="15" Background="#FF3A3838" Foreground="White" VerticalContentAlignment="Center"/>
+                            <DataGrid x:Name="dgServers" Grid.Row="1">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Width="*" Visibility="Hidden" Binding="{Binding Id}" Header="Id"/>
+                                    <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Server Name"/>
+                                    <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Ip Address"/>
+                                    <DataGridTextColumn Width="*" Visibility="Visible" Binding="{Binding Id}" Header="Title"/>
+                                </DataGrid.Columns>
+                                <DataGrid.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Add New Server" x:Name="btnNewServer" Click="BtnNewServer_Click">
+                                            <MenuItem.Icon>
+                                                <Image Source="/Plus.png" />
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Header="Refresh" x:Name="btnRefreshServers" >
+                                            <MenuItem.Icon>
+                                                <Image Source="/icons8-refresh-barcode-80.png" />
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <Separator/>
+                                        <MenuItem Header="Delete" x:Name="btnDeleteServer">
+                                            <MenuItem.Icon>
+                                                <Image Source="/icons8-delete-64.png"  />
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Header="Edit">
+                                            <MenuItem.Icon>
+                                                <Image Source="/icons8-edit-64.png"  />
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Header="Server Sites" x:Name="btnSitest" Click="BtnSitest_Click">
+                                            <MenuItem.Icon>
+                                                <Image Source="/icons8-servers-group-80.png"  />
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                    </ContextMenu>
+                                </DataGrid.ContextMenu>
+                            </DataGrid>
                         </Grid>
                     </Grid>
                 </TabItem>

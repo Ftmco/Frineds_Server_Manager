@@ -123,6 +123,26 @@ namespace ServerManager.WPF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] icons8_google_sites_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_google_sites_64", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] icons8_servers_group_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_servers_group_80", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] icons8_test_account_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8_test_account_64", resourceCulture);

@@ -7,6 +7,10 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Console.png" />
+    <None Remove="icons8-delete-64.png" />
+    <None Remove="icons8-edit-64.png" />
+    <None Remove="icons8-refresh-barcode-80.png" />
+    <None Remove="icons8-servers-group-80.png" />
     <None Remove="icons8-test-account-64.png" />
     <None Remove="Pages\Account\auth-bg-dark.jpg" />
     <None Remove="Pages\Account\auth-bg.jpg" />
@@ -17,6 +21,7 @@
     <None Remove="Pages\icons8-refresh-barcode-80.png" />
     <None Remove="Pages\Plus.png" />
     <None Remove="Pages\Settings.png" />
+    <None Remove="Plus.png" />
     <None Remove="Settings.png" />
   </ItemGroup>
   <ItemGroup>
@@ -35,6 +40,10 @@
 
   <ItemGroup>
     <Resource Include="Console.png" />
+    <Resource Include="icons8-delete-64.png" />
+    <Resource Include="icons8-edit-64.png" />
+    <Resource Include="icons8-refresh-barcode-80.png" />
+    <Resource Include="icons8-servers-group-80.png" />
     <Resource Include="icons8-test-account-64.png" />
     <Resource Include="Pages\Account\auth-bg-dark.jpg" />
     <Resource Include="Pages\Account\auth-bg.jpg" />
@@ -45,6 +54,7 @@
     <Resource Include="Pages\icons8-refresh-barcode-80.png" />
     <Resource Include="Pages\Plus.png" />
     <Resource Include="Pages\Settings.png" />
+    <Resource Include="Plus.png" />
     <Resource Include="Settings.png" />
   </ItemGroup>
 

@@ -73,9 +73,12 @@ namespace ServerManager.WPF.Pages
         {
             if (PingId != Guid.Empty)
             {
+                this.Title = "Edit";
                 ServerPings ping = await _control.Services.FindAsync(PingId);
                 if (ping != null)
                 {
+                    this.Title += " " + ping.Title;
+                    lblTitle.Content = "Edit Ping Server";
                     txtServerName.Text = ping.ServerName;
                     txtTitle.Text = ping.Title;
                     prgDescription.Inlines.Add(new Run(ping.Description));

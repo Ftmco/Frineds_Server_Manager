@@ -23,24 +23,31 @@ public record Server
     public Guid Id { get; set; }
 
     /// <summary>
-    /// Server Name or Server Ip Address
+    /// Server Name (Title)
     /// </summary>
     [NotNull]
     public string ServerName { get; set; }
 
     /// <summary>
-    /// Description
+    /// Server Ip Address 
     /// </summary>
-    public string Descriptiion { get; set; }
+    [NotNull]
+    public string ServerIpAddress { get; set; }
 
     /// <summary>
-    /// Title For Server Pings
+    /// Server Conect Token
     /// </summary>
-    public string Title { get; set; }
+    public string Token { get; set; }
+
+    /// <summary>
+    /// Description
+    /// </summary>
+    public string Description { get; set; }
 
     /// <summary>
     /// Insert Date Time
     /// </summary>
     [NotNull]
     public DateTime InsertDate { get; set; }
+
 }
