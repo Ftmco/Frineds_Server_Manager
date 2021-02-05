@@ -230,6 +230,10 @@
               "target": "Package",
               "version": "[5.0.2, )"
             },
+            "Microsoft.NETCore.Runtime.CoreCLR": {
+              "target": "Package",
+              "version": "[2.0.8, )"
+            },
             "sqlite": {
               "target": "Package",
               "version": "[3.13.0, )"

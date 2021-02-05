@@ -50,26 +50,32 @@ namespace ServerManager.WPF.Pages
             {
                 dgvPings.AutoGenerateColumns = false;
                 IEnumerable<ServerPings> data = await _control.Services.GetAllAsync();
-                float sum = data.Sum(d => d.Avrage);
-                double pgAvrageValue = sum / data.Count();
-                pgAvrage.Maximum = sum;
-                pgAvrage.Value = pgAvrageValue;
-
-                double switchValue = pgAvrageValue * 100 / sum;
-
-                lblAvrage.Content = $"'{Convert.ToInt32(pgAvrageValue)}/{sum}' | '{Convert.ToInt32((double.IsNaN(switchValue)? 0 : switchValue))}%'";
-
-                pgAvrage.Foreground = switchValue switch
+                if (data.Count() != 0)
                 {
-                    > 75 => new SolidColorBrush(Colors.Red),
-                    > 65 => new SolidColorBrush(Colors.Orange),
-                    > 55 => new SolidColorBrush(Colors.Yellow),
-                    > 45 => new SolidColorBrush(Colors.YellowGreen),
-                    > 25 => new SolidColorBrush(Colors.Gold),
-                    _ => new SolidColorBrush(Colors.Green),
+                    float sum = data.Count() > 1 ? data.Sum(d => d.Avrage) : data.FirstOrDefault().Ping;
+                    double pgAvrageValue = data.Count() > 1 ? sum / data.Count() : data.FirstOrDefault().Avrage;
 
-                };
-                dgvPings.ItemsSource = data.OrderByDescending(sp => sp.Ping);
+                    if (double.IsNaN(pgAvrageValue))
+                        pgAvrageValue = 0;
+
+                    pgAvrage.Maximum = sum;
+                    pgAvrage.Value = pgAvrageValue;
+
+                    double switchValue = pgAvrage.Value * 100 / pgAvrage.Maximum;
+
+                    lblAvrage.Content = $"'{Convert.ToInt32(pgAvrage.Value)}/{pgAvrage.Maximum}' | '{Convert.ToInt32((double.IsNaN(switchValue) ? 0 : switchValue))}%'";
+                    pgAvrage.Foreground = switchValue switch
+                    {
+                        > 75 => new SolidColorBrush(Colors.Red),
+                        > 65 => new SolidColorBrush(Colors.Orange),
+                        > 55 => new SolidColorBrush(Colors.Yellow),
+                        > 45 => new SolidColorBrush(Colors.YellowGreen),
+                        > 25 => new SolidColorBrush(Colors.Gold),
+                        _ => new SolidColorBrush(Colors.Green)
+                    };
+
+                    dgvPings.ItemsSource = data.OrderByDescending(sp => sp.Ping);
+                }
             }
             await GetPingingAsync();
 

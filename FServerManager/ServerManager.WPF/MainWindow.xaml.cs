@@ -101,7 +101,6 @@ namespace ServerManager.WPF
                         lblConnect.Foreground = Brushes.Red;
                         Console.Beep(1000, 2560);
                         Thread.Sleep(2500);
-                        Application.Current.Shutdown();
                     }));
             });
 

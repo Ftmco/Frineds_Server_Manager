@@ -31,6 +31,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.NETCore.Runtime.CoreCLR" Version="2.0.8" />
     <PackageReference Include="sqlite" Version="3.13.0" />
   </ItemGroup>
 
