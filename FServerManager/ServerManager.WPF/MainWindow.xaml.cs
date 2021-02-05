@@ -100,7 +100,6 @@ namespace ServerManager.WPF
                         lblConnect.Content = "Trying to connect to the Internet more than allowed please check your connection and Restart Application";
                         lblConnect.Foreground = Brushes.Red;
                         Console.Beep(1000, 2560);
-                        Thread.Sleep(2500);
                     }));
             });
 
