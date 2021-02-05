@@ -83,6 +83,7 @@ namespace ServerManager.WPF.Pages
 
         private void BtnRefresh_Click(object sender, RoutedEventArgs e)
         {
+            IsInChange = false;
             BindGrid();
         }
 
@@ -241,12 +242,14 @@ namespace ServerManager.WPF.Pages
             ServerPings current = (ServerPings)dgvPings.CurrentItem;
             if (current != null)
             {
+                IsInChange = true;
                 if (MessageBox.Show($"Are You Sure To Delete '{current.Title}'?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     using (_control = new Control<ServerPings>())
                     {
                         if (await _control.Services.DeleteAsync(current) && await _control.SaveAsync())
                         {
+                            IsInChange = false;
                             BindGrid();
                         }
                         else
