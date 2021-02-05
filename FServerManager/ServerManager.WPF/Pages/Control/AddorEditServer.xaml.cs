@@ -1,17 +1,7 @@
 ﻿using FSM.WPF.Services.Generic.Control;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ServerManager.WPF.Pages.Control
 {
@@ -29,9 +19,25 @@ namespace ServerManager.WPF.Pages.Control
             InitializeComponent();
         }
 
-        private void BtnSubmit_Click(object sender, RoutedEventArgs e)
+        private async void BtnSubmit_Click(object sender, RoutedEventArgs e)
         {
-
+            TextRange txt = new TextRange(txtDescription.Document.ContentStart
+                     , txtDescription.Document.ContentEnd);
+            using (_serverManager = new Control<Server>())
+            {
+                Server newServer = new()
+                {
+                    InsertDate = DateTime.Now,
+                    Token = txtToken.Text,
+                    Description = txt.Text,
+                    ServerIpAddress = txtServerIpAddress.Text,
+                    ServerName = txtServerName.Text
+                };
+                if (await _serverManager.Services.InsertAsync(newServer) && await _serverManager.SaveAsync())
+                    DialogResult = true;
+                else
+                    MessageBox.Show("Sorry :( Exception", "Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e) =>
@@ -41,11 +47,13 @@ namespace ServerManager.WPF.Pages.Control
         {
             if (Id != Guid.Empty)
             {
+                Title = "Edit";
                 using (_serverManager = new Control<Server>())
                 {
                     Server server = await _serverManager.Services.FindAsync(Id);
                     if (server != null)
                     {
+                        Title += $" {server.ServerName}";
                         txtServerIpAddress.Text = server.ServerIpAddress;
                         txtServerName.Text = server.ServerName;
                         txtToken.Text = server.Token;
