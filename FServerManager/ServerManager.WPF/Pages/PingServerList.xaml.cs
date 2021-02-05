@@ -57,7 +57,7 @@ namespace ServerManager.WPF.Pages
 
                 double switchValue = pgAvrageValue * 100 / sum;
 
-                lblAvrage.Content = $"'{Convert.ToInt32(pgAvrageValue)}/{sum}' | '{Convert.ToInt32(switchValue)}%'";
+                lblAvrage.Content = $"'{Convert.ToInt32(pgAvrageValue)}/{sum}' | '{Convert.ToInt32((double.IsNaN(switchValue)? 0 : switchValue))}%'";
 
                 pgAvrage.Foreground = switchValue switch
                 {
