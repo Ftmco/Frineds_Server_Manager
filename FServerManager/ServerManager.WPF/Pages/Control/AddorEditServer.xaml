@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServerManager.WPF.Pages.Control"
         mc:Ignorable="d"
-        Title="AddorEditServer" Width="550" MaxHeight="560" MaxWidth="560" MinHeight="450" MinWidth="540" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+        Title="AddorEditServer" Loaded="Window_Loaded" Width="550" MaxHeight="560" MaxWidth="560" MinHeight="450" MinWidth="540" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"/>
@@ -17,10 +17,70 @@
                 <RowDefinition />
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition Height="100"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid>
-                
+                <Label Content="Name : " Margin="10,0,488,34" Width="52" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+                <TextBox Margin="10,34,10,0" Height="31" VerticalAlignment="Top" VerticalContentAlignment="Center" x:Name="txtServerName">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Label Content="Ip Address : " Margin="10,0,455,34" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+                <TextBox Margin="10,34,10,0" Height="31" VerticalAlignment="Top" VerticalContentAlignment="Center" x:Name="txtServerIpAddress">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Label Content="Token : " Margin="10,0,455,34" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+                <TextBox Margin="10,34,10,0" Height="31" VerticalAlignment="Top" VerticalContentAlignment="Center" x:Name="txtToken">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Label Content="Description : " Margin="10,0,455,72" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="28"/>
+                <RichTextBox Margin="10,28,10,5" x:Name="txtDescription">
+                    <FlowDocument>
+                        <Paragraph FontSize="15" x:Name="prgDescription"/>
+                    </FlowDocument>
+                    <RichTextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                        <Style TargetType="{x:Type Paragraph}">
+                            <Setter Property="Margin" Value="0" />
+                        </Style>
+                    </RichTextBox.Resources>
+                </RichTextBox>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Button VerticalAlignment="Top" HorizontalAlignment="Center" Content="Submit" Foreground="Green" Height="30" x:Name="btnSubmit" Margin="0,7,0,0" Width="416" Click="BtnSubmit_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button VerticalAlignment="Top" HorizontalAlignment="Center" Content="Cancel" Foreground="Red" Height="30" Width="416" x:Name="btnCancel"  Margin="0,42,0,0" Click="BtnCancel_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
             </Grid>
         </Grid>
     </Grid>
