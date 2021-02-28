@@ -76,9 +76,51 @@ namespace ServerManager.WPF.Pages
 
                     dgvPings.ItemsSource = data.OrderByDescending(sp => sp.Ping);
                 }
+                SetLstPings();
             }
             await GetPingingAsync();
+        }
 
+        private async void SetLstPings()
+        {
+            using (_control = new Control<ServerPings>())
+            {
+                IEnumerable<ServerPings> data = await _control.Services.GetAllAsync();
+                List<ListBoxItem> lstItems = new List<ListBoxItem>();
+                foreach (var item in data)
+                {
+                    float avrage = item.Ping;
+
+                    ListBoxItem lstIrem = new();
+                    StackPanel stackPanel = new();
+                    stackPanel.Children.Add(new Label { Content = item.Title });
+                    stackPanel.Children.Add(new Label { Content = $"ping : {avrage}" });
+                    stackPanel.Children.Add(new ProgressBar
+                    {
+                        Maximum = 100,
+                        Width = cd.Width.Value - 50,
+                        HorizontalContentAlignment = HorizontalAlignment.Stretch,
+                        HorizontalAlignment = HorizontalAlignment.Stretch,
+                        VerticalAlignment = VerticalAlignment.Center,
+                        Height = 25,
+                        Value = avrage,
+                        Foreground = avrage switch
+                        {
+                            > 75 => new SolidColorBrush(Colors.Red),
+                            > 65 => new SolidColorBrush(Colors.Orange),
+                            > 55 => new SolidColorBrush(Colors.Yellow),
+                            > 45 => new SolidColorBrush(Colors.YellowGreen),
+                            > 25 => new SolidColorBrush(Colors.Gold),
+                            _ => new SolidColorBrush(Colors.Green)
+                        }
+                    });
+
+                    lstIrem.Content = stackPanel;
+                    lstItems.Add(lstIrem);
+
+                    lstPings.ItemsSource = lstItems.Distinct();
+                }
+            }
         }
 
         private void BtnRefresh_Click(object sender, RoutedEventArgs e)

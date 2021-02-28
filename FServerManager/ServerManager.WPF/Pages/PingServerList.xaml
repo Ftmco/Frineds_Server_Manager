@@ -9,61 +9,85 @@
       Title="PingServerList" Loaded="Page_Loaded">
 
     <Grid>
+       
         <Grid Grid.Row="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="35"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
             <Label Content="Ping Servers" HorizontalContentAlignment="Center" Background="#FF3A3838" Foreground="White" VerticalAlignment="Top"/>
 
             <Grid Grid.Row="1">
-                <DataGrid x:Name="dgvPings" Margin="5" CanUserAddRows="False" CanUserDeleteRows="False" ItemsSource="{Binding lstPings}">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Width="*" Header="Server Name" Binding="{Binding ServerName}"/>
-                        <DataGridTextColumn Width="*" Header="Title" Binding="{Binding Title}"/>
-                        <DataGridTextColumn Width="*" Header="Server IpAddress" Binding="{Binding IpAddress}"/>
-                        <DataGridTextColumn Width="*" Header="Ping" Binding="{Binding Ping}"/>
-                        <DataGridTextColumn Width="*" Header="Ping Avrage" Binding="{Binding Avrage}"/>
-                        <DataGridTextColumn Width="*" Header="Request Count" Binding="{Binding RequestCount}"/>
-                        <DataGridTextColumn Width="*" Foreground="Red" Header="Exception Count" Binding="{Binding ExceptionCount}"/>
-                        <DataGridTextColumn Width="*" Header="Status" Binding="{Binding Status}"/>
-                    </DataGrid.Columns>
-                    <DataGrid.ContextMenu>
-                        <ContextMenu>
-                            <MenuItem Header="Add" x:Name="btnAddNewPingServer" Click="BtnAddNewPingServer_Click">
-                                <MenuItem.Icon>
-                                    <Image Source="/Pages/Plus.png" />
-                                </MenuItem.Icon>
-                            </MenuItem>
-                            <MenuItem Header="Refresh" x:Name="btnRefresh" Click="BtnRefresh_Click">
-                                <MenuItem.Icon>
-                                    <Image Source="/Pages/icons8-refresh-barcode-80.png" />
-                                </MenuItem.Icon>
-                            </MenuItem>
-                            <Separator/>
-                            <MenuItem Header="Edit" x:Name="btnEdit" Click="BtnEdit_Click">
-                                <MenuItem.Icon>
-                                    <Image Source="/Pages/icons8-edit-64.png" />
-                                </MenuItem.Icon>
-                            </MenuItem>
-                            <MenuItem Header="Delete" x:Name="btnDelete"  Click="BtnDelete_Click">
-                                <MenuItem.Icon>
-                                    <Image Source="/Pages/icons8-delete-64.png" />
-                                </MenuItem.Icon>
-                            </MenuItem>
-                        </ContextMenu>
-                    </DataGrid.ContextMenu>
-                    <DataGrid.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="7"/>
-                        </Style>
-                    </DataGrid.Resources>
-                </DataGrid>
-            </Grid>
-            <Grid Grid.Row="2">
-                <ProgressBar Margin="10,0,10,0" x:Name="pgAvrage"/>
-                <Label x:Name="lblAvrage" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" FontSize="9" Width="202" Height="20"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition x:Name="cd" Width="350" MinWidth="300" MaxWidth="400"/>
+                </Grid.ColumnDefinitions>
+                <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <DataGrid x:Name="dgvPings" Margin="5" CanUserAddRows="False" CanUserDeleteRows="False" ItemsSource="{Binding lstPings}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Width="*" Header="Server Name" Binding="{Binding ServerName}"/>
+                                <DataGridTextColumn Width="*" Header="Title" Binding="{Binding Title}"/>
+                                <DataGridTextColumn Width="*" Header="Server IpAddress" Binding="{Binding IpAddress}"/>
+                                <DataGridTextColumn Width="*" Header="Ping" Binding="{Binding Ping}"/>
+                                <DataGridTextColumn Width="*" Header="Ping Avrage" Binding="{Binding Avrage}"/>
+                                <DataGridTextColumn Width="*" Header="Request Count" Binding="{Binding RequestCount}"/>
+                                <DataGridTextColumn Width="*" Foreground="Red" Header="Exception Count" Binding="{Binding ExceptionCount}"/>
+                                <DataGridTextColumn Width="*" Header="Status" Binding="{Binding Status}"/>
+                            </DataGrid.Columns>
+                            <DataGrid.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Add" x:Name="btnAddNewPingServer" Click="BtnAddNewPingServer_Click">
+                                        <MenuItem.Icon>
+                                            <Image Source="/Pages/Plus.png" />
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <MenuItem Header="Refresh" x:Name="btnRefresh" Click="BtnRefresh_Click">
+                                        <MenuItem.Icon>
+                                            <Image Source="/Pages/icons8-refresh-barcode-80.png" />
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <Separator/>
+                                    <MenuItem Header="Edit" x:Name="btnEdit" Click="BtnEdit_Click">
+                                        <MenuItem.Icon>
+                                            <Image Source="/Pages/icons8-edit-64.png" />
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <MenuItem Header="Delete" x:Name="btnDelete"  Click="BtnDelete_Click">
+                                        <MenuItem.Icon>
+                                            <Image Source="/Pages/icons8-delete-64.png" />
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                </ContextMenu>
+                            </DataGrid.ContextMenu>
+                            <DataGrid.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="7"/>
+                                </Style>
+                            </DataGrid.Resources>
+                        </DataGrid>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <ProgressBar Margin="10,0,10,0" x:Name="pgAvrage"/>
+                        <Label x:Name="lblAvrage" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" FontSize="9" Width="202" Height="20"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <ListBox x:Name="lstPings" Padding="5" Margin="5">
+                        <ListBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="7"/>
+                            </Style>
+                          
+                        </ListBox.Resources>
+                    </ListBox>
+                </Grid>
             </Grid>
         </Grid>
     </Grid>
