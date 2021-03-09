@@ -1,19 +1,13 @@
 ﻿using FSM.WPF.Services.Generic.Control;
 using FSM.WPF.Services.Repository;
 using FSM.WPF.Services.Services;
-using ServerManager.WPF.Pages;
 using ServerManager.WPF.Pages.Account;
-using ServerManager.WPF.Pages.Control;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace ServerManager.WPF
 {
@@ -38,8 +32,7 @@ namespace ServerManager.WPF
         {
             GetDate();
             CheckConnection();
-            NavigateFrames();
-            BindGrid();
+
         }
 
         private void BtnFile_Click(object sender, RoutedEventArgs e)
@@ -48,12 +41,6 @@ namespace ServerManager.WPF
             (sender as Button).ContextMenu.PlacementTarget = (sender as Button);
             (sender as Button).ContextMenu.Placement = System.Windows.Controls.Primitives.PlacementMode.Bottom;
             (sender as Button).ContextMenu.IsOpen = true;
-        }
-
-        private void BtnPoweShell_Click(object sender, RoutedEventArgs e)
-        {
-            PoweShell ps1 = new();
-            ps1.ShowDialog();
         }
 
         #region __Private Methodes__
@@ -103,19 +90,7 @@ namespace ServerManager.WPF
                     }));
             });
 
-
-        private void NavigateFrames()
-        {
-            frmServerInfos.Navigate(new ServerTasks());
-            frmListServers.Navigate(new PingServerList());
-        }
-
         #endregion
-
-        private void BtnSitest_Click(object sender, RoutedEventArgs e)
-        {
-            frmServerInfos.Navigate(new ServerSites());
-        }
 
         private void BtnAccount_Click(object sender, RoutedEventArgs e)
         {
@@ -129,24 +104,6 @@ namespace ServerManager.WPF
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
-        }
-
-        private void BtnNewServer_Click(object sender, RoutedEventArgs e)
-        {
-            AddorEditServer addNewServer = new();
-            if (addNewServer.ShowDialog() == true)
-            {
-                BindGrid();
-            }
-        }
-
-        private async void BindGrid()
-        {
-            using (_serverManager = new Control<Server>())
-            {
-                IEnumerable<Server> data = await _serverManager.Services.GetAllAsync();
-                dgServers.ItemsSource = data.OrderByDescending(s => s.InsertDate);
-            }
         }
     }
 }
