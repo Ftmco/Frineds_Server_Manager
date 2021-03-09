@@ -15,27 +15,6 @@
     <Compile Update="Pages\Account\SingUp.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Control\AddorEditServer.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\NewIISApp.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\NewPing.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PingServerList.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PowerShell.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\ServerSites.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\ServerTasks.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
@@ -50,27 +29,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Account\SingUp.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\Control\AddorEditServer.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\NewIISApp.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\NewPing.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PingServerList.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PowerShell.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\ServerSites.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\ServerTasks.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
