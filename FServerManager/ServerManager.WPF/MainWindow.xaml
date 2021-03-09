@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServerManager.WPF" 
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
         Title="Friends Server Manager " Height="500" Width="900" MinHeight="450" MinWidth="850" WindowStartupLocation="CenterScreen">
 
     <Grid>

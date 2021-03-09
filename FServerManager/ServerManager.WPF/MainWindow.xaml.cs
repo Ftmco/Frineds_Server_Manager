@@ -141,5 +141,10 @@ namespace ServerManager.WPF
                 item.BorderBrush = new SolidColorBrush() { Color = Colors.White, Opacity = 0.1 };
             }
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            BtnHome_Click(sender, e);
+        }
     }
 }

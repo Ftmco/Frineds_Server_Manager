@@ -19,6 +19,10 @@
     <None Remove="Pages\Account\auth-bg.jpg" />
     <None Remove="Pages\Account\login.png" />
     <None Remove="Pages\Account\register.png" />
+    <None Remove="Pages\Ping Servers\icons8-edit-64 %281%29.png" />
+    <None Remove="Pages\Ping Servers\icons8-plus-64.png" />
+    <None Remove="Pages\Ping Servers\icons8-refresh-64.png" />
+    <None Remove="Pages\Ping Servers\icons8-trash-64.png" />
     <None Remove="Plus.png" />
     <None Remove="Settings.png" />
   </ItemGroup>
@@ -51,6 +55,10 @@
     <Resource Include="Pages\Account\auth-bg.jpg" />
     <Resource Include="Pages\Account\login.png" />
     <Resource Include="Pages\Account\register.png" />
+    <Resource Include="Pages\Ping Servers\icons8-edit-64 (1).png" />
+    <Resource Include="Pages\Ping Servers\icons8-plus-64.png" />
+    <Resource Include="Pages\Ping Servers\icons8-refresh-64.png" />
+    <Resource Include="Pages\Ping Servers\icons8-trash-64.png" />
     <Resource Include="Plus.png" />
     <Resource Include="Settings.png" />
   </ItemGroup>
