@@ -2,6 +2,9 @@
 using FSM.WPF.Services.Repository;
 using FSM.WPF.Services.Services;
 using ServerManager.WPF.Pages.Account;
+using ServerManager.WPF.Pages.Home;
+using ServerManager.WPF.Pages.Ping_Servers;
+using ServerManager.WPF.Pages.Servers;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -104,6 +107,39 @@ namespace ServerManager.WPF
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void BtnHome_Click(object sender, RoutedEventArgs e)
+        {
+            Home homePage = new();
+            frmMain.Navigate(homePage);
+            Button[] btns = new[] { btnServers, btnPingList };
+            ActiveButton(btnHome, btns);
+        }
+
+        private void BtnPingList_Click(object sender, RoutedEventArgs e)
+        {
+            PingServers pingPage = new();
+            frmMain.Navigate(pingPage);
+            Button[] btns = new[] { btnServers, btnHome };
+            ActiveButton(btnPingList, btns);
+        }
+
+        private void BtnServers_Click(object sender, RoutedEventArgs e)
+        {
+            Servers serversPage = new();
+            frmMain.Navigate(serversPage);
+            Button[] btns = new[] { btnPingList, btnHome };
+            ActiveButton(btnServers, btns);
+        }
+
+        void ActiveButton(Button currentBtn, Button[] DeactiveBtns)
+        {
+            currentBtn.BorderBrush = new SolidColorBrush() { Color = Colors.Black };
+            foreach (var item in DeactiveBtns)
+            {
+                item.BorderBrush = new SolidColorBrush() { Color = Colors.White, Opacity = 0.1 };
+            }
         }
     }
 }

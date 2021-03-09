@@ -10,7 +10,9 @@
     <None Remove="icons8-delete-64.png" />
     <None Remove="icons8-edit-64.png" />
     <None Remove="icons8-home-64.png" />
+    <None Remove="icons8-internet-64.png" />
     <None Remove="icons8-refresh-barcode-80.png" />
+    <None Remove="icons8-server-64.png" />
     <None Remove="icons8-servers-group-80.png" />
     <None Remove="icons8-test-account-64.png" />
     <None Remove="Pages\Account\auth-bg-dark.jpg" />
@@ -40,7 +42,9 @@
     <Resource Include="icons8-delete-64.png" />
     <Resource Include="icons8-edit-64.png" />
     <Resource Include="icons8-home-64.png" />
+    <Resource Include="icons8-internet-64.png" />
     <Resource Include="icons8-refresh-barcode-80.png" />
+    <Resource Include="icons8-server-64.png" />
     <Resource Include="icons8-servers-group-80.png" />
     <Resource Include="icons8-test-account-64.png" />
     <Resource Include="Pages\Account\auth-bg-dark.jpg" />
