@@ -9,10 +9,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Shared\ViewModels\ViewModels.csproj" />
     <ProjectReference Include="..\Server.DataLayer\Server.DataLayer.csproj" />
     <ProjectReference Include="..\Server.Entity\Server.Entity.csproj" />
     <ProjectReference Include="..\Server.Services\Server.Services.csproj" />
-    <ProjectReference Include="..\ViewModels\ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

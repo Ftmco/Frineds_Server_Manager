@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FSM.WPF.Entity\FSM.WPF.Entity.csproj" />
-    <ProjectReference Include="..\FSM.WPF.ViewModels\FSM.WPF.ViewModels.csproj" />
+    <ProjectReference Include="..\..\ViewModels\FSM.WPF.ViewModels\FSM.WPF.ViewModels.csproj" />
+    <ProjectReference Include="..\..\WPF\FSM.WPF.Entity\FSM.WPF.Entity.csproj" />
   </ItemGroup>
 
   <ItemGroup>

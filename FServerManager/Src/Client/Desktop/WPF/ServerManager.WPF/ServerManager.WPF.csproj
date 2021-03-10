@@ -38,7 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FSM.WPF.Services\FSM.WPF.Services.csproj" />
+    <ProjectReference Include="..\..\Services\FSM.WPF.Services\FSM.WPF.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>
