@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FSM.WPF.Services.Repository;
+using FSM.WPF.ViewModels.AccountViewModels;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ServerManager.WPF.Pages.Account
 {
@@ -19,6 +10,12 @@ namespace ServerManager.WPF.Pages.Account
     /// </summary>
     public partial class Login : Window
     {
+        #region __Dependency__
+
+        private IAccountRepository _account;
+
+        #endregion
+
         public Login()
         {
             InitializeComponent();
@@ -45,10 +42,26 @@ namespace ServerManager.WPF.Pages.Account
             SingUp singUp = new();
             DialogResult = singUp.ShowDialog();
         }
-               
-        private void BtnLogin_Click(object sender, RoutedEventArgs e)
+
+        private async void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
 
+            switch (await _account.LoginAsync(new LoginViewModel
+            {
+                Email = txtUserName.Text,
+                Password = txtPassword.Password,
+                RememberMe = true
+            }))
+            {
+                case LoginResponse.Success:
+                    break;
+                case LoginResponse.UserNotFount:
+                    break;
+                case LoginResponse.Exception:
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

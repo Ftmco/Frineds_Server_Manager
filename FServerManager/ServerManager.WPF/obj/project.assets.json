@@ -1782,6 +1782,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "FSM.WPF.Entity": "1.0.0",
+          "FSM.WPF.ViewModels": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2"
         },
@@ -1790,6 +1791,16 @@
         },
         "runtime": {
           "bin/placeholder/FSM.WPF.Services.dll": {}
+        }
+      },
+      "FSM.WPF.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/FSM.WPF.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FSM.WPF.ViewModels.dll": {}
         }
       }
     }
@@ -6374,6 +6385,11 @@
       "type": "project",
       "path": "../FSM.WPF.Services/FSM.WPF.Services.csproj",
       "msbuildProject": "../FSM.WPF.Services/FSM.WPF.Services.csproj"
+    },
+    "FSM.WPF.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../FSM.WPF.ViewModels/FSM.WPF.ViewModels.csproj",
+      "msbuildProject": "../FSM.WPF.ViewModels/FSM.WPF.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {

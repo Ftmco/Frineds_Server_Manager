@@ -15,6 +15,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FSM.WPF.Entity\FSM.WPF.Entity.csproj" />
+    <ProjectReference Include="..\FSM.WPF.ViewModels\FSM.WPF.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Generic\" />
   </ItemGroup>
 
 </Project>
