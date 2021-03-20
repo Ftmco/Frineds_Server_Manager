@@ -9,6 +9,42 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBox CornerRadius="15" Margin="10" FontSize="15"
+                         PlaceholderText="Search"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
 
+                </TextBox>
+                <Pivot Grid.Row="1" >
+                    <PivotItem >
+                        <PivotItem.Header>
+                            <TextBlock Text="Collections" FontSize="15"/>
+                        </PivotItem.Header>
+                    </PivotItem>
+                    <PivotItem >
+                        <PivotItem.Header>
+                            <TextBlock Text="History" FontSize="15"/>
+                        </PivotItem.Header>
+                    </PivotItem>
+                    <PivotItem >
+                        <PivotItem.Header>
+                            <TextBlock Text="News" FontSize="15"/>
+                        </PivotItem.Header>
+                    </PivotItem>
+                </Pivot>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>
