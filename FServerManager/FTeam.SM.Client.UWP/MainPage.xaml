@@ -9,6 +9,27 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Button Margin="10,0,0,0" CornerRadius="10" Height="35">
+                <Button.Content>
+                    <StackPanel >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="5"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Stretch="Fill" Width="20" Height="20" Source="/Assets/canvasm.myo2.png"/>
+                            <TextBlock Grid.Column="2" Text="Account"/>
+                        </Grid>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
 
+        </Grid>
     </Grid>
 </Page>
